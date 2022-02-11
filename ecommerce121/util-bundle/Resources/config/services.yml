@@ -1,0 +1,18 @@
+services:
+#    util.controller_util:
+#        class: Ecommerce121\UtilBundle\Controller\ControllerUtil
+#        arguments:
+#            - '@http_kernel'
+#            - '%kernel.root_dir%'
+#            - '@templating'
+#            - '@router'
+#            - '@form.factory'
+#            - '@doctrine'
+#            - '@translator'
+#            - '@security.token_storage'
+#            - '@security.authorization_checker'
+#            - '@validator'
+#            - '@event_dispatcher'
+#
+#    util.security.md5_encoder:
+#        class: Ecommerce121\UtilBundle\Security\Encoder\Md5NoSaltEncoder

@@ -1,0 +1,34 @@
+@import '../globals/mixins';
+
+#error-generic,
+#error-404,
+#error-500{
+	div.container-page {
+		min-height: 705px;
+	}
+	div.page-body {
+		@include back-img('general','city-background-error.png', no-repeat, bottom center, none);
+	}
+	div.img-background-error {
+		&>div {
+			margin: 15% 0px;
+			text-align: center;
+			&>img {
+				width: 100%;
+				max-width: 433px;
+				height: auto;
+				display: block;
+				margin: auto;
+			}
+			&>p {
+				margin-top: 40px;
+				@include font-base(20px, normal, $color-liver, none, center, 130%, $font-family-base);
+				&>span {
+					display: block;
+					@include font-base(24px, normal, $color-liver, none, center, 100%, $font-family-demi-bold);
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}

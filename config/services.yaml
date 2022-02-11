@@ -1,0 +1,126 @@
+parameters:
+  locale: '%env(APP_LOCALE)%'
+  secret: '%env(APP_SECRET)%'
+  contact_email: '%env(SENDER_EMAIL)%'
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+      autowire: true      # Automatically injects dependencies in your services.
+      autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+      public: true
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+      resource: '../src/'
+      exclude:
+        - '../src/DependencyInjection/'
+        - '../src/Entity/'
+        - '../src/Event/'
+        - '../src/Repository/'
+        - '../src/Kernel.php'
+        - '../src/Tests/'
+        - '../src/Extension/'
+        - '../src/Model/Builder/'
+        - '../src/Model/SearchCriteriaBuilder/'
+        - '../src/Service/ImportService/Core/Exception'
+        - '../src/ValueObject'
+
+    Ecommerce121\UtilBundle\:
+      resource: '../ecommerce121/util-bundle/'
+      autowire: true
+      exclude:
+        - '../ecommerce121/util-bundle/DependencyInjection/'
+        - '../ecommerce121/util-bundle/Entity/'
+        - '../ecommerce121/util-bundle/Lib/'
+        - '../ecommerce121/util-bundle/Kernel.php'
+        - '../ecommerce121/util-bundle/Tests/'
+        - '../ecommerce121/util-bundle/Repository/'
+
+    App\Controller\ContactController:
+      arguments:
+        $contactMail: contact_email
+
+    App\Lib\EmailSender:
+      arguments:
+        $emailSenderFromAddress: contact_email
+
+  ###########################################################################
+  ### Event Subscribers
+  ###########################################################################
+    App\EventSubscriber\ChangeLogSubscriber:
+      tags:
+        - { name: doctrine.event_subscriber, event: onFlush }
+
+    App\EventSubscriber\CustomFeeSubscriber:
+      tags:
+        - { name: kernel.event_subscriber }
+
+    App\EventSubscriber\DoctrineSubscriber:
+      tags:
+        - { name: doctrine.event_subscriber, event: preUpdate }
+
+    App\EventSubscriber\DeregistrationFormSubscriber:
+      tags:
+        - { name: kernel.event_subscriber }
+
+    App\EventSubscriber\EmailSubscriber:
+      tags:
+        - { name: kernel.event_subscriber }
+
+    App\EventSubscriber\FormSubscriber:
+      tags:
+        - { name: kernel.event_subscriber }
+
+    App\EventSubscriber\InspectionFormSubscriber:
+      tags:
+        - { name: kernel.event_subscriber }
+
+    App\EventSubscriber\InvoiceSubscriber:
+      tags:
+        - { name: kernel.event_subscriber }
+
+    App\EventSubscriber\MunicipalitySubscriber:
+      tags:
+        - { name: kernel.event_subscriber }
+
+    App\EventSubscriber\NotificationSubscriber:
+      tags:
+        - { name: kernel.event_subscriber }
+
+    App\EventSubscriber\PropertySubscriber:
+      tags:
+        - { name: kernel.event_subscriber }
+
+    App\EventSubscriber\RegistrationFormSubscriber:
+      tags:
+        - { name: kernel.event_subscriber }
+
+    App\EventSubscriber\RenewalFormSubscriber:
+      tags:
+        - { name: kernel.event_subscriber }
+
+    App\EventSubscriber\ReviewSubscriber:
+      tags:
+        - { name: kernel.event_subscriber }
+
+    App\EventSubscriber\SupportSubscriber:
+      arguments:
+        $contactMail: contact_email
+      tags:
+        - { name: kernel.event_subscriber }
+
+  ###########################################################################
+  ### Form types
+  ###########################################################################
+    App\Form\AttachmentType:
+      tags:
+        - { name: form.type }
+  ###########################################################################
+  ### Payum
+  ###########################################################################
+    Payum\Core\Bridge\Symfony\Builder\GatewayFactoryBuilder:
+      arguments: [ App\Extension\Payum\Factory\BanquestGatewayFactory ]
+      tags:
+        - { name: payum.gateway_factory_builder, factory: banquest_gateway }
+

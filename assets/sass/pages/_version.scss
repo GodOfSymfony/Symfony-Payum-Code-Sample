@@ -1,0 +1,191 @@
+@import '../globals/mixins';
+
+#version-form, #version-index {
+	&>div.container-page>div.page-body>div.content-wrapper>main.content>form.form>div.responsive-container.form-body-version>div.version-number {
+		&>div.form-column {
+			@media (max-width: $breakpoint-mobile) {
+				width: 100%!important;
+			}
+		}
+	}
+
+	div.container-accordion {
+		&>div {
+			overflow: hidden;
+			&>a {
+				@include font-base(16px, normal, $color-outer-Space, none, left, 100%, $font-family-demi-bold);
+				display: block;
+				padding: 10px 15px;
+				@include back-img('general','plane-arrow-up-white.png', no-repeat, 95% 14px, none);
+			}
+			&.active>a{
+				@include font-base(16px, normal, $color-white, none, left, 100%, $font-family-demi-bold);
+				background-color: $color-slate-gray;
+			}
+			&>ul {
+				margin: 0px;
+				padding: 0px;
+				width: 100%;
+				height: auto;
+				background-color: $color-snow;
+				li {
+					list-style: none;
+					margin: 0px;
+					display: flex;
+					&:nth-child(odd) {
+						background-color: $color-snow;
+					}
+					&:nth-child(even) {
+						background-color: $color-isabelline;
+					}
+					a {
+						@include font-base(16px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+						display: block;
+						padding: 10px 15px;
+					}
+				}
+			}
+		}
+	}
+
+	div.container-version-side {
+		margin-right: 15px;
+		div.container-accordion {
+			margin-bottom: 15px;
+			border-bottom: solid 2px $color-old-lavender;
+			> div {
+				> a {
+
+					> span{
+						color: $color-slate-gray;
+					}
+				}
+
+				&.active {
+					> a {
+						background: $color-payne-grey;
+						> span{
+							-moz-transform: rotate(180deg);
+							-webkit-transform: rotate(180deg);
+							-o-transform: rotate(180deg);
+							-ms-transform: rotate(180deg);
+							margin-top: -7px;
+							color: $color-white;
+						}
+					}
+
+				}
+
+			}
+		}
+		&>div:first-child {
+			margin-top: 0%;
+		}
+	}
+
+	div.version-content {
+		&:not(.active) {
+			.info-version {
+				display: none;
+			}
+		}
+	}
+
+	div.version-title {
+		width: 100%;
+		background-color: $color-white;
+		padding: 10px 20px;
+		text-align: left;
+		margin-bottom: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		p {
+			@include font-base(14px, normal, $color-old-lavender, capitalize, left, 100%, $font-family-demi-bold);
+			width: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		.calendar-actions {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			width: 100%;
+			max-width: 200px;
+
+			.actions{
+				width: auto;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				a{
+					margin: 0 0 0 15px;
+					padding: 0;
+
+					span{
+						font-size: 21px !important;
+
+						&.icon-edit{
+							display: inline-block;
+							margin-top: -2px;
+						}
+					}
+				}
+			}
+
+			.info-calendar{
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				margin-left: 15px;
+				@include font-base(14px, normal, $color-old-lavender, capitalize, left, 100%, $font-family-demi-bold);
+
+				.icon-calendar{
+					font-size: 19px;
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+	.container-version-info {
+		margin-left: -15px;
+		padding-left: 15px;
+	}
+
+	div.container-btn-back {
+		display: block;
+		padding-bottom: 40px;
+		a.back-btn {
+			float: left;
+			display: inline-block;
+			margin-top: 13px;
+			margin-left: 0;
+			@include font-base(16px, normal, $color-old-lavender, none, left, 100%, $font-family-demi-bold);
+			> span.icon-arrow {
+				display: inline-block;
+				@include font-icon(16px, $color-old-lavender);
+				-webkit-transform: rotate(90deg);
+				-moz-transform: rotate(90deg);
+				-ms-transform: rotate(90deg);
+				-o-transform: rotate(90deg);
+				filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+				margin-right: 3px;
+			}
+		}
+
+		.back-btn:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		a.back-to-top {
+			display: inline-block;
+			float: right;
+			margin-top: 13px;
+			margin-right: 0;
+			@include font-base(16px, normal, $color-old-lavender, none, left, 100%, $font-family-demi-bold);
+		}
+	}
+}

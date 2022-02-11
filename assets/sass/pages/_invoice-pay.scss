@@ -1,0 +1,245 @@
+@import '../globals/mixins';
+
+#invoice-pay,
+#credit-card-form {
+	div.col-12.responsive-container {
+		clear: both;
+		float: none;
+	}
+
+	div.btn-new-header-title {
+		position: absolute;
+		top: -10%;
+		right: 0px;
+		&>div {
+			&>a {
+				@include font-base(14px, normal, $color-old-lavender, normal, left, 100%, $font-family-demi-bold);
+				display: inline-block;
+				padding: 5px 15px;
+				border: solid 1px $color-old-lavender;
+				margin-right: 10px;
+				&:last-child {
+					margin-right: 0px;
+				}
+				&:hover {
+					background-color: $color-old-lavender;
+					color: $color-white-smoke
+				}
+			}
+		}
+		@media (max-width: $breakpoint-mobile) {
+			top: -14%;
+			&>div {
+				&>a {
+					@include font-base(12px, normal, $color-old-lavender, normal, left, 100%, $font-family-demi-bold);
+					padding: 5px 10px;
+				}
+			}
+		}
+	}
+
+
+	div.container-pay-info {
+		background-color: $color-white;
+		padding: 30px 30px;
+		min-height: 440px;
+
+		.form-column{
+			padding: 0;
+		}
+
+		.textfield .textfield{
+			margin-bottom: 0;
+			label[for=credit_card_securityCode] {
+				margin-left: 35px!important;
+			}
+		}
+
+		.name-cvv{
+			display: flex;
+			align-items: flex-start;
+			justify-content: flex-start;
+			> div{
+				padding: 0;
+				margin-right: 15px;
+				width: 100%;
+				flex: auto;
+
+				&:last-child{
+					margin-right: 0;
+					width: 120px;
+					min-width: 120px;
+				}
+			}
+
+		}
+
+		&>p.title-pay-credit-card {
+			@include font-base(16px, normal, $color-old-lavender, normal, left, 100%, $font-family-demi-bold);
+			margin-bottom: 35px;
+		}
+
+		&>ul.pay-credit-card {
+			font-size: 0px;
+			width: 100%;
+			margin: 0 auto 30px auto;
+			padding: 0px;
+			display: table;
+			&>li {
+				vertical-align: middle;
+				margin: 0px;
+				padding: 0px;
+				list-style: none;
+				display: table-cell;
+				width: 25%;
+				height: 45px;
+				img {
+					display: block;
+					opacity: 0.5;
+					filter: alpha(opacity=50);
+					width: 100%;
+					max-width: 90px;
+					height: auto;
+					margin: auto;
+					&.active {
+						opacity: 1;
+						filter: alpha(opacity=100);
+					}
+				}
+				@media (max-width: $breakpoint-mobile) {
+					width: 50%;
+					text-align: center;
+					margin-bottom: 20px;
+				}
+			}
+		}
+
+		ul.card-info {
+			font-size: 0px;
+			text-align: left;
+			margin: 0px;
+			padding: 0px;
+			width: 100%;
+			&>li {
+				width: 100%;
+				display: inline-block;
+				margin: 0px;
+				padding: 0px;
+				list-style: none;
+				@media (max-width: $breakpoint-mobile) {
+					width: 100%;
+					margin-right: 0px;
+				}
+
+				#credit_card_expireAt{
+					display: flex;
+					align-items: flex-start;
+					justify-content: flex-start;
+					select{
+						margin-right: 8px;
+						width: 100%;
+
+						&:last-child {
+							margin-right: 0px;
+						}
+					}
+					#credit_card_expireAt_day {
+						display: none!important;
+					}
+				}
+
+				#credit_card_securityCode {
+					margin: 0 10px!important;
+					width: auto!important;
+					float: right;
+				}
+			}
+		}
+		label {
+			margin-bottom: 10px;
+		}
+	}
+
+	div.container-pay-black {
+		background-color: $color-rifle-green;
+		padding: 20px 20px 10px 20px;
+		min-height: 394px;
+
+		&>div.contact-pay-info {
+			min-height: 267px;
+			margin-bottom: 20px;
+			position: relative;
+			&>ul.list-info-pay {
+				font-size: 0px;
+				text-align: left;
+				margin: 0px;
+				padding: 0px;
+				width: 100%;
+				&>li {
+					vertical-align: top;
+					display: inline-block;
+					width: 50%;
+					margin: 0px;
+					padding: 0px;
+					list-style: none;
+					position: relative;
+					p.title-pay {
+						@include font-base(18px, normal, $color-white, normal, left, 100%, $font-family-demi-bold);
+					}
+					p.invoice-pay {
+						@include font-base(16px, normal, $color-white, normal, left, 100%, $font-family-base);
+					}
+					p.date-pay {
+						@include font-base(18px, normal, $color-white, normal, left, 100%, $font-family-demi-bold);
+					}
+					img {
+						width: 100%;
+						height: auto;
+						max-width: 153px;
+						position: absolute;
+						top: -20px;
+						right: -20px;
+					}
+					@media (max-width: $breakpoint-mobile) {
+						width: 70%;
+						&:last-child {
+							width: 30%;
+						}
+
+					}
+				}
+			}
+			&:after {
+				content: "";
+				display: block;
+				width: 100%;
+				border-bottom: 1px solid $color-manatee;
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+
+			}
+		}
+		p.total-pay {
+			@include font-base(16px, normal, $color-white, normal, left, 100%, $font-family-base);
+			padding: 15px 0px;
+			&>span {
+				@include font-base(36px, normal, $color-white, normal, left, 100%, $font-family-demi-bold);
+				float: right;
+			}
+		}
+	}
+	button.btn-confirm-pay {
+		display: block;
+		width: 100%;
+		background: transparent;
+		border: none;
+		background-color: $color-old-lavender;
+		@include font-base(16px, normal, $color-white, normal, center, 100%, $font-family-demi-bold);
+		padding: 15px 15px;
+		&.active {
+			background-color: $color-dark-sea-green;
+		}
+	}
+}
+

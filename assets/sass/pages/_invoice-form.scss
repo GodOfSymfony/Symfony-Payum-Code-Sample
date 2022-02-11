@@ -1,0 +1,114 @@
+@import '../globals/mixins';
+
+#invoice-form {
+    div.form-row {
+        &>div.form-column {
+            &>div.file-uploader {
+                &>label {
+                    @include font-base(14px, normal, $color-old-lavender, capitalize, left, 100%, $font-family-base);
+                    display: block;
+                }
+                &>div.drop-area {
+                    width: 100%;
+                    display: block;
+                    border: dashed 2px $color-old-lavender;
+                    padding: 70px 10px;
+                    text-align: center;
+                    @include font-base(18px, normal, $color-old-lavender, capitalize, center, 100%, $font-family-demi-bold);
+                    margin: 10px 0px 30px 0px;
+                    &:hover {
+                        background-color: $color-white-smoke;
+                        cursor: copy;
+                    }
+                    &:-moz-drag-over {
+                        background-color: $color-white-smoke;
+                        cursor: copy;
+                    }
+                    &[drop-active=true] {
+                        background-color: $color-white-smoke;
+                        cursor: copy;
+                    }
+                    &.active {
+                        background-color: $color-white-smoke;
+                        cursor: copy;
+                    }
+                }
+                &>a.fileinput-button {
+                    &>span {
+                        @include font-base(14px, normal, $color-old-lavender, capitalize, left, 100%, $font-family-demi-bold);
+                    }
+                    &>label.custom-file-upload {
+                        float: right;
+                        margin-top: -10px;
+                    }
+                }
+                &>ul.files-container {
+                    margin: 0px;
+                    padding: 0px;
+                    margin-top: 20px;
+                    &>li {
+                        margin: 0px;
+                        padding: 0px;
+                        list-style: none;
+                        width: 100%;
+                        display: block;
+                        margin-bottom: 10px;
+                        @include font-base(14px, normal, $color-old-lavender, normal, left, 100%, $font-family-demi-bold);
+                        &>a {
+                            display: inline-block;
+                            float: right;
+                            &>span.icon-remove_cancel {
+                                @include font-icon(15px, $color-dark-coral);
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .toggle-list{
+        .toggle-list-items{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            label.radio{
+                margin: 10px 10px 10px 0;
+                width: 100%;
+
+                &:last-child{
+                    margin-right: 0;
+                }
+
+                > .radio-label{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    border: 1px solid $color-pastel-gray;
+
+                    &:after{
+                        position: relative;
+                        right: inherit;
+                        top: inherit;
+                        left: inherit;
+                        bottom: inherit;
+                        margin: 0 -22px 0 7px;
+                    }
+                }
+
+                input[type=radio]:checked + span{
+                    box-shadow: 0 0 4px 0 rgba(0,0,0,0.22);
+
+                    &:after{
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

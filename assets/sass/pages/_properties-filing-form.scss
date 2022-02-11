@@ -1,0 +1,117 @@
+@import '../globals/mixins';
+
+#property-filing-form {
+	div.form-row {
+		&>div.form-column {
+			&>div.file-uploader {
+				&>label {
+					@include font-base(14px, normal, $color-old-lavender, capitalize, left, 100%, $font-family-base);
+					display: block;
+				}
+				&>div.drop-area {
+					width: 100%;
+					display: block;
+					border: dashed 2px $color-old-lavender;
+					padding: 70px 10px;
+					text-align: center;
+					@include font-base(18px, normal, $color-old-lavender, capitalize, center, 100%, $font-family-demi-bold);
+					margin: 10px 0px 30px 0px;
+					&:hover {
+						background-color: $color-white-smoke;
+						cursor: copy;
+					}
+					&:-moz-drag-over {
+						background-color: $color-white-smoke;
+						cursor: copy;
+					}
+					&[drop-active=true] {
+						background-color: $color-white-smoke;
+						cursor: copy;
+					}
+					&.active {
+						background-color: $color-white-smoke;
+						cursor: copy;
+					}
+				}
+				&>a.fileinput-button {
+					&>span {
+						@include font-base(14px, normal, $color-old-lavender, capitalize, left, 100%, $font-family-demi-bold);
+					}
+					&>label.custom-file-upload {
+						float: right;
+						margin-top: -10px;
+					}
+				}
+				&>ul.files-container {
+					margin: 0px;
+					padding: 0px;
+					margin-top: 20px;
+					&>li {
+						margin: 0px;
+						padding: 0px;
+						list-style: none;
+						width: 100%;
+						display: block;
+						margin-bottom: 10px;
+						@include font-base(14px, normal, $color-old-lavender, normal, left, 100%, $font-family-demi-bold);
+						&>a {
+							display: inline-block;
+							float: right;
+							&>span.icon-remove_cancel {
+								@include font-icon(15px, $color-dark-coral);
+
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	div.container-page {
+		div.page-body {
+			div.content-wrapper {
+				main {
+					h1.content-box-title {
+						margin: 0px 0% 30px 0%;
+					}
+					div.info-properties-extra {
+						background-color: $color-rifle-green;
+						float: none;
+						margin-bottom: 20px;
+						padding: 20px;
+						margin: 35px 0px;
+						div.col-6 {
+							p.title-address {
+								padding: 0px;
+								margin: 0px;
+								margin-bottom: 10px;
+								@include font-base(14px, normal, $color-white, uppercase, left, 100%, $font-family-base);
+
+							}
+							p.address-address {
+								padding: 0px;
+								margin: 0px;
+								@include font-base(24px, normal, $color-white, normal, left, 100%, $font-family-demi-bold);
+							}
+							p.update-date {
+								padding: 0px;
+								margin: 0px;
+								@include font-base(14px, normal, $color-white, normal, left, 100%, $font-family-demi-bold);
+							}
+							&:last-child {
+								&>p {
+									text-align: right;
+								}
+							}
+						}
+						&:after {
+							content: "";
+							display: block;
+							clear: both;
+						}
+					}
+				}
+			}
+		}
+	}
+}

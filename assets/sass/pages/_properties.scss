@@ -1,0 +1,238 @@
+@import '../globals/mixins';
+
+#property-index {
+	.container-page {
+		@media (max-height: 890px) {
+			min-height: 1170px;
+		}
+		@media (min-height: 891px) {
+			min-height: 1200px;
+		}
+		@media (max-width: $breakpoint-mobile) {
+			min-height:auto;
+		}
+		div.page-body>div.content-wrapper>main>div.listing>form.listing-form>div.row>div.col-9>div.listing-data>div.listing-container>table.data-table>tbody {
+			tr {
+				td:first-child{
+					vertical-align: top;
+					span {
+						display: inline-block;
+						margin-top: 14px;
+					}
+				}
+			}
+		}
+	}
+}
+
+#properties__form{
+	width: 75%;
+	padding: 30px 0;
+	& .form-row{
+		flex-wrap: wrap;
+	}
+	& .form-column {
+		width: 50%;
+		flex: auto;
+	}
+	& .form-footer {
+		width: 50%;
+		flex: auto;
+		margin-top: 0;
+		&:after {
+			margin-bottom: 0;
+		}
+	}
+	form{
+		margin-right: 15px;
+	}
+	button{
+		height: 35px;
+	}
+	& .required{
+		display: none;
+	}
+}
+
+#property-info {
+	.form-body {
+		.form-info-details {
+			height: 50px;
+			width: 100%;
+			display: block;
+			background-color: $color-rifle-green;
+
+		}
+	}
+}
+
+.td-properties-table {
+	padding: 5px 10px!important;
+}
+
+div.address{
+	margin: 14px 0px;
+	@include font-base(14px, normal, $color-liver, none, left, 100%, $font-family-base);
+	span {
+		@include font-base(14px, normal, $color-payne-grey, none, left, 100%, $font-family-demi-bold);
+		&.register {
+			@include font-base(12px, normal, $color-old-lavender, uppercase, center, 100%, $font-family-base);
+			background-color: $color-isabelline;
+			white-space: nowrap;
+			padding: 5px 15px 3px 15px;
+			display: inline-block;
+			margin-left: 15px;
+			&.require {
+				@include font-base(12px, normal, $color-coral-pink, uppercase, center, 100%, $font-family-base);
+			}
+		}
+	}
+}
+
+div.container-property-detail {
+	a.see-property-details {
+		margin: 14px 0px;
+      	font-family:$font-family-demi-bold!important;
+		&>span {
+			width: 20px;
+			height: 20px;
+			display: inline-block;
+			float: left;
+			margin-right: 10px;
+			@include back-img('general', 'dotsCircule.png', no-repeat, center, contain);
+			&.hide {
+				@include back-img('general', 'BtnHideContent.png', no-repeat, center, contain);
+			}
+		}
+    
+		&>img {
+			width: 20px;
+			height: 20px;
+			display: inline-block;
+			float: left;
+			margin-right: 10px;
+		}
+		@include font-base(14px, normal, $color-liver, none, left, 100%, $font-family-base);
+	}
+	div.property-details {
+
+	}
+}
+
+div.info-proprtie {
+	p {
+		@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+		span {
+			@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-demi-bold);
+		}
+	}
+}
+
+div.actions {
+	a.edit-action {
+		span.icon-view {
+			@include font-icon(13px, $color-slate-gray);
+		}
+	}
+}
+
+.property-details {
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	background-color: $color-white-smoke;
+	& > div.padding-info-properties {
+		padding: 10px;
+		& > div {
+			& > div.item-info-properties {
+				@include font-base(12px, normal, $color-old-lavender, inherit, left, 100%, $font-family-base);
+				margin-bottom: 18px;
+				strong {
+					@include font-base(12px, normal, $color-liver, inherit, left, 16px, $font-family-demi-bold);
+					margin-bottom: 6px;
+					display: inline-block;
+				}
+				a {
+					@include font-base(12px, normal, $color-old-lavender, inherit, left, 100%, $font-family-base);
+					display: inline-block;
+					opacity: .5;
+
+					&:hover{
+						opacity: 1;
+					}
+					span.icon-view {
+						display: inline-block;
+						@include font-icon(10px, $color-old-lavender);
+						margin-left: 5px;
+					}
+				}
+			}
+		}
+	}
+}
+
+div.three-inline-switchs {
+	div.form-column {
+		div.toggle-list {
+			.toggle-list-items {
+				text-align: center;
+			}
+			span.toggle-list-label {
+				display: block;
+				margin-left: -15px;
+			}
+			div.switch-conteiner {
+				width: 33%;
+				display: inline-block;
+				@media (max-width: $breakpoint-mobile) {
+					width: 30%;
+					text-align: left;
+					& > label.selectfield-label-input-check {
+						margin-left: -10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/*modal*/
+div#detail-modal {
+	&>div.modal-content{
+		padding: 30px;
+		&>div.modal-body {
+			&>div {
+				&:first-child {
+					text-align: right;
+					padding: 15px 0px;
+					&:before {
+						display: inline-block;
+						content: "\e909";
+						font-family: 'icomoon';
+						font-size: 16px;
+						color: $color-old-lavender;
+					}
+					&>a {
+						display: inline-block;
+						@include font-base(14px, normal, $color-old-lavender, capitalize, left, 100%, $font-family-demi-bold);
+					}
+				}
+				&.detail-row {
+					background-color: $color-white-smoke;
+					padding: 11px;
+					&>label.detail-label {
+						display: inline-block;
+						@include font-base(14px, normal, $color-old-lavender, capitalize, left, 100%, $font-family-demi-bold);
+						min-width: 152px;
+					}
+					&>div.detail-value {
+						display: inline-block;
+						@include font-base(14px, normal, $color-old-lavender, capitalize, left, 100%, $font-family-base);
+					}
+				}
+			}
+		}
+	}
+}

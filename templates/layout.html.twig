@@ -1,0 +1,163 @@
+<!doctype html>
+<html class="no-js" lang="es">
+    <head>
+        <title>{% block title %}Munireg{% endblock %}</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        <link rel="icon" type="image/png" href="{{ asset('images/app/favicon.ico') }}" />
+        <meta name="google" content="notranslate">
+        {% block head_includes %}{% endblock %}
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QPERE0GSEC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-QPERE0GSEC');
+        </script>
+    </head>
+    <body>
+        {% block page %}
+            <div class="row menu-finder menu-mobile">
+                {% include 'Navigation/mobile-menu.html.twig' %}
+            </div>
+            <div class="row menu-finder menu-finder-desktop">
+                <div class="col-2 clear-row">
+                    <div class="top-logo">
+                        <a class="logo-header">
+                            <img src="{{ asset('images/app/menu/') }}munireg-finallogo.svg" alt="" >
+                        </a>
+                        <a class="OpenMenu open-menu-tablet">
+                            <span class="icon-menu-mobile"></span>
+                        </a>
+                        <a href="{{ path('app_settings_index') }}" class="btn-config">
+                            <span>
+                                <img src="{{ asset('images/app/menu/') }}icon_settings.svg" alt="" >
+                            </span>
+                        </a>
+                        <a href="{{ path('app_logout') }}" class="btn-onOff">
+                            <span>
+                                <img src="{{ asset('images/app/menu/') }}icon_logout.svg" alt="" >
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-10">
+
+                    {% block header_finder %}
+                    <div class="header-finder">
+                        <div class="finder-add-new">
+                            {% include 'Navigation/navbarQuickAdd.html.twig' %}
+                        </div>
+
+                        {% if app.user.type == constant('App\\ValueObject\\UserTypes::MUNIREG') %}
+                            {% set placeHolder = 'Search properties, invoices, organizations, municipalities, users and employees' %}
+                        {% endif %}
+                        {% if app.user.type == constant('App\\ValueObject\\UserTypes::REGISTER_PARTY') %}
+                            {% set placeHolder = 'Search registrations, properties, invoices and users' %}
+                        {% endif %}
+                        {% if app.user.type == constant('App\\ValueObject\\UserTypes::MUNICIPALITY') %}
+                            {% set placeHolder = 'Search registrations, properties and users' %}
+                        {% endif %}
+
+                        <input type="text" value="" placeholder="{{ placeHolder }}" class="input-search" autocomplete="off"
+                               name="{{ constant('App\\Helper\\SearchHelper::PARAM_NAME') }}"
+                               data-action="{{ path('app_search') }}" />
+                        <a class="aBtnHeaderPlus">
+                            <span><img src="{{ asset('images/app/menu/') }}plus-icon.png" alt="" /></span>
+                        </a>
+                    </div>
+                    <div class="container-blur-search">
+                        <div class="container-search">
+                            <div class="search-item-finder-searching">
+                                <img src="{{ asset('images/app/general/spinner.gif') }}" alt="" />
+                            </div>
+                            <div class="container-search-items">
+                                {% include 'Search/resultContainer.html.twig' %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endblock %}
+                </div>
+            </div>
+
+            <div class="page" id="{% block page_id %}general-page{% endblock %}">
+                <div class="row container-page">
+                    {% if block('page_header') is defined %}
+                        <header class="page-header">
+                            {{ page_header_block|raw }}
+                        </header>
+                    {% endif %}
+                    <div class="page-sidebar col-2">
+                        {% block navbar %}
+                            {{ render(controller('App\\Controller\\ComponentController:navbarComponentAction')) }}
+                        {% endblock %}
+                    </div>
+
+                    <div class="page-body col-10">
+                        {% block content_wrapper %}
+                            <div class="content-wrapper">
+                                {% block pre_content %}{% endblock %}
+                                <main class="content content-box">
+                                    {% block content %}{% endblock %}
+                                </main>
+                            </div>
+                        {% endblock %}
+                        {% block changelog %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+
+        {% endblock %}
+
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+            <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
+            <script type="text/javascript">
+                var APP_DEBUG = {{ app.debug ? 'true' : 'false' }};
+                var imagesUrl = '{{ app.request.getSchemeAndHttpHost() }}/images/';
+                var uploadsUrl = '{{ app.request.getSchemeAndHttpHost() }}/uploads/';
+                var fileUploaderSessionId = '{{ session_id() }}';
+                var userIsAuthenticated = {{ app.user ? 'true' : 'false' }};
+            </script>
+            <script src="{{ asset('js/app/vendor/require.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('js/app/config.js') }}" type="text/javascript"></script>
+            {% for flashMessage in app.session.flashbag.get('message') %}
+            <script type="text/javascript">
+                require(['app'], function(App) {
+                    require(['lib/util'], function(Util) {
+                        Util.showToast('{{ flashMessage|raw }}');
+                    });
+                });
+            </script>
+            {% endfor %}
+
+            <script type="text/javascript">
+                require(['app'], function() {
+                    require(['jquery', 'components/finderHead', 'components/search', 'components/menu'], function($, FinderHead, SearchBar, Menu) {
+                        $(function() {
+                            new FinderHead();
+                            new SearchBar();
+                            new Menu();
+                        });
+                    });
+                });
+            </script>
+        {% endblock %}
+        {% if app.debug %}
+            <!--script src="//localhost:35729/livereload.js"></script-->
+        {% endif %}
+        {% block bottom_includes %}{% endblock %}
+        {% include 'Common/alertModal.html.twig' %}
+        {% include 'Common/confirmationModal.html.twig' %}
+        {% include 'Common/detailModal.html.twig' %}
+        {% include 'Common/simpleFormModal.html.twig' %}
+    </body>
+</html>

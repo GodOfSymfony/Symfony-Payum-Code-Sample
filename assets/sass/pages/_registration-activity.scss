@@ -1,0 +1,74 @@
+
+#registration-activity-index {
+
+  h1.content-box-title{
+    line-height: 30px;
+  }
+
+  div.btn-new div a{
+    @include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+    padding: 7px 10px 6px;
+    margin: 0 0 0 10px;
+    border: 1px solid $color-old-lavender;
+
+    &:hover{
+      background-color: $color-old-lavender;
+      color: $color-white;
+    }
+  }
+  .data-table{
+    tbody{
+      td{
+        .info{
+          display: flex;
+          align-items: stretch;
+          justify-content: flex-start;
+
+          > div{
+            width: 100%;
+
+            &.info-data{
+              padding-left: 10px;
+              margin: 0;
+              display: flex;
+              align-items: center;
+              justify-content: flex-end;
+              flex-wrap: wrap;
+              .date{
+                display: block;
+                width: 100%;
+                align-self: flex-start;
+                text-align: right;
+                margin-bottom: 10px;
+              }
+              .entity{
+                align-self: flex-end;
+                @include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+
+                .name{
+                  display: inline-block;
+                }
+              }
+            }
+
+            &.info-dataTop{
+              .name{
+                display: block;
+                margin-bottom: 10px !important;
+              }
+              .address{
+                @include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+                display: block;
+
+                span{
+                  @include font-base(14px, normal, $color-payne-grey, none, left, 100%, $font-family-demi-bold);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

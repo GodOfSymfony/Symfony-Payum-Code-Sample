@@ -1,0 +1,87 @@
+@import '../globals/mixins';
+
+#tutorial-form {
+    div.toggle-list {
+        text-align: left;
+        width: 100%;
+        &>span.toggle-list-label {
+            margin-left: 0px;
+        }
+        &>div.toggle-list-items {
+            text-align: left;
+            &>div.switch-conteiner {
+                width: 32%;
+
+            }
+        }
+    }
+
+    .selectfield{
+        select.selectfield-input[multiple="multiple"]{
+            padding: 10px 0;
+            border: 0;
+            background: transparent;
+            height: 100px;
+            overflow: inherit;
+
+            option{
+                float: left;
+                display: inline-block;
+                width: auto;
+                padding: 10px 40px;
+                margin: 0 10px 0 0;
+                position: relative;
+                border: 1px solid $color-platinum;
+                @include font-base(14px, normal, $color-old-lavender, capitalize, center, 100%, $font-family-demi-bold);
+                &:last-child{
+                    margin-right: 0;
+                }
+
+                &:before{
+                    content: '';
+                    width: 20px;
+                    height: 20px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin: 0 5px 0 0;
+                    padding: 0;
+                    position: absolute;
+                    left: 10px;
+                    top: 50%;
+                    margin-top: -10px;
+                    font-size: 19px;
+                    z-index: 999;
+                    color: $color-rifle-green;
+                    font-family: 'icomoon' !important;
+                    speak: none;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-variant: normal;
+                    text-transform: none;
+                    line-height: 1;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                }
+
+                &:checked{
+                    background-color: $color-payne-grey;
+
+                    &:before{
+                        content: "\e923";
+
+                    }
+                }
+            }
+
+            &:focus{
+                outline: none;
+
+                option{
+                    &:before{
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+    }
+}

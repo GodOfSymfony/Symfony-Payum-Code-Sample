@@ -1,0 +1,152 @@
+@import "variables";
+@import "mixins";
+
+body {
+	background-color: $color-white-smoke;
+	overflow-x: hidden;
+	height: auto;
+}
+p {
+	@include font-base(14px, normal, $color-old-lavender, none, left, inherit, $font-family-base);
+}
+a {
+	text-decoration:none;
+}
+.content-wrapper {
+	&:after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+	margin-bottom: 35px;
+}
+
+.page {
+	.page-body {
+		display: block;
+		padding: 0% 3%;
+		position: relative;
+		&:after {
+			content: " ";
+			display: block;
+			clear: both;
+		}
+		@media (max-width: $breakpoint-tablet) {
+			width: 100%;
+			float: none;
+		}
+	}
+	&:after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+}
+
+.text-align-left {
+	text-align: left!important;
+}
+.text-align-center {
+	text-align: center!important;
+}
+.text-align-right {
+	text-align: right!important;
+}
+
+h1.content-box-title {
+	@include font-base(24px, normal, $color-slate-gray, capitalize, left, 100%, $font-family-demi-bold);
+	margin: 4% 0%;
+	@media (max-width: $breakpoint-mobile) {
+		font-size: 18px;
+		width: 50%;
+		margin: 36px 0px;
+	}
+	clear: both;
+}
+
+.page{
+	.listing-data,
+	.title-page{
+		padding-right: 15px;
+		@media (max-width: $breakpoint-tablet) {
+			padding-right: 0;
+		}
+	}
+
+}
+
+
+
+.right-container {
+	width: 48%;
+	float: right;
+	margin-left: 4%;
+	&:after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+}
+.left-container {
+	width: 48%;
+	float: right;
+	&:after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+}
+
+.relative-element {
+	position: relative;
+}
+
+.search-box-footer {
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+.clear-before-after {
+	&:before {
+		display: none!important;
+	}
+	&:after {
+		display: none!important;
+	}
+}
+.clear-after {
+	&:after {
+		display: none!important;
+	}
+}
+
+.div-not-found {
+	padding: 5% 0%;
+}
+
+.no-padding {
+	padding: 0px!important;
+}
+.no-padding-left {
+	padding-left: 0px!important;
+}
+.no-padding-right {
+	padding-right: 0px!important;
+}
+.no-padding-top {
+	padding-top: 0px!important;
+}
+.no-padding-bottom {
+	padding-bottom: 0px!important;
+}
+
+input {
+	&[type='number'] {
+		-moz-appearance: textfield;
+	}
+
+	&::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+	}
+}

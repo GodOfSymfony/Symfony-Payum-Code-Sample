@@ -1,0 +1,22 @@
+
+#account-form {
+  .content-box-title{
+    margin: 40px 0;
+  }
+  .form{
+    .external-form-select{
+      padding: 0;
+      margin: 0;
+      top: -74px;
+      width: 50%;
+      max-width: 215px;
+
+      select{
+        background-color: $color-white;
+      }
+      label{
+        display: none !important;
+      }
+    }
+  }
+}

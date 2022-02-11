@@ -1,0 +1,188 @@
+@import "../globals/variables";
+
+.modal {
+	display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	background-color: #fafafa;
+	padding: 0;
+	max-height: 70%;
+	width: 55%;
+	margin: auto;
+	overflow-y: auto;
+	z-index: $zindex-modal;
+	border-radius: 2px;
+	transform: translate(0);
+	will-change: top, opacity;
+	@include shadow-24dp;
+
+	h1, h2,
+	h3, h4 {
+		margin-top: 0;
+	}
+
+	.modal-title {
+		font-size: 28px;
+	}
+
+	.modal-content {
+		padding: 24px;
+	}
+
+	.modal-close {
+		cursor: pointer;
+	}
+
+	.modal-footer {
+		border-radius: 0 0 2px 2px;
+		background-color: #fafafa;
+		padding: 4px 6px;
+		width: 100%;
+
+		.button {
+			float: right;
+			margin: 6px 0;
+		}
+		@media (max-width: 400px) {
+			width: 100%!important;
+			height: auto;
+		}
+	}
+}
+
+.lean-overlay {
+	position: fixed;
+	z-index: $zindex-modal-background;
+	top: -100px;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 125%;
+	width: 100%;
+	background: #000;
+	display: none;
+	will-change: opacity;
+}
+
+// Modal with fixed action footer
+.modal.modal-fixed-footer {
+	padding: 0;
+	height: 70%;
+	.modal-content {
+		position: absolute;
+		height: calc(100% - 56px);
+		max-height: 100%;
+		width: 100%;
+		overflow-y: auto;
+	}
+	.modal-footer {
+		border-top: 1px solid rgba(0,0,0,.1);
+		position: absolute;
+		bottom: 0;
+	}
+}
+
+// Modal Bottom Sheet Style
+.modal.bottom-sheet {
+	top: auto;
+	bottom: -100%;
+	margin: 0;
+	width: 100%;
+	max-height: 45%;
+	border-radius: 0;
+	will-change: bottom, opacity;
+}
+
+.modal {
+	.overlay {
+		display: none;
+	}
+
+	.spinner {
+		display: none;
+	}
+
+	&.loading {
+		.modal-body * {
+			display: none;
+		}
+
+		.modal-body {
+			height: 100px;
+		}
+
+		.overlay {
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			background-color: rgba($color-white, 0.7);
+			display: block;
+		}
+
+		.spinner {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 80px;
+			height: 80px;
+			margin-left: -40px;
+			margin-top: -40px;
+			display: block;
+		}
+	}
+}
+
+#dispute-modal{
+	background-color: $color-white;
+	max-height: 300px;
+	max-width: 580px;
+	height: auto;
+	.modal-content{
+		padding: 30px;
+		padding-bottom: 0;
+		position: relative;
+		max-height: 240px;
+
+		.textfield label{
+			margin-bottom: 15px;
+		}
+	}
+	.modal-footer{
+		padding: 10px 30px 30px;
+		position: relative;
+		background-color: $color-white;
+		text-align: right;
+		border-top: 0;
+		height: auto;
+
+		a{
+			float: initial;
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0 0 0 10px;
+			padding: 5px 30px 3px;
+			border: 1px solid $color-payne-grey;
+			@include font-base(14px, normal, $color-old-lavender, capitalize, center, 19px, $font-family-demi-bold);
+
+			&:hover{
+				background-color: $color-payne-grey;
+				color: $color-white
+			}
+
+			&.save-button{
+				border-color:$color-dark-sea-green;
+				background-color: $color-dark-sea-green;
+				color: $color-white;
+
+				&:hover{
+					border-color: darken($color-dark-sea-green, 15%);
+					background-color: darken($color-dark-sea-green, 15%);
+					color: $color-white;
+				}
+			}
+		}
+	}
+}

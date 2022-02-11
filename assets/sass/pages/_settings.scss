@@ -1,0 +1,111 @@
+@import '../globals/mixins';
+
+div#settings-notification-form {
+	&>div.container-page>div.page-body>div.content-wrapper>main.content>div.form-accordion-side-settings>form {
+		&>div.accordion-custom {
+			&>div {
+				border-bottom: 1px solid $color-white-smoke;
+				&.active {
+					.collapser-button {
+						@include back-img('general','plane-arrow-down-white.png', no-repeat, right 5% top 14px, none);
+						cursor:pointer;
+					}
+					.notificarion-icon-reset {
+						background-image: url('../../images/app/general/icon_password_blue.svg'), url('../../images/app/general/plane-arrow-down.png') !important;
+						background-color: $color-white-smoke;
+						border: solid 2px $color-isabelline;
+						border-bottom: 2px solid $color-slate-gray;
+						color: $color-old-lavender;
+						cursor:pointer;
+					}
+					.notificarion-icon-settings {
+						background-image: url('../../images/app/general/icon_notifications_blue.svg'), url('../../images/app/general/plane-arrow-down.png') !important;
+						background-color: $color-white-smoke;
+						border-bottom: 2px solid $color-slate-gray;
+						color: $color-old-lavender;
+						cursor:pointer;
+					}
+				}
+				.notificarion-icon-reset {
+					padding-left: 40px!important;
+					background-image: url('../../images/app/general/icon_password.svg'), url('../../images/app/general/plane-arrow-up-white.png') !important;
+					background-position: 15px 10px,95% 14px!important;
+					cursor:pointer;
+				}
+				.notificarion-icon-settings {
+					padding-left: 40px!important;
+					background-image: url('../../images/app/general/icon_notifications.svg'), url('../../images/app/general/plane-arrow-up-white.png') !important;
+					background-position: 15px 10px,95% 14px!important;
+					cursor:pointer;
+				}
+				div.padding-accordion-fields {
+					padding: 35px 35px 0px 35px;
+				}
+			}
+		}
+	}
+}
+.padding-left-15 {
+	padding-left: 15px;
+}
+
+.btn-ig-arrow-right {
+	display: block;
+	background-color: $color-white;
+	padding: 15px 15px;
+	@include back-img('general','icon_leftarrow.svg', no-repeat, 97.5% 16px, none);
+	margin-bottom: 15px;
+	&>div {
+		div.links-title {
+			@include font-base(18px, normal, $color-old-lavender, none, left, 100%, $font-family-demi-bold);
+			margin-bottom: 10px;
+		}
+		div.links-description {
+			@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+		}
+	}
+}
+
+.form-accordion-side-settings {
+	form {
+		div.form-footer {
+			.btn-green {
+				padding-top: 15px;
+				padding-bottom: 15px;
+			}
+			&:after {
+				display: none;
+			}
+		}
+	}
+}
+
+.input-switch-list {
+	li {
+		width: 100%;
+		div.form-row {
+			width: 100%;
+			div.form-column {
+				min-height: auto;
+				height: auto;
+				div.switch-conteiner {
+					padding: 15px 22px 15px 22px;
+					label {
+						@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+					}
+				}
+				div {
+					div.switch-conteiner {
+						padding: 15px 22px 15px 22px;
+						label {
+							@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+						}
+					}
+				}
+			}
+		}
+		&:first-child {
+			margin-top: 20px;
+		}
+	}
+}

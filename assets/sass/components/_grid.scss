@@ -1,0 +1,297 @@
+@import "../globals/variables";
+
+.container-page {
+	display: flex;
+	justify-content: flex-start;
+	align-items: stretch;
+	min-height: 100vh;
+	@media (max-height: 890px) {
+		min-height: 940px;
+	}
+	@media (max-width: $breakpoint-mobile) {
+		min-height: 100%;
+	}
+	@media (max-width: $breakpoint-tablet) {
+		min-height: 100%;
+	}
+}
+
+.row {
+	margin: 0px;
+	&::after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+}
+
+.col-1 {
+	width: 8.33%;
+}
+.col-2 {
+	width: 16.66%;
+	position: relative;
+}
+.col-3 {
+	width: 25%;
+}
+.col-4 {
+	width: 33.33%;
+}
+.col-5 {
+	width: 41.66%;
+}
+.col-6 {
+	width: 50%;
+}
+.col-7 {
+	width: 58.33%;
+}
+.col-8 {
+	width: 66.66%;
+}
+.col-9 {
+	width: 75%;
+}
+.col-10 {
+	width: 83.33%;
+}
+.col-11 {
+	width: 91.66%;
+}
+.col-12 {
+	width: 100%;
+}
+
+[class*="col-"] {
+	float: left;
+	padding: 0px;
+	&:after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+}
+
+.max-width-90 {
+	max-width: 90%!important;
+	margin-left: 0px!important;
+}
+
+.no-white-fom {
+	form.form {
+		background-color: transparent!important;
+	}
+}
+.clear-side-row-right {
+	&:after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+}
+
+body.min-active {
+	.page-body.col-10 {
+		width: 100%;
+		.changelog-container {
+			height: 60px;
+			.changelog-header {
+				padding: 23px 3%;
+			}
+		}
+	}
+	div.page-sidebar {
+		width: 52px;
+		overflow: hidden;
+		nav#navbar {
+			margin-left: -2px;
+			div.container {
+				a.btn-menu-min {
+					width: 52px;
+					height: 40px;
+					display: block;
+					&>span.icon-menu-mobile {
+						@include back-img('menu', 'BtnMobileDashs.png', no-repeat, center, contain);
+						display: block;
+						width: 30px;
+						height: 30px;
+						margin: auto;
+						margin-top: 17px;
+						@include font-icon(16px, $color-white);
+					}
+				}
+				ul {
+					li {
+						a {
+							background-position: 13px center!important;
+						}
+						&:last-child {
+							display: none!important;
+						}
+					}
+				}
+			}
+			a.btn-footer-menu {
+				padding: 6px 0px 6px 49px;
+				background-position: 15px center;
+			}
+		}
+
+	}
+	/*Styles menu minimalist*/
+	.menu-finder-desktop {
+		height: 0px;
+		overflow: hidden;
+	}
+}
+
+
+
+div.responsive-container {
+	&.col-3 {
+		&.side-bar-filter {
+			position: absolute;
+			right: 0px;
+			top: 0px;
+			height: 100%;
+		}
+	}
+}
+
+div.responsive-container {
+	@media(max-width: $breakpoint-mobile) {
+		&.col-9 {
+			width: 100%;
+			float: none;
+			display: block;
+			margin: auto;
+			&>div.btn-new {
+				top: 0px;
+			}
+			&>h1.content-box-title {
+				width: 50%;
+			}
+		}
+		&.col-3 {
+			width: 100%;
+			float: none;
+			display: block;
+			margin: auto;
+
+			&.side-bar-filter {
+				/* TODO Filters are removed from mobile version */
+				display: none;
+				position: static;
+			}
+			&>.search-box-side {
+				height: 50px;
+				overflow: hidden;
+				&.active {
+					height: auto;
+				}
+				p.a-btn-filters {
+					cursor: pointer;
+					text-align: center;
+				}
+			}
+		}
+		&.col-6 {
+			width: 100%;
+			float: none;
+			display: block;
+			&>form.form {
+				&>div.form-body {
+					&.max-width-90 {
+						max-width: 100%!important;
+					}
+				}
+			}
+			&.fields-container {
+				margin-bottom: 40px;
+			}
+		}
+		&.col-4 {
+			width:100%;
+			float: none;
+			display: block;
+			&>form.form {
+				margin-bottom: 40px;
+			}
+		}
+		&.col-8 {
+			width: 100%;
+			float: none;
+			display: block;
+			&.padding-left-15 {
+				padding-left: 0px;
+			}
+		}
+		&.col-12 {
+			width: 100%;
+			float: none;
+			display: block;
+		}
+
+		&.col-9, &.col-3, &.col-6 {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+
+#municipality-index, #property-index, #user-index, #employee-index,
+#organization-index, #support-ticket, #invoice-index, #invoice-pay,
+#property-filing-index {
+	@media (max-width: $breakpoint-tablet) {
+		div.responsive-container {
+			&.col-6 {
+				width: 100%;
+				float: none;
+				display: block;
+			}
+			&.col-9 {
+				width: 95%;
+				margin: auto;
+				float: none;
+				display: block;
+				&>div.btn-new {
+					top: 3%;
+				}
+			}
+			&.col-3 {
+				width: 95%;
+				margin: auto;
+				float: none;
+				/* TODO Filters are removed from mobile version */
+				display: none;
+				&.side-bar-filter {
+					position: static;
+				}
+				&>.search-box-side {
+					height: 50px;
+					overflow: hidden;
+					width: 100%;
+					&.active {
+						height: auto;
+					}
+					p.a-btn-filters {
+						cursor: pointer;
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $breakpoint-tablet-768) {
+	.responsive-container {
+		&.col-3 {
+			width: 100%;
+		}
+		&.col-9 {
+			width: 100%;
+		}
+	}
+}

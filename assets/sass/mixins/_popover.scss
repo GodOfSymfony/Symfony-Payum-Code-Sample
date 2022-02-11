@@ -1,0 +1,80 @@
+@import "../globals/variables.scss";
+
+/*
+Popover
+=======
+
+HTML example:
+-------------
+  <div class="popover">
+      <div class="popover-content arrow-top">
+          Your content
+      </div>
+  </div>
+
+CSS example:
+------------
+  .popover {
+    @include popover($background-color: blue, $border-color: black);
+    width: 300px;
+  }
+
+TODO: add missing arrow dispositions
+*/
+@mixin popover(
+  $background-color,
+  $border-color,
+  $border-width: 1px,
+  $arrow-position-from-left: 50%,
+  $arrow-width: 14px,
+  $arrow-height: 10px
+) {
+  position: absolute;
+  z-index: $zindex-popover;
+  &:not(.visible) { display: none; }
+
+  .popover-content {
+    background-color: $background-color;
+    border: $border-width solid $border-color;
+    position: relative;
+
+    &:before, &:after {
+      border-color: transparent;
+      border-style: solid;
+      content: close-quote;
+      position: absolute;
+      height: 0;
+      width: 0;
+    }
+
+    &.arrow-top {
+      margin-top: $arrow-height;
+
+      &:before, &:after {
+        bottom: 100%;
+        left: $arrow-position-from-left;
+      }
+
+      &:before {
+        border-bottom-color: $border-color;
+        border-width: 0 ($arrow-width + $border-width) ($arrow-height + $border-width);
+        margin-left: -$arrow-width - $border-width;
+      }
+
+      &:after {
+        border-bottom-color: $background-color;
+        border-width: 0 $arrow-width $arrow-height;
+        margin-left: -$arrow-width;
+      }
+    }
+  }
+
+  &.popover-flip-h .popover-content {
+    &.arrow-bottom, &.arrow-top {
+      &:before, &:after {
+        left: auto;
+        right: $arrow-position-from-left;
+      }
+    }
+  }
+}

@@ -1,0 +1,596 @@
+@import '../globals/mixins';
+
+#dashboard-index {
+	div.container-block-dashboard {
+		margin-bottom: 50px;
+
+		&.reports{
+			margin-bottom: 0;
+
+			.report{
+				padding-right: 20px;
+				.info{
+					display: flex;
+					align-items: flex-start;
+					justify-content: flex-start;
+					background-color: $color-white;
+					padding: 20px;
+
+					.legend{
+						width: 25%;
+						padding-right: 15px;
+						min-width: 120px;
+
+						td{
+							display: flex;
+							align-items: flex-start;
+							justify-content: flex-start;
+							margin-bottom: 20px;
+
+							.legendColorBox{
+								padding: 0;
+								width: 14px;
+								min-width: 14px;
+								height: 14px;
+
+								> div{
+									border: 0 !important;
+
+									> div{
+										border-width: 6px !important;
+									}
+								}
+							}
+
+							.legendLabel{
+								width: 100%;
+								padding-left: 8px;
+								@include font-base(14px, normal, $color-liver, none, left, 16px, $font-family-base);
+
+								label{
+									margin-bottom: 4px;
+									display: inline-block;
+								}
+
+								strong{
+									font-family: $font-family-demi-bold;
+								}
+							}
+						}
+					}
+
+					.graphic{
+						width: 75%;
+						height: 200px;
+						overflow-x: auto;
+
+						.flot-tick-label.tickLabel{
+							font-size: 10px;
+							padding: 0 4px;
+						}
+					}
+				}
+
+				& + .report{
+					padding-right: 0;
+					padding-left: 20px;
+				}
+			}
+
+			.title-report{
+				padding-right: 20px;
+				& + .title-report{
+					padding-right: 0;
+					padding-left: 20px;
+				}
+			}
+
+			&.reports-municipal{
+				.report{
+					padding-right: 30px;
+				}
+
+				#dashboard-pie{
+					margin-top: 0;
+					position: relative;
+					background-color: $color-white;
+					padding-top: 30px !important;
+
+					canvas{
+						&.flot-base{
+							left: 50% !important;
+							margin-left: -75px;
+							top: 20px !important;
+						}
+					}
+
+					.legend{
+						position: absolute;
+						top: 100%;
+						left: 0;
+						width: 100%;
+						padding: 10px;
+						background: $color-white;
+
+						> table,
+						> div{
+							position: relative !important;
+							width: 100% !important;
+							height: auto !important;
+							top: inherit !important;
+							right: inherit !important;
+						}
+
+						table{
+							tbody{
+								tr{
+									display: block;
+									margin-bottom: 5px;
+								}
+								td{
+									display: flex;
+									align-items: center;
+									justify-content: flex-start;
+
+									.legendColorBox{
+										margin-right: 5px;
+										width: 14px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.register{
+			> .listing{
+				padding-right: 20px;
+
+				& + .listing{
+					padding-right: 0;
+					padding-left: 20px;
+				}
+			}
+		}
+
+	}
+	p.title-dashboard {
+		@include font-base(18px, normal, $color-outer-Space, none, left, 100%, $font-family-demi-bold);
+		padding: 0;
+		padding-left: 21px;
+		margin: 0 0 20px;
+		&.register {
+			@include back-img('general','icon_review.svg', no-repeat, 0px 0px, inherit);
+		}
+		&.reports {
+			@include back-img('general','icon_report.svg', no-repeat, 0px 0px, inherit);
+		}
+		&.financials {
+			@include back-img('general','icon_financials.svg', no-repeat, 0px 0px, inherit);
+			padding-left: 14px;
+		}
+		&.registrations {
+			@include back-img('general','icon_registrations.svg', no-repeat, 0px -1px, inherit);
+			padding-left: 25px;
+		}
+	}
+	/*registration*/
+	ul.lista-register-dashboard {
+		margin: 0px;
+		padding: 0px;
+		width: 96%;
+		display: block;
+		li {
+			display: block;
+			list-style: none;
+			margin: 0px;
+			padding: 0px;
+			@include font-base(14px, normal, $color-liver, none, left, 100%, $font-family-base);
+			background-color: $color-white;
+			margin-bottom: 5px;
+			padding: 5px 15px 15px 15px;
+			p.number {
+				@include font-base(14px, normal, $color-payne-grey, none, left, 100%, $font-family-base);
+				display:inline-block;
+				min-width: 40px;
+				padding: 0px 5px 0px 10px;
+				margin-bottom: 0px;
+			}
+
+			p.address {
+				@include font-base(14px, normal, $color-liver, none, left, 100%, $font-family-base);
+				display:inline-block;
+				min-width: 160px;
+				padding: 0px 10px 0px 5px;
+				margin-bottom: 0px;
+			}
+
+			p.state {
+				display:inline-block;
+				min-width: 180px;
+				padding: 0px 5px 0px 10px;
+				margin-bottom: 0px;
+				span {
+					@include font-base(14px, normal, $color-coral-pink, none, left, 100%, $font-family-base);
+					padding: 5px 10px;
+					background-color: $color-isabelline;
+					&.active {
+						@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+					}
+				}
+			}
+
+			a.btn-view {
+				display: inline-block;
+				@include font-base(14px, normal, $color-outer-Space, none, left, 100%, $font-family-demi-bold);
+				@include back-img('general','icon_edit.svg', no-repeat, 15px 2px, none);
+				min-width: 40px;
+				padding: 0px 10px 0px 40px;
+				margin-bottom: 0px;
+			}
+		}
+	}
+	/*Items for review*/
+	ul.list-item-review-dashboard {
+		margin: 0px 0px 20px 0px;
+		padding: 0px;
+		width: 100%;
+		font-size: 0px;
+		padding-right: 30px;
+		@media (max-width: $breakpoint-mobile) {
+			padding-right: 0;
+		}
+
+		li {
+			margin: 0px;
+			margin-right: 1%;
+			padding: 0px;
+			width: 15.83%;
+			display: inline-block;
+			vertical-align: top;
+			list-style: none;
+			font-size: 0px;
+			background-color: $color-white;
+
+			&:nth-child(6n+6){
+				margin-right: 0;
+			}
+			> a,
+			div {
+				width: 100%;
+				height: 159px;
+				margin: 0;
+				padding: 0 5px;
+				border-bottom: solid 3px $color-payne-grey;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-wrap: wrap;
+				span {
+					&:first-child{
+						@include font-base(70px, normal, $color-old-lavender, none, center, 100%, $font-family-light);
+						margin: 0;
+						width: 100%;
+						line-height: 70px;
+						align-self: flex-end;
+						padding: 15px 0;
+						display: block;
+					}
+
+					&:last-child{
+						display: block;
+						@include font-base(14px, normal, $color-payne-grey, none, center, 100%, $font-family-demi-bold);
+						margin: 0;
+						align-self: flex-start;
+						height: 30px;
+						display: block;
+					}
+				}
+			}
+		}
+	}
+	/*Reports*/
+	.element-report-dashboard {
+		background-color: $color-white;
+		border-right: solid 3px $color-payne-grey;
+		margin-bottom: 15px;
+		padding: 0 20px;
+		height: 72px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		span.title {
+			margin: 0px 0px 10px 0px;
+			width: 100%;
+			align-self: flex-end;
+			@include font-base(17px, normal, $color-old-lavender, none, left, 19px, $font-family-demi-bold);
+		}
+		span.info {
+			display: block;
+			width: 100%;
+			align-self: flex-start;
+			@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+		}
+
+		.candidates{
+			display: block;
+			width: 100%;
+		}
+		.Financials{
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			width: 100%;
+
+			span{
+				width: 100%;
+				display: block;
+				&.account-balance{
+					@include font-base(17px, normal, $color-old-lavender, none, right, 19px, $font-family-demi-bold);
+					max-width: 120px;
+				}
+			}
+		}
+	}
+	/*Pie Chart*/
+	#dashboard-pie {
+		width: 100%;
+		height: 100%;
+		min-height: 180px;
+		margin-top: 15px;
+		//&>canvas {
+		//	padding: 15px 0px!important;
+		//	width: 100% !important;
+		//	max-width: 800px;
+		//	height: auto !important;
+		//	&.flot-base {
+		//		padding-right: 70px;
+		//		z-index: 9999999;
+		//	}
+		//	&.flot-overlay {
+		//		background-color: $color-white;
+		//		z-index: 99;
+		//	}
+		//}
+		///**/
+		//div.legend {
+		//	table {
+		//		top: 20px!important;
+		//		z-index: 9999999;
+		//		tbody {
+		//			tr {
+		//				margin-bottom: 15px;
+		//				display: block!important;
+		//				td {
+		//					&.legendColorBox {
+		//						padding-right: 5px;
+		//					}
+		//					&.legendLabel {
+		//						@include font-base(14px, normal, $color-liver, none, left, 100%, $font-family-base);
+		//						padding-left: 5px;
+		//					}
+		//				}
+		//			}
+		//		}
+		//	}
+		//}
+	}
+	/*Bars Chart*/
+	#dashboard-bars {
+		width: 96%;
+		min-height: 150px;
+		margin-top: 15px;
+		background-color: $color-white;
+		/**/
+		&>canvas {
+			padding: 15px 0px!important;
+			/**/
+			width: 100% !important;
+			height: auto !important;
+			&.flot-base {
+				padding-right: 70px;
+				z-index: 9999999;
+			}
+			&.flot-overlay {
+				z-index: 99;
+			}
+		}
+		/**/
+		div.legend {
+			table {
+				top: 20px!important;
+				left: 0px!important;
+				tbody {
+					tr {
+						margin-bottom: 15px;
+						display: block!important;
+						td {
+							&.legendColorBox {
+								padding-right: 5px;
+							}
+							&.legendLabel {
+								@include font-base(14px, normal, $color-liver, none, left, 100%, $font-family-base);
+								padding-left: 5px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	/*responsive*/
+	div.container-block-dashboard {
+
+		@media (max-width: $breakpoint-tablet-landscape) {
+			&>div.col-9 {
+				& > ul.list-item-review-dashboard {
+					li {
+						margin-right: 2%;
+						width: 23.5%;
+						margin-bottom: 10px;
+
+						&:nth-child(6n+6){
+							margin-right: 2%;
+						}
+						&:nth-child(4n+4){
+							margin-right: 0;
+						}
+					}
+				}
+			}
+		}
+		@media (max-width: $breakpoint-tablet) {
+			&>div.col-9 {
+				& > ul.list-item-review-dashboard {
+					li {
+						margin-right: 2%;
+						width: 32%;
+						margin-bottom: 10px;
+
+						&:nth-child(6n+6),
+						&:nth-child(4n+4){
+							margin-right: 2%;
+						}
+						&:nth-child(3n+3){
+							margin-right: 0;
+						}
+					}
+				}
+			}
+		}
+		@media (max-width: $breakpoint-tablet-650) {
+			&>div.col-9 {
+				& > ul.list-item-review-dashboard {
+					li {
+						margin-right: 4%;
+						width: 48%;
+						margin-bottom: 10px;
+
+						&:nth-child(6n+6),
+						&:nth-child(4n+4),
+						&:nth-child(3n+3){
+							margin-right: 4%;
+						}
+						&:nth-child(2n+2){
+							margin-right: 0;
+						}
+					}
+				}
+			}
+		}
+		@media (max-width: $breakpoint-mobile) {
+			&>div.col-9 {
+				width: 100%;
+				float: none;
+				display: block;
+				&>div.switch-conteiner-title {
+					top: 2px;
+					width: 50%;
+					&>label {
+						font-size: 10px;
+						width: 80px;
+						margin-left: 25px;
+					}
+				}
+			}
+			&>div.col-3 {
+				width: 100%;
+				float: none;
+				display: block;
+			}
+		}
+	}
+	div.container-block-dashboard {
+		@media (max-width: $breakpoint-mobile) {
+			&>div.col-9 {
+				ul.lista-register-dashboard {
+					margin: 0px;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.register-listing,
+	.municipality-listing{
+		.listing-data {
+			padding-right: 30px;
+
+			&.register-data{
+				padding-right: 0;
+			}
+
+			table.data-table{
+				border: 0;
+				tbody{
+					border: 0;
+					tr{
+						border-top: 0;
+						border-bottom: 0;
+						margin-bottom: 4px;
+						display: block;
+						td{
+							border: 0;
+							background-color: $color-white;
+							padding: 12px 20px 10px;
+							display: block;
+						}
+					}
+				}
+			}
+
+			.info-listing{
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+
+				.address{
+					margin: 0;
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+					width: 100%;
+				}
+
+				.number{
+					display: inline-block;
+					vertical-align: middle;
+					margin: 0 5px 0 0;
+					padding: 0;
+				}
+				.state{
+					background-color: $color-isabelline;
+					display: inline-block;
+					vertical-align: middle;
+					margin: -3px 5px 0 10px;
+					padding: 3px 8px 0px;
+					@include font-base(12px, normal, $color-liver, uppercase, left, 16px, $font-family-base);
+
+					span{
+						@include font-base(12px, normal, $color-liver, inherit, left, 16px, $font-family-base);
+					}
+				}
+
+				.action{
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+					//width: 20%;
+
+					a{
+						@include font-base(12px, normal, $color-payne-grey, uppercase, left, 1, $font-family-demi-bold);
+						padding-top: 3px;
+					}
+
+					.icon-view{
+						color: $color-payne-grey;
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+	}
+}

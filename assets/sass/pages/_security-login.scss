@@ -1,0 +1,129 @@
+@import "../globals/variables";
+@import "../globals/mixins";
+
+#security-login {
+	background-image: url('../../images/app/security/background_login.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	text-align: center;
+	padding: 5%;
+	.login-content {
+		width: 90%;
+		height: auto;
+		max-width: 516px;
+		margin: auto;
+		background-color: rgba(255,255,255,0.3);
+		-webkit-box-shadow: 0px 10px 30px -8px rgba(0,0,0,0.75);
+		-moz-box-shadow: 0px 10px 30px -8px rgba(0,0,0,0.75);
+		box-shadow: 0px 10px 30px -8px rgba(0,0,0,0.75);
+		div.LogoSecurity {
+			padding: 20px;
+			img {
+				width: 100%;
+				height: auto;
+				max-width: 150px;
+			}
+		}
+
+		form {
+			div {
+				&.formItemsContainer {
+					padding: 5%;
+				}
+				button {
+					display: block;
+				}
+				&.create-account {
+					background-color: rgba(255,255,255,0.2);
+					width: 100%;
+					padding: 3%;
+					label {
+						display: none!important;
+					}
+					text-align: center;
+					font-family: $font-family-demi-bold;
+					color: $color-white;
+					font-size: 16px;
+					span {
+						font-family: inherit;
+						color: inherit;
+						font-size: inherit;
+					}
+					a {
+						font-family: $font-family-bold;
+						color: inherit;
+						font-size: inherit;
+						font-weight: bold;
+					}
+				}
+				div {
+					&.forgot-pass {
+						text-align: right;
+						a {
+							display: inline-block;
+							text-align: right;
+							font-size: 14px;
+							text-transform: uppercase;
+							color: $color-white;
+							padding: 2% 0%;
+							font-family: $font-family-demi-bold;
+							text-decoration: none;
+						}
+					}
+				}
+			}
+		}
+		/*MOBILE STYLES - login-content*/
+		@media (max-width: $breakpoint-mobile) {
+			height: 100%;
+			position: relative;
+			.LogoSecurity {
+				text-align: center;
+				&>img {
+					display: block;
+					max-width: 150px;
+					margin: 0px auto;
+				}
+			}
+			div.formItemsContainer {
+				div {
+					margin-bottom: 20px;
+					label {
+						margin-bottom: 10px;
+					}
+				}
+				div.forgot-pass {
+
+				}
+				button.btn-green {
+					width: 100%;
+					padding: 20px 25px;
+					max-width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.login-content {
+	.error {
+		color: #ca3535;
+		font-size: 15px;
+		font-weight: bold;
+		text-align: center;
+		background-color: rgba(255,255,255,0.4);
+		padding: 10px 5px;
+	}
+	.success {
+		color: #ffffff;
+		font-size: 15px;
+		font-weight: bold;
+		text-align: center;
+		background-color: rgba(255,255,255,0.4);
+		padding: 10px 5px;
+	}
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="14px" viewBox="0 0 19 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_contact</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="sidebar" transform="translate(-27.000000, -486.000000)" fill="#EFEFEF">
+            <g transform="translate(-1.000000, 0.000000)" id="icon_contact">
+                <g transform="translate(28.000000, 486.000000)">
+                    <g id="Capa_1">
+                        <g id="Group">
+                            <path d="M9.5,9.54545455 L7.14942857,7.47818182 L0.428857143,13.2668182 C0.673142857,13.4945455 1.00292857,13.6363636 1.36664286,13.6363636 L17.6333571,13.6363636 C17.9957143,13.6363636 18.3241429,13.4945455 18.5670714,13.2668182 L11.8505714,7.47818182 L9.5,9.54545455 L9.5,9.54545455 Z" id="Shape"></path>
+                            <path d="M18.5711429,0.369545455 C18.3268571,0.140454545 17.9984286,0 17.6333571,0 L1.36664286,0 C1.00428571,0 0.675857143,0.141818182 0.431571429,0.372272727 L9.5,8.18181818 L18.5711429,0.369545455 L18.5711429,0.369545455 Z" id="Shape"></path>
+                            <polygon id="Shape" points="0 1.19727273 0 12.5263636 6.55907143 6.92590909"></polygon>
+                            <polygon id="Shape" points="12.4409286 6.92590909 19 12.5263636 19 1.19318182"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

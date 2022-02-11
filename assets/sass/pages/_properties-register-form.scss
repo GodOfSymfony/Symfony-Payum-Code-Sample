@@ -1,0 +1,377 @@
+@import '../globals/mixins';
+
+#property-registration-form,
+#property-renewal-form {
+
+    &.print {
+        .selectfield select.selectfield-input {
+            background-image: inherit;
+        }
+    }
+
+    .container-btn-back{
+        margin-bottom: 20px;
+    }
+    div.choose-another {
+        text-align: right;
+        @include font-base(16px, normal, $color-old-lavender, none, right, 100%, $font-family-demi-bold);
+        margin: 17px 0px 15px 0px;
+
+        a{
+            display: inline-block;
+            vertical-align: middle;
+            margin: -3px 0 0;
+            padding: 5px 15px;
+            border: 1px solid $color-payne-grey;
+            @include font-base(14px, normal, $color-old-lavender, capitalize, center, 19px, $font-family-demi-bold);
+
+            &:hover{
+                background-color: $color-payne-grey;
+                color: $color-white
+            }
+        }
+    }
+    div.property-summary {
+        background-color: $color-rifle-green;
+        padding: 20px;
+        text-align: left;
+        &>div.address {
+            width: 50%;
+            margin: 0px;
+            &>label.title {
+                @include font-base(14px, normal, $color-white, none, left, 100%, $font-family-base);
+                margin-bottom: 10px;
+                display: block;
+            }
+            &>label.address {
+                @include font-base(24px, normal, $color-white, none, left, 100%, $font-family-demi-bold);
+                display: block;
+            }
+        }
+        &>div.last-update {
+            width: 50%;
+            float: right;
+            &>label.title {
+                @include font-base(14px, normal, $color-white, none, right, 100%, $font-family-base);
+                margin-bottom: 10px;
+                display: block;
+            }
+            &>label.address {
+                @include font-base(14px, normal, $color-white, none, right, 100%, $font-family-demi-bold);
+                display: block;
+            }
+        }
+    }
+
+    h1.content-box-title {
+        div.content-box-support {
+            float: right;
+            cursor: pointer;
+            &>form {
+                padding: 0px;
+                background-color: transparent;
+                &>div.form-body {
+                    display: none;
+                    padding: 0px;
+                    margin: 0px;
+                    height: 0px;
+                    overflow: hidden;
+                }
+                &>div.form-footer {
+                    width: 100%;
+                    float: none;
+                    margin: 0px;
+                    padding: 0px;
+                    height: auto;
+                    button.btn-title {
+                        display: block;
+                        padding: 3px 38px;
+                        @include font-base(14px, normal, $color-old-lavender, none, center, 100%, $font-family-demi-bold);
+                        border:solid 1px $color-payne-grey;
+                        background-color: transparent;
+                    }
+                }
+            }
+
+            &.content-btn{
+                text-align: right;
+
+                .button.waves-effect{
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin: -3px 0 0;
+                    padding: 5px 15px;
+                    border: 1px solid $color-payne-grey;
+                    @include font-base(14px, normal, $color-old-lavender, capitalize, center, 19px, $font-family-demi-bold);
+
+                    &:hover{
+                        background-color: $color-payne-grey;
+                        color: $color-white
+                    }
+                }
+            }
+            .logs-form {
+                float: left;
+                margin-right: 10px;
+                display: inline-flex;
+                div {
+                    a {
+                        display:inline-block;
+                        @include font-base(14px, normal, $color-old-lavender, normal, left, 100%, $font-family-demi-bold);
+                    }
+
+                    .logs-qty{
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 50%;
+                        background-color: $color-payne-grey;
+                        margin: -2px 3px 0;
+                        padding: 0;
+                        @include font-base(10px, normal, $color-white, inherit, center, 16px, $font-family-demi-bold);
+                    }
+                }
+            }
+            .new-dispute {
+                display: inline-flex;
+                float: left;
+                margin-right: 10px;
+                div {
+                    a {
+                        display:inline-block;
+                        @include font-base(14px, normal, $color-old-lavender, normal, left, 100%, $font-family-demi-bold);
+                    }
+                }
+            }
+        }
+    }
+
+    div.form-footer {
+        &>button.btn-clean-big {
+            padding: 1.5% 2%;
+            max-width: 225px;
+            margin-right: 15px;
+        }
+        &>a.btn-green-big {
+            padding: 1.5% 2%;
+            max-width: 400px;
+        }
+    }
+
+    div.blur-entity {
+        border-bottom: solid 4px $color-payne-grey;
+        -webkit-box-shadow: 0px 4px 9px -2px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 4px 9px -2px rgba(0,0,0,0.75);
+        box-shadow: 0px 4px 9px -2px rgba(0,0,0,0.75);
+
+        &.active {
+            position: absolute;
+            z-index: 999;
+            margin-top: -18px;
+            height: auto;
+            display: flex;
+            width: 44%;
+            > .container {
+                width: 100%;
+                height: 100%;
+                background-color: white;
+            }
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            border-bottom: solid 4px $color-payne-grey;
+            background-color: $color-white;
+            clear: both;
+            -webkit-box-shadow: 0px 4px 9px -2px rgba(115, 115, 115, 0.75);
+            -moz-box-shadow: 0px 4px 9px -2px rgba(115, 115, 115, 0.75);
+            box-shadow: 0px 4px 9px -2px rgba(115, 115, 115, 0.75);
+            float: left;
+            position: relative;
+            width: 100%;
+            img {
+                width: 60px;
+                height: 60px;
+                display: inline-block;
+                padding: 0px;
+                margin: 0;
+            }
+            &.active {
+                display: block;
+            }
+        }
+    }
+
+    div.result-find-propert {
+        background-color: $color-white;
+        width: 100%;
+        -webkit-box-shadow: 1px 2px 1px -2px rgba(115, 115, 115, 0.86);
+        -moz-box-shadow: 1px 2px 1px -2px rgba(115, 115, 115, 0.86);
+        box-shadow: 1px 2px 1px -2px rgba(115, 115, 115, 0.86);
+        height: auto;
+        max-height: 300px;
+        overflow: hidden;
+        z-index: 999;
+        border-bottom: solid 4px $color-payne-grey;
+        overflow-y: scroll;
+
+        @media (max-width: $breakpoint-mobile) {
+            top: -14px;
+        }
+        ul.list-result-proper {
+            font-size: 0px;
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+            padding: 5px 15px;
+            border-bottom: solid 3px $color-isabelline;
+            &:last-child {
+                border-bottom: none;
+            }
+            &>li {
+                width: 50%;
+                margin: 0px;
+                padding: 0px;
+                display: inline-block;
+                &>p {
+                    @include font-base(14px, normal, $color-payne-grey, none, left, 100%, $font-family-demi-bold);
+                }
+                &>a {
+                    display: inline-block;
+                    @include font-base(14px, normal, $color-old-lavender, none, center, 100%, $font-family-demi-bold);
+                    padding: 5px 15px;
+                    border: 1px solid $color-payne-grey;
+                }
+                &>span {
+                    display: block;
+                    @include font-base(14px, normal, $color-old-lavender, none, right, 100%, $font-family-base);
+                    &>span.icon-calendar {
+                        @include font-icon(16px, $color-slate-gray);
+                    }
+                }
+                &:last-child {
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+}
+#simple-form-modal {
+    height: auto;
+    max-height: 100%;
+    &>div.modal-content {
+        padding: 16px 24px;
+        &>div.modal-body {
+            &>div.entity-type {
+                &>a.btn-green-big {
+                    @include font-base(24px, normal, $color-old-lavender, capitalize, center, 100%, $font-family-demi-bold);
+                    border: 1px solid $color-pastel-gray;
+                    background-color: $color-white-smoke;
+                    padding: 4% 1%;
+                    width: 100%;
+                    max-width: 49%;
+                    margin: 15px auto;
+                    text-decoration: none;
+                    display: inline-block;
+                    opacity: 0.46;
+
+                    &:hover, &.active {
+                        color: $color-dark-sea-green;
+                        background-color: $color-pastel-gray;
+                        opacity: 1;
+                    }
+                    @media (max-width: $breakpoint-tablet-768) {
+                        max-width: 99%;
+                    }
+                    &:last-child {
+                        float: right;
+                    }
+                }
+            }
+
+            &>form {
+                &>div.contact-form-register {
+                    &>div.form-row {
+                        width: 100%;
+                        &>div.form-column {
+                            &>div {
+                                &>label {
+                                    @include font-base(14px, normal, $color-old-lavender, capitalize, left, 100%, $font-family-base);
+                                    display: block;
+                                }
+                                &>input {
+                                    @include font-base(14px, normal, $color-old-lavender, normal, left, 100%, $font-family-base);
+                                    display: block;
+                                    width: 100%;
+                                    background: $color-white-smoke;
+                                    border: 1px solid $color-pastel-gray;
+                                    padding: 9px 15px 8px 15px;
+                                    margin: 10px 0% 4% 0%;
+                                }
+                            }
+                        }
+                    }
+                }
+                &>div.form-row {
+                    width: 49%;
+                    &:nth-child(even){
+                        float: right;
+                    }
+                    &>div.form-column {
+                        &>div {
+                            &>label {
+                                @include font-base(14px, normal, $color-old-lavender, capitalize, left, 100%, $font-family-base);
+                                display: block;
+                            }
+                            &>input {
+                                @include font-base(14px, normal, $color-old-lavender, normal, left, 100%, $font-family-base);
+                                display: block;
+                                width: 100%;
+                                background: $color-white-smoke;
+                                border: 1px solid $color-pastel-gray;
+                                padding: 9px 15px 8px 15px;
+                                margin: 10px 0% 4% 0%;
+                            }
+                        }
+                    }
+                }
+                &:after {
+                    content: "";
+                    display: block;
+                    clear: both;
+                }
+            }
+        }
+    }
+    &>div.modal-footer {
+        margin-bottom: 38px;
+        height: auto;
+        &>a.btn-clean-small {
+            background: none;
+            border: none;
+            background-color: $color-dark-sea-green;
+            @include font-base(16px, normal, $color-white, uppercase, center, 100%, $font-family-demi-bold);
+            padding: 1.5% 4%;
+            width: 100%;
+            max-width: 210px;
+            margin: 15px auto;
+            text-decoration: none;
+            display: inline-block;
+        }
+        &>a.btn-green-small {
+            background: none;
+            border: none;
+            background-color: $color-dark-sea-green;
+            @include font-base(16px, normal, $color-white, uppercase, center, 100%, $font-family-demi-bold);
+            padding: 1.5% 4%;
+            width: 100%;
+            max-width: 210px;
+            margin: 15px auto;
+            text-decoration: none;
+            display: inline-block;
+        }
+    }
+}

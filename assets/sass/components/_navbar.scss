@@ -1,0 +1,226 @@
+@import "../globals/variables.scss";
+@import "../globals/mixins.scss";
+
+#navbar {
+	background-color: $color-payne-grey;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+
+	div.container {
+		height: 100%;
+		width: 100%;
+		padding: 0px;
+		@media (max-width: $breakpoint-mobile) {
+			min-height:400px;
+			overflow-y:scroll;
+		}
+		ul {
+			@media (max-width: $breakpoint-mobile) {
+				min-height: 580px;
+			}
+			list-style: none;
+			width: 100%;
+			padding: 0px;
+			margin: 0px;
+			li {
+				list-style: none;
+				display: block;
+				&.active, &:hover {
+					background-color: $color-rifle-green;
+				}
+				border-bottom: solid 1px $color-old-lavender;
+				&:nth-last-child(2) {
+					border-bottom: solid 1px $color-charcoal;
+				}
+				&:last-child {
+					border-bottom: none;
+				}
+				a {
+					@include font-base(16px, normal, $color-isabelline, capitalize, left, 100%, $font-family-base);
+					display: block;
+					padding: 18px 15px 16px 65px;
+					background-position: 10px center;
+					background-repeat: no-repeat;
+					text-decoration: none;
+					&.dashbord {
+						@include back-img('menu', 'icon_dashboard.svg', no-repeat, $navbar-icons-position, 26px);
+					}
+					&.properties {
+						@include back-img('menu', 'icon_property.svg', no-repeat, $navbar-icons-position, 26px);
+					}
+					&.account {
+						@include back-img('menu', 'icon_account.svg', no-repeat, $navbar-icons-position, 26px);
+					}
+					&.registration{
+						position: relative;
+						&:before {
+							content: "\e917";
+							color: $color-isabelline;
+							font-family: 'icomoon';
+							position: absolute;
+							left: 28px;
+							font-size: 24px;
+							top: 15px;
+						}
+					}
+					&.invoicing {
+						@include back-img('menu', 'icon_invoicing.svg', no-repeat, $navbar-icons-position, 26px);
+					}
+					&.reports {
+						@include back-img('menu', 'icon_report.svg', no-repeat, $navbar-icons-position, 26px);
+					}
+					&.users {
+						@include back-img('menu', 'icon_users.svg', no-repeat, $navbar-icons-position, 26px);
+					}
+					&.employees {
+						@include back-img('menu', 'icon_employees.svg', no-repeat, $navbar-icons-position, 26px);
+					}
+					&.municipalities {
+						@include back-img('menu', 'icon_municipalities.svg', no-repeat, $navbar-icons-position, 26px);
+					}
+					&.organizations {
+						@include back-img('menu', 'icon_organizations.svg', no-repeat, $navbar-icons-position, 26px);
+					}
+					&.entities {
+						@include back-img('menu', 'icon_entities.svg', no-repeat, $navbar-icons-position, 26px);
+					}
+					&.reviews {
+						@include back-img('menu', 'icon_review.svg', no-repeat, $navbar-icons-position, 26px);
+					}
+					&.contacts {
+						@include back-img('menu', 'icon_contact.svg', no-repeat, $navbar-icons-position, 26px);
+					}
+				}
+				a.open-menu-minimal {
+					@include font-base(12px, normal, $color-slate-gray, uppercase, center, 100%, $font-family-demi-bold);
+					padding:15px 5px;
+					cursor: pointer;
+					&>span.icon-arrow {
+						cursor: pointer;
+						display: inline-block;
+						float: left;
+						margin-top: -3px;
+						@include font-icon(16px, $color-slate-gray);
+						-webkit-transform: rotate(90deg);
+						-moz-transform: rotate(90deg);
+						-ms-transform: rotate(90deg);
+						-o-transform: rotate(90deg);
+						filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+					}
+				}
+			}
+		}
+	}
+}
+.btn-footer-menu {
+	width: 100%;
+	display: block;
+	padding: 15px 10px 15px 50px;
+	@include font-base(16px, normal, $color-isabelline, capitalize, left, 100%, $font-family-base);
+	@include back-img('general', 'icon_changelog.svg', no-repeat, 20px center, none);
+	background-color: $color-charcoal;
+	border-top: 1px $color-white solid;
+	cursor: pointer;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	text-decoration: none!important;
+}
+
+div.page {
+	@media (max-width: $breakpoint-tablet) {
+		div.container-page {
+			position: relative;
+			div.page-sidebar {
+				width: 0px;
+				overflow: hidden;
+				&.active {
+					position: absolute;
+					width: 100%;
+					height: 90%;
+					z-index: 99999999;
+				}
+			}
+		}
+	}
+	@media (max-width: $breakpoint-tablet) {
+		div.container-page {
+			div.page-sidebar {
+				&.active {
+					height: 100%;
+				}
+			}
+		}
+	}
+	@media (max-width: $breakpoint-mobile) {
+		div.container-page {
+			margin-top: 15px;
+			div.page-sidebar {
+				&.active {
+					top: -15px;
+					height: -webkit-calc(100% + 15px);
+					height:    -moz-calc(100% + 15px);
+					height:         calc(100% + 15px);
+				}
+			}
+		}
+	}
+}
+
+div.menu-mobile {
+	display: none;
+	margin-bottom: 0px;
+	@media (max-width: $breakpoint-mobile) {
+		display: block;
+		.page-sidebar {
+			width: 0px;
+			&.active {
+				position: static;
+				width: 100%;
+				z-index: 99999;
+			}
+		}
+	}
+	ul.list-btns-menu-header {
+		width: 100%;
+		margin: 0px;
+		padding: 8px 0px;
+		font-size: 0px;
+		text-align: center;
+		background-color: $color-payne-grey;
+		height: 67px;
+		li {
+			margin: auto;
+			padding: 0px;
+			list-style: none;
+			width: 50%;
+			display: block;
+			text-align: center;
+			margin-top: 10px;
+			a {
+				text-align: center;
+				&>span {
+					width: 40px;
+					height: 40px;
+					margin: auto;
+					font-size: 20px;
+					color: $color-white;
+					&.icon-menu-mobile {
+						@include back-img('menu', 'BtnMobileDashs.png', no-repeat, center, contain);
+						display: block;
+						width: 30px;
+						height: 30px;
+						margin: auto;
+					}
+				}
+				&>p {
+					@include font-base(7px, normal, $color-white, uppercase, center, 100%, $font-family-base);
+					margin-top: 5px;
+				}
+			}
+		}
+	}
+}

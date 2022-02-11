@@ -1,0 +1,41 @@
+@import '../globals/mixins';
+
+#organization-create {
+	div.external-form-input {
+		top: -62px;
+	}
+}
+
+#organization-index{
+	.data-table{
+		td{
+			.info{
+				display: flex;
+				align-items: stretch;
+				justify-content: flex-start;
+
+				.credit-info{
+					display: flex;
+					align-items: flex-start;
+					justify-content: flex-end;
+					flex-wrap: wrap;
+					.address{
+						@include font-base(14px, normal, $color-old-lavender, inherit, right, 19px, $font-family-base);
+						display: block;
+					}
+					.user-credit{
+						align-self: flex-end;
+						@include font-base(14px, normal, $color-old-lavender, inherit, left, 19px, $font-family-base);
+					}
+				}
+			}
+		}
+	}
+
+	table.data-table tbody tr td:last-child{
+		padding: 0;
+		vertical-align: middle;
+		text-align: center;
+		min-width: 65px;
+	}
+}

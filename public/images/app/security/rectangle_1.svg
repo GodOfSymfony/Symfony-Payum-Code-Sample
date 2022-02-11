@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920px" height="980px" viewBox="0 0 1920 980" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="100%" id="radialGradient-1">
+            <stop stop-color="#8097B2" stop-opacity="0.401947464" offset="0%"></stop>
+            <stop stop-color="#495E7A" stop-opacity="0.821671196" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.940123601">
+        <g id="Login" fill="url(#radialGradient-1)">
+            <g id="Group-4">
+                <g transform="translate(0.000000, -232.000000)" id="Rectangle-1">
+                    <rect x="0" y="232" width="1920" height="980"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

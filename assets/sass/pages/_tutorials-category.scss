@@ -1,0 +1,120 @@
+@import '../globals/mixins';
+
+#tutorial-category {
+	div.container-verison-side {
+		div.tutorial-category-container {
+			div.container-accordion {
+				&.category-container {
+					&>div {
+						&>a.header-category {
+							background-image: none;
+							&>span {
+								margin-right: 15px;
+								&.delete-action {
+									margin-right: 0px!important;
+								}
+							}
+						}
+						ul.category-content {
+							&>li.tutorial-content {
+								&:nth-child(2n) {
+									background-color: $color-white-smoke;
+								}
+								&>span {
+									display: inline-block;
+									width: auto;
+									padding: 0px;
+									margin: 0px 0px 0px 10px;
+									&:first-child {
+										float: left;
+										display: block;
+									}
+									float: right;
+									margin-bottom: 0px;
+								}
+								&>a {
+									display: inline-block;
+									&:first-child {
+										float: left;
+										display: block;
+									}
+									float: right;
+									margin-bottom: 0px;
+									span {
+										margin-top: -3px;
+									}
+								}
+								&:after {
+									content: "";
+									display: block;
+									clear: both;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	div.container-tutorial-side {
+		margin-right: 15px;
+		div.container-accordion {
+			margin-top: 15px;
+			border-bottom: solid 2px $color-old-lavender;
+			&.category-container {
+				&>div {
+					height: 56px;
+				}
+			}
+			&.inactive {
+				div{
+					a {
+						background-color: $color-isabelline;
+						color: $color-old-lavender;
+						@include back-img('general','plane-arrow-down.png', no-repeat, 95% 14px, none);
+					}
+				}
+			}
+		}
+		&>div:first-child {
+			margin-top: 0%;
+		}
+	}
+	.container-tutorial-info {
+		margin-left:-15px;
+		padding-left:15px;
+		&:after {
+			content: "";
+			display:block;
+			clear: both;
+		}
+	}
+	div.container-verison-side {
+		padding-right: 15px;
+	}
+	ul.category-content {
+		&>li {
+			padding: 10px 13px 10px 10px;
+			&>a {
+				display: inline-block;
+				&>span {
+					display: inline-block;
+					padding: 5px;
+				}
+			}
+		}
+	}
+	div.container-tutorial-icons {
+		div.container-icons-add {
+			form.form {
+				div.form-body {
+					div.form-row {
+						div.form-column {
+							padding: 0px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

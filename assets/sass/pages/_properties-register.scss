@@ -1,0 +1,294 @@
+@import '../globals/mixins';
+
+#property-deregister-index,
+#property-renewal-index,
+#property-register-index {
+
+	.text-proper,
+	.text-register-proper {
+		margin: 40px 0;
+		@include font-base(14px, normal, $color-rifle-green, none, left, 100%, $font-family-base);
+	}
+
+	div.container-search-bar-property {
+		display: block;
+		clear: both;
+		position: relative;
+		float: left;
+		p.title-block-filter {
+			padding: 0px;
+			background-color: transparent;
+			margin-bottom: 10px;
+			border: 0px;
+			@include font-base(14px, bold, $color-old-lavender, '', left, 100%, $font-family-base);
+		}
+		ul.input-list {
+			margin-top: 0px;
+			li {
+				position: relative;
+				div.textfield {
+					label.textfield-label {
+						display: none !important;
+					}
+					input {
+						background-color: $color-white;
+					}
+				}
+
+			}
+		}
+		div.search-box-footer {
+			position: absolute;
+			top: 48%;
+			right: 2%;
+			width: 20px;
+			height: 20px;
+			padding: 0%!important;
+			@media (max-width: $breakpoint-mobile) {
+				top: 56%;
+			}
+			& > a.search-button {
+				display: block;
+				font-size: 0px;
+				width: 20px;
+				height: 20px;
+				background-color: transparent;
+				@include back-img('general', 'icon_search_blue.svg', no-repeat, 0px 0px, contain);
+			}
+		}
+	}
+
+	div.search-address-finder-searching, div.search-zipcode-finder-searching {
+		display: none;
+		text-align: center;
+		border-bottom: solid 4px $color-payne-grey;
+		background-color: $color-white;
+		clear: both;
+		-webkit-box-shadow: 0px 4px 9px -2px rgba(115, 115, 115, 0.75);
+		-moz-box-shadow: 0px 4px 9px -2px rgba(115, 115, 115, 0.75);
+		box-shadow: 0px 4px 9px -2px rgba(115, 115, 115, 0.75);
+		float: left;
+		position: relative;
+		width: 100%;
+		img {
+			width: 60px;
+			height: 60px;
+			display: inline-block;
+			padding: 0px;
+			margin: 0;
+		}
+		&.active {
+			display: block;
+		}
+	}
+
+
+	ul.input-list {
+		margin-top: 0px;
+		margin-bottom: 0px;
+		li {
+			position: relative;
+			width: 100%;
+			div.textfield {
+				label.textfield-label {
+					display: none !important;
+				}
+				input {
+					background-color: $color-white;
+					margin-bottom: 0px;
+				}
+				&>a.btn-find {
+					position: absolute;
+					right: 15px;
+					top: 9px;
+				}
+			}
+		}
+	}
+	div.result-find-propert {
+		background-color: $color-white;
+		width: 100%;
+		-webkit-box-shadow: 0px 4px 9px -2px rgba(115, 115, 115, 0.75);
+		-moz-box-shadow: 0px 4px 9px -2px rgba(115, 115, 115, 0.75);
+		box-shadow: 0px 4px 9px -2px rgba(115, 115, 115, 0.75);
+		height: auto;
+		overflow: hidden;
+		float: left;
+		z-index: 999;
+		border-bottom: solid 4px $color-payne-grey;
+		margin-top: -15px;
+
+		@media (max-width: $breakpoint-mobile) {
+			top: -14px;
+		}
+		&>ul.list-result-proper {
+			.title{
+				float: left;
+			}
+			.date{
+				float: right;
+			}
+			font-size: 0px;
+			margin: 0px;
+			padding: 0px;
+			width: 100%;
+			padding: 5px 15px;
+			border-bottom: solid 3px $color-isabelline;
+			cursor: pointer;
+			&:last-child {
+				border-bottom: none;
+			}
+			&>li {
+				width: 98%;
+				margin: 0px;
+				padding: 0px;
+				display: inline-block;
+				&>p {
+					@include font-base(14px, normal, $color-payne-grey, none, left, 100%, $font-family-demi-bold);
+				}
+				&>a {
+					display: inline-block;
+					@include font-base(14px, normal, $color-old-lavender, none, center, 100%, $font-family-demi-bold);
+					padding: 5px 15px;
+					border: 1px solid $color-payne-grey;
+					margin-top: 8px;
+				}
+				&>span {
+					display: block;
+					@include font-base(14px, normal, $color-old-lavender, none, right, 100%, $font-family-base);
+					&>span.icon-calendar {
+						@include font-icon(16px, $color-slate-gray);
+					}
+				}
+				&:last-child {
+					text-align: right;
+				}
+			}
+		}
+	}
+	div.clear-form-property-register {
+		clear: both;
+		height: 30px;
+		padding: 0px;
+		margin: 0px;
+	}
+	div.result-search-property {
+		padding: 25px;
+		background-color: $color-white;
+		margin-top: 30px;
+		&>form{
+			&>div.form-body {
+				padding: 0;
+			}
+			div>h1 {
+				@include font-base(16px, normal, $color-payne-grey, none, left, 100%, $font-family-demi-bold);
+				margin: 10px 0px 25px 0px;
+			}
+			.form-column{
+				padding: 0;
+
+				label + ul{
+					margin: 3px 0;
+					padding: 0;
+					list-style: none;
+
+					li{
+						@include font-base(12px, normal, $color-fire-engine-red, none, left, 100%, $font-family-base);
+					}
+				}
+			}
+		}
+		button.btn-register {
+			width: 100%;
+			max-width: 210px;
+			display: block;
+			@include font-base(14px, normal, $color-old-lavender, none, center, 100%, $font-family-demi-bold);
+			padding: 10px 15px;
+			border: 1px solid $color-payne-grey;
+			margin: auto;
+			background-color: transparent;
+		}
+		ul.list-info-property {
+			font-size: 0px;
+			width: 100%;
+			padding: 0px;
+			margin: 0px;
+			&>li {
+				width: 30%;
+				padding: 0px;
+				margin: 0px;
+				display: inline-block;
+				text-align: left;
+				&:first-child {
+					width: 50%;
+				}
+				&:last-child {
+					width: 20%;
+				}
+				&>div.textfield {
+					width: 90%;
+				}
+				&>a.btn-register {
+					width: 100%;
+					display: block;
+					@include font-base(14px, normal, $color-old-lavender, none, center, 100%, $font-family-demi-bold);
+					padding: 10px 15px;
+					border: 1px solid $color-payne-grey;
+				}
+			}
+			@media (max-width: $breakpoint-mobile) {
+				&>li {
+					width: 50%;
+					&:first-child {
+						width: 100%;
+						&>div.textfield {
+							width: 100%;
+						}
+					}
+					&:last-child {
+						width: 50%;
+					}
+				}
+			}
+		}
+	}
+	div.contact-for-assistance {
+		&>div {
+			a.messenge-register-property,
+			p.messenge-register-property {
+				@include font-base(14px, normal, $color-old-lavender, none, center, 100%, $font-family-demi-bold);
+			}
+			a.messenge-register-property {
+				display: block;
+				padding: 10px;
+			}
+		}
+	}
+	#form-container-registration {
+		display: none;
+	}
+}
+div.container-btn-back {
+	display: block;
+	&>a.btn-back {
+		float: left;
+		margin-top: 13px;
+		margin-left: -28px;
+		@include font-base(16px, normal, $color-old-lavender, none, left, 100%, $font-family-demi-bold);
+		&>span.icon-arrow {
+			display: inline-block;
+			@include font-icon(16px, $color-old-lavender);
+			-webkit-transform: rotate(90deg);
+			-moz-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			-o-transform: rotate(90deg);
+			filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+			margin-right: 10px;
+		}
+	}
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}

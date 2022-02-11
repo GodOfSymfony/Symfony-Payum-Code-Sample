@@ -1,0 +1,136 @@
+@import '../globals/mixins';
+
+#changelog-index {
+    table.data-table-list {
+        &>tbody {
+            &>tr {
+                &>td {
+                    padding: 5px 8px;
+                    width: 30%;
+                    &:first-child {
+                        padding: 5px 10px 5px 20px;
+                        width: 40%;
+                    }
+                    &:last-child {
+                        padding: 5px 20px 5px 10px;
+                        width: 30%;
+                    }
+                    &>div.changlog-info {
+                        &>p {
+                            line-height: 130%;
+                            &>span.type {
+                                padding: 7px 10px;
+                            }
+                            &:first-child {
+                                margin-bottom: 5px;
+                            }
+                        }
+                        img {
+                            width: 35px !important;
+                            height: 35px !important;
+                            display: inline-flex;
+                            margin-right: 10px;
+                        }
+                    }
+                    /**/
+                    &>div.info>div.info-data {
+                        &>p{
+                            &>span.type {
+                                padding: 7px 10px;
+                            }
+                        }
+                        &>p.name {
+                            color: $color-rifle-green;
+                            font-family: $font-family-base;
+                            &>span {
+                                color: $color-charcoal;
+                            }
+                        }
+                        &>p.date {
+                            color: $color-rifle-green;
+                            font-family: $font-family-base;
+                            &>span {
+                                color: $color-charcoal;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*changelog component*/
+.changelog-wrapper {
+    &.active {
+        .changelog-container {
+            height: auto;
+            z-index: 999;
+            .changelog-header a.btn-changelog-open {
+                @include back-img('general', 'DownArrowBlue.png', no-repeat, center, none);
+            }
+        }
+
+        .changelog-overlay {
+            display: block;
+        }
+    }
+
+    .changelog-container {
+        position: absolute;
+        width: 100%;
+        left: 0px;
+        bottom: 0px;
+        background-color: $color-white-smoke;
+        overflow: hidden;
+        height: 49px;
+
+        .changelog-header {
+            background-color: $color-white;
+            padding: 20px 3%;
+            @include font-base(14px, normal, $color-charcoal, capitalize, left, 100%, $font-family-demi-bold);
+            a.btn-changelog-open {
+                display: block;
+                width: 13px;
+                height: 7px;
+                @include back-img('general', 'UpArrowBlue.png', no-repeat, center, none);
+                float: right;
+                margin-top: 5px;
+            }
+        }
+        .container-btn-filters {
+            text-align: right;
+            padding: 1% 0%;
+            a {
+                @include font-base(14px, normal, $color-charcoal, uppercase, center, 100%, $font-family-demi-bold);
+                border: solid 1px $color-charcoal;
+                background-color: transparent;
+                padding: 1% 1%;
+                width: 100%;
+                max-width: 197px;
+                margin: 10px auto;
+                text-decoration: none;
+                display: inline-block;
+                margin-left: 10px;
+            }
+        }
+        .table-changelog {
+            margin-bottom: 0px;
+            padding: 0% 3%;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+    }
+
+    .changelog-overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 99;
+        display: none;
+        left: 0px;
+        top: 0px;
+        background-color: rgba(0,0,0,0.15);
+    }
+}

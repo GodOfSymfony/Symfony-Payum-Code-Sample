@@ -1,0 +1,221 @@
+@import "functions";
+
+/* ==========  GLOBALS ========== */
+
+$image_path: '../../images/app' !default;
+$font_path: '../../font/app' !default;
+
+/* ==========  COLORS  ========== */
+
+@import "colors";
+
+$color-error: #de3226 !default;
+$color-primary:           $color-white-smoke !default;
+$color-primary-dark:      $color-slate-gray !default;
+$color-accent:            $color-white !default;
+
+/* ==========  Typography  ========== */
+
+$font-family-base:            'Avenir Next LT Pro Regular', sans-serif !default;
+$font-family-demi-bold:       'Avenir Next LT Pro Demi', sans-serif !default;
+$font-family-bold:            'Avenir Next LT Pro Bold', sans-serif !default;
+$font-family-heavy:           'Avenir Next LT Pro Heavy Condensed', sans-serif !default;
+$font-family-light:           'Avenir Next LT Pro Ultra Light', sans-serif !default;
+
+$line-height-base:            1.428571429 !default; // 20/14;
+
+$text-link-hover-decoration:  underline;
+
+/* ==========  Z-index master list  ========== */
+
+$zindex-navbar:            1000;
+$zindex-dropdown:          1000;
+$zindex-popover:           1060;
+$zindex-tooltip:           1070;
+$zindex-navbar-fixed:      1030;
+$zindex-modal-background:  1040;
+$zindex-modal:             1050;
+$zindex-full-screen:       1060;
+$zindex-absolute-dropdown: 1070;
+$zindex-toast:             1080;
+
+/* ==========  Navbar  ========== */
+$navbar-height: 50px;
+$navbar-icons-position: 25px center;
+
+/* ==========  Dropdown ========== */
+
+
+/* ==========  Standard Buttons  ========== */
+.btn-config {
+
+}
+.btn-onOff{
+
+}
+
+/**
+ * Dimensions
+ */
+
+
+/* ==========  Icon Toggles  ========== */
+
+
+
+/* ==========  Radio Buttons  ========== */
+
+
+
+/* ==========  Content Tabs  ========== */
+
+
+
+/* ==========  Checkboxes  ========== */
+
+
+/* ==========  Switches  ========== */
+
+
+/* ==========  Sizes  ========== */
+
+.height-view{
+	height: 100vh;
+}
+
+
+/* ==========  Spinner  ========== */
+.spinner {
+	background-image: url('../../images/app/general/spinner.gif');
+	background-position: center center;
+	background-size: contain;
+}
+
+/* ==========  Text fields  ========== */
+
+
+
+/* ==========  Card  ========== */
+
+
+
+/* Card dimensions */
+
+
+/* Cover image */
+
+
+/* ==========  Sliders ========== */
+
+
+
+/* ========== Progress ========== */
+
+
+
+/* ==========  List ========== */
+
+
+
+/* ==========  Item ========== */
+
+// Default Item Colors
+/*
+$default-item-text-color: rgba($color-rifle-green, 0.87) !default;
+$default-item-outline-color: $color-slate-gray !default;
+$default-item-hover-bg-color: $palette-grey-200 !default;
+$default-item-focus-bg-color: $palette-grey-200 !default;
+$default-item-active-bg-color: $palette-grey-300 !default;
+$default-item-divider-color: rgba($color-black, 0.12) !default;
+*/
+$text-link-hover-color: $color-slate-gray;
+// Disabled Button Colors
+
+
+/* ==========  Dropdown menu ========== */
+
+
+/* ==========  Tooltips  ========== */
+
+
+/* ==========  Footer  ========== */
+
+
+/*mega-footer*/
+
+
+/*mini-footer*/
+
+/* ========== Menu ========== */
+
+
+/* ========== Animation ========== */
+
+
+/* ========== Badge ========== */
+
+
+
+/* ========== Shadows ========== */
+$shadow-key-umbra-opacity: 0.2 !default;
+$shadow-key-penumbra-opacity: 0.14 !default;
+$shadow-ambient-shadow-opacity: 0.12 !default;
+
+
+
+
+/* ========== Data Table ========== */
+$data-table-font-size: 13px !default;
+$data-table-header-font-size: 12px !default;
+
+$data-table-header-color: rgba(#000, 0.54) !default;
+$data-table-divider-color: rgba(#000, 0.12) !default;
+
+$data-table-hover-color: #eeeeee !default;
+$data-table-selection-color: #e0e0e0 !default;
+
+$data-table-dividers: 1px solid $data-table-divider-color !default;
+
+$data-table-row-height: 48px !default;
+$data-table-last-row-height: 56px !default;
+$data-table-header-height: 56px !default;
+
+$data-table-column-spacing: 36px !default;
+$data-table-column-padding: $data-table-column-spacing / 2;
+
+$data-table-card-header-height: 64px !default;
+$data-table-card-title-top: 20px !default;
+$data-table-card-padding: 24px !default;
+$data-table-button-padding-right: 16px !default;
+$data-table-cell-top: $data-table-card-padding / 2;
+
+/* ========== Tooltip ========== */
+
+
+
+/* ========== Alert ========== */
+
+
+
+/* ========== Collapsible ========== */
+
+
+
+/* ========== Toast ========== */
+$toast-height: 48px !default;
+$toast-font-size: 14px !default;
+$toast-color: $color-rifle-green !default;
+$toast-text-color: $color-white !default;
+$toast-top-height: $navbar-height !default;
+
+
+
+/* ========== Media Query Size ========== */
+
+$breakpoint-notebook: 1280px;
+$breakpoint-tablet-landscape: 1024px;
+$breakpoint-tablet: 999px;
+$breakpoint-tablet-768: 768px;
+$breakpoint-tablet-650: 650px;
+$breakpoint-mobile: 480px;
+$breakpoint-mobile-320: 320px;

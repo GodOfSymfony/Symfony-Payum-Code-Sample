@@ -1,0 +1,24 @@
+payum:
+  security:
+    token_storage:
+      App\Entity\PaymentToken: { doctrine: orm }
+
+  storages:
+    App\Entity\Payment: { doctrine: orm }
+
+  gateways:
+    core:
+      payum.template.layout: templates/layout.html.twig
+      payum.template.obtain_credit_card: templates/Payment/form_credit_card.html.twig
+
+    authorize_net:
+      factory: authorize_net_aim
+      login_id: '%env(ANET_LOGIN_ID)%'
+      transaction_key: '%env(ANET_TRANSACTION_KEY)%'
+      sandbox: true
+
+    banquest_gateway_payment:
+      factory: banquest_gateway
+      source_key: '%env(BANQUEST_SOURCE_KEY)%'
+      source_pin: '%env(BANQUEST_SOURCE_PIN)%'
+      sandbox: '%env(BANQUEST_SANDBOX)%'

@@ -1,0 +1,321 @@
+@import "../globals/variables";
+
+div.container-ckeditor {
+	@include font-base(14px, normal, $color-old-lavender, normal, left, 100%, $font-family-base);
+	background-color: $color-white;
+	padding: 15px;
+	margin: 10px 0px 20px 0px;
+
+	h1 {
+		@include font-base(inherit, normal, inherit, normal, inherit, 100%, $font-family-demi-bold);
+	}
+	h2 {
+		@include font-base(inherit, normal, inherit, normal, inherit, 100%, $font-family-demi-bold);
+	}
+	h3 {
+		@include font-base(inherit, normal, inherit, normal, inherit, 100%, $font-family-demi-bold);
+	}
+	h4 {
+		@include font-base(inherit, normal, inherit, normal, inherit, 100%, $font-family-demi-bold);
+	}
+	blockquote {
+
+	}
+	div {
+		@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+		iframe {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	p {
+		@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+		span {
+			@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+		}
+	}
+	a {
+		@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+		text-decoration: none;
+		span {
+			@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+		}
+		strong {
+			@include font-base(inherit, normal, inherit, normal, inherit, 100%, $font-family-demi-bold);
+			p {
+				@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+				a {
+					@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+					text-decoration: none;
+				}
+			}
+			a {
+				@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+				text-decoration: none;
+			}
+		}
+	}
+	span {
+		@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+		strong {
+			@include font-base(inherit, normal, inherit, normal, inherit, 100%, $font-family-demi-bold);
+			p {
+				@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+				a {
+					@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+					text-decoration: none;
+				}
+			}
+			a {
+				@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+				text-decoration: none;
+			}
+		}
+		a {
+			@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+			text-decoration: none;
+			span {
+				@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+			}
+			strong {
+				@include font-base(inherit, normal, inherit, normal, inherit, 100%, $font-family-demi-bold);
+				p {
+					@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+					a {
+						@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+						text-decoration: none;
+					}
+				}
+				a {
+					@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	strong {
+		@include font-base(inherit, normal, inherit, normal, inherit, 100%, $font-family-demi-bold);
+		p {
+			@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+			a {
+				@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+				text-decoration: none;
+			}
+		}
+		a {
+			@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+			text-decoration: none;
+		}
+	}
+	em {
+		@include font-base(inherit, normal, inherit, normal, inherit, 100%, $font-family-demi-bold);
+		p {
+			@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+			a {
+				@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+				text-decoration: none;
+			}
+		}
+		a {
+			@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+			text-decoration: none;
+			strong {
+				@include font-base(inherit, normal, inherit, normal, inherit, 100%, $font-family-demi-bold);
+				p {
+					@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+					a {
+						@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+						text-decoration: none;
+					}
+				}
+				a {
+					@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+					text-decoration: none;
+					p {
+						@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+					}
+				}
+				p {
+					@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+					a {
+						@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+						text-decoration: none;
+					}
+				}
+			}
+		}
+		strong {
+			@include font-base(inherit, normal, inherit, normal, inherit, 100%, $font-family-demi-bold);
+			p {
+				@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+				a {
+					@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+					text-decoration: none;
+				}
+			}
+			a {
+				@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+				text-decoration: none;
+			}
+			em {
+				@include font-base(inherit, normal, inherit, normal, inherit, 100%, $font-family-demi-bold);
+				p {
+					@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+					a {
+						@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+						text-decoration: none;
+					}
+				}
+				a {
+					@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+					text-decoration: none;
+					strong {
+						@include font-base(inherit, normal, inherit, normal, inherit, 100%, $font-family-demi-bold);
+						p {
+							@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+							a {
+								@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+								text-decoration: none;
+							}
+						}
+						a {
+							@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+							text-decoration: none;
+							p {
+								@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+							}
+						}
+						p {
+							@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+							a {
+								@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+								text-decoration: none;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		ul, ol {
+			li {
+				@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+				a {
+					@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+					text-decoration: none;
+				}
+				p {
+					@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+				}
+				strong {
+					@include font-base(inherit, normal, inherit, normal, inherit, 100%, $font-family-demi-bold);
+					p {
+						@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+						a {
+							@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+							text-decoration: none;
+						}
+					}
+					a {
+						@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+						text-decoration: none;
+					}
+					em {
+						@include font-base(inherit, normal, inherit, normal, inherit, 100%, $font-family-demi-bold);
+						p {
+							@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+							a {
+								@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+								text-decoration: none;
+							}
+						}
+						a {
+							@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+							text-decoration: none;
+							strong {
+								@include font-base(inherit, normal, inherit, normal, inherit, 100%, $font-family-demi-bold);
+								p {
+									@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+									a {
+										@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+										text-decoration: none;
+									}
+								}
+								a {
+									@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+									text-decoration: none;
+									p {
+										@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+									}
+								}
+								p {
+									@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+									a {
+										@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+										text-decoration: none;
+									}
+								}
+							}
+						}
+					}
+					em {
+						@include font-base(inherit, normal, inherit, normal, inherit, 100%, $font-family-demi-bold);
+						p {
+							@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+							a {
+								@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+								text-decoration: none;
+							}
+						}
+						a {
+							@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+							text-decoration: none;
+							strong {
+								@include font-base(inherit, normal, inherit, normal, inherit, 100%, $font-family-demi-bold);
+								p {
+									@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+									a {
+										@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+										text-decoration: none;
+									}
+								}
+								a {
+									@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+									text-decoration: none;
+									p {
+										@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+									}
+								}
+								p {
+									@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+									a {
+										@include font-base(inherit, normal, inherit, normal, inherit, 100%, inherit);
+										text-decoration: none;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	img {
+		width: 100%;
+		height: auto;
+	}
+	figure {
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	iframe {
+		width: 100%;
+		height: auto;
+	}
+}

@@ -1,0 +1,70 @@
+#municipality-index {
+  .listing-data {
+    .info .name {
+      @include font-base(14px, normal, $color-old-lavender, inherit, left, 19px, $font-family-base);
+      &-bold {
+        @include font-base(14px, normal, $color-payne-grey, Capitalize, left, 19px, $font-family-demi-bold);
+        padding: 0;
+        margin: 0;
+      }
+      span {
+        &.verified {
+          margin-left: 0;
+          margin-right: 5px;
+          @include font-base(14px, normal, $color-slate-gray, Capitalize, left, 19px, $font-family-demi-bold);
+          min-width: 75px;
+          text-align: center;
+          padding: 3px 5px 1px;
+        }
+        &.user-count {
+          min-width: 75px;
+          padding: 5px 5px 3px;
+          margin-left: 0;
+          margin-right: 5px;
+          text-align: center;
+
+          span {
+            padding: 0;
+            margin: 0;
+            @include font-base(14px, normal, $color-old-lavender, inherit, left, 16px, $font-family-base);
+          }
+        }
+
+        &.icon-contact {
+          padding: 0;
+          margin: -2px 5px 0 0;
+          vertical-align: middle;
+        }
+      }
+
+      &.phone-mail {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        .icon-single_user {
+          padding-right: 0;
+          margin-right: 5px;
+        }
+      }
+    }
+    .contactPhone {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      a {
+        margin-left: 5px;
+        margin-top: 0;
+        text-align: left;
+      }
+    }
+  }
+
+  table.data-table tbody tr td:last-child{
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    min-width: 65px;
+  }
+
+}

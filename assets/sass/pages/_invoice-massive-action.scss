@@ -1,0 +1,217 @@
+@import '../globals/mixins';
+
+#invoice-massive-action {
+
+    .container-invoice-color {
+        padding: 20px 20px 20px 20px;
+        &.paid {
+            background-color: $color-dark-sea-green;
+        }
+        &.unpaid {
+            background-color: $color-rifle-green;
+        }
+        &.pastdue {
+            background-color: $color-dark-coral;
+        }
+        & > div.row {
+            & > div.col-8 {
+                .title-invoice {
+                    @include font-base(24px, normal, $color-white, normal, left, 100%, $font-family-demi-bold);
+                    margin-bottom: 20px;
+                }
+                .text-invoice {
+                    @include font-base(14px, normal, $color-white, normal, left, 100%, $font-family-base);
+                    margin-bottom: 10px;
+                    span {
+                        @include font-base(14px, normal, $color-white, normal, left, 100%, $font-family-demi-bold);
+                    }
+                }
+            }
+
+            & > div.col-4 {
+                & > div.row {
+                    & > div {
+                        .text-date-invoice {
+                            @include font-base(16px, normal, $color-white, normal, right, 100%, $font-family-base);
+                        }
+                        .date-invoice {
+                            @include font-base(18px, normal, $color-white, normal, right, 100%, $font-family-demi-bold);
+                        }
+                        .img-invoice-side {
+                            width: 100%;
+                            height: auto;
+                            margin-top: -20px;
+                            margin-right: -20px;
+                        }
+                        .price-invoice {
+                            @include font-base(36px, normal, $color-white, normal, right, 100%, $font-family-demi-bold);
+                            padding-right: 25px;
+                            margin-bottom: 0px;
+                        }
+                        .text-price-invoice {
+                            @include font-base(24px, normal, $color-white, normal, center, 100%, $font-family-demi-bold);
+                            padding: 15px 0px;
+                            border-left: solid 1px $color-white;
+                            margin-bottom: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /**/
+    div.paid-options-invoice {
+        text-align: right;
+        margin: -15px -30px 0px 0px;
+        font-size: 0px;
+        & > a {
+            display: inline-block;
+            margin-left: 0px;
+            margin-right: 0px;
+            @include font-base(14px, normal, $color-white, none, left, 100%, $font-family-base);
+            padding: 10px 25px;
+            background-color: $color-dark-sea-green;
+            & > span {
+                display: inline-block;
+                @include font-base(14px, normal, $color-white, none, left, 100%, $font-family-demi-bold);
+            }
+            &:last-child {
+                border-left: solid 1px $color-white;
+            }
+        }
+    }
+    /**/
+
+    .title-detail-invoice {
+        @include font-base(18px, normal, $color-old-lavender, normal, left, 100%, $font-family-demi-bold);
+        margin-bottom: 30px;
+    }
+    .paid-detail-invoice {
+        @include font-base(18px, normal, $color-old-lavender, normal, left, 100%, $font-family-demi-bold);
+        margin-bottom: 30px;
+        & > span {
+            & > span {
+                @include font-base(16px, normal, $color-old-lavender, normal, left, 100%, $font-family-base);
+            }
+            @include font-icon(18px, $color-payne-grey);
+            float: right;
+            &:before {
+                float: left;
+                margin-right: 10px;
+                margin-top: 3px;
+            }
+        }
+    }
+
+    div.container-files-invoice {
+        p {
+            @include font-base(18px, normal, $color-old-lavender, normal, left, 100%, $font-family-demi-bold);
+            margin-top: 40px;
+        }
+        ul {
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+            li {
+                list-style: none;
+                padding: 0px;
+                margin: 0px;
+                display: block;
+                border-bottom: solid 2px $color-white-smoke;
+                margin-bottom: 2px;
+                &:first-child {
+                    border-top: solid 2px $color-white-smoke;
+                }
+                p {
+                    @include font-base(16px, normal, $color-old-lavender, normal, left, 100%, $font-family-base);
+                    padding: 12px 0px 13px 0px;
+                    margin: 0px 0px;
+                    & > span {
+                        @include font-icon(25px, $color-slate-gray);
+                        float: left;
+                        margin-top: -5px;
+                        margin-right: 10px;
+                    }
+                    & > a {
+                        display: inline-block;
+                        background-color: $color-slate-gray;
+                        float: right;
+                        padding: 10px 15px;
+                        margin-top: -14px;
+                        & > span {
+                            @include font-icon(20px, $color-white);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .page-break-before {
+        page-break-before: always;
+    }
+
+    /*Printer styles start*/
+    @media print {
+        div.container-invoice-color {
+            border-bottom: solid 2px #000000;
+            div.row {
+                div.col-4 {
+                    div.row {
+                        div.col-7 {
+                            float: none;
+                            width: 100%;
+                            text-align: right;
+                            p.price-invoice {
+                                padding-right: 0px;
+                            }
+                        }
+                        div.col-5 {
+                            float: none;
+                            width: 100%;
+                            text-align: right;
+                            p {
+                                border-left: none;
+                                text-align: right;
+                            }
+                        }
+                        &:first-child {
+                            .col-6.text-align-right {
+                                width: 100%;
+                                text-align: right;
+                                &:last-child {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+	/*Printer styles end*/
+
+    div.back-color-white {
+        div.col-6{
+            width: 100%;
+        }
+    }
+
+    /*Styles PDF*/
+
+    div.container-invoice-color {
+        div.row {
+            div.col-8 {
+                width: 50%;
+            }
+            div.col-4 {
+                width: 50%;
+            }
+        }
+    }
+    @media media {
+        div.back-color-white {
+            min-height: 100vh;
+        }
+    }
+}

@@ -1,0 +1,682 @@
+@import "../globals/variables.scss";
+@import "../globals/mixins.scss";
+
+.menu-finder {
+	position: relative;
+	height: 67px;
+	&>.col-2, &>.col-10 {
+		height: 67px;
+		position: relative;
+	}
+	&>.col-10 {
+		height: 67px;
+		position: relative;
+	}
+
+	@media (min-width: $breakpoint-tablet-768) and (max-width: $breakpoint-tablet) {
+		&>.col-2 {
+			width: 30%;
+		}
+		&>.col-10 {
+			width: 69%;
+		}
+	}
+	@media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet-768) {
+		&>.col-2 {
+			width: 40%;
+		}
+		&>.col-10 {
+			width: 60%;
+		}
+	}
+	@media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet-650) {
+		&>.col-2 {
+			width: 50%;
+		}
+		&>.col-10 {
+			width: 50%;
+		}
+	}
+	@media (max-width: $breakpoint-mobile) {
+		margin-bottom: 0px;
+		&>.col-2 {
+			display: none!important;
+		}
+		&>.col-10 {
+			width: 100%!important;
+		}
+	}
+
+	div.top-logo {
+		background-color: $color-white-smoke;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: stretch;
+		justify-content: center;
+		&>a:first-child {
+			padding: 10px 10px;
+			min-width: 100px;
+		}
+		&>a {
+			position: relative;
+			width: 100%;
+			display: inline-block;
+			float: left;
+			font-size: 30px;
+			cursor: pointer;
+			text-align: center;
+			height: 100%;
+			text-decoration: none;
+			text-shadow: none;
+			&.logo-header {
+				text-align: center;
+				width: 100%;
+				background-color: $color-white;
+				img {
+					width: 100%;
+					height: auto;
+					max-width: 58px;
+					display: block;
+					margin: auto;
+				}
+			}
+			&.btn-config {
+				width: 100%;
+				&>span {
+					color: #505050;
+					text-decoration: none;
+					position: absolute;
+					top: 50%;
+					left: 0px;
+					right:0px;
+					margin: -15px auto auto auto;
+				}
+				@media (max-width:$breakpoint-mobile) {
+					margin-top: 14%;
+				}
+			}
+			&.btn-onOff {
+				width: 100%;
+				&>span {
+					color: #505050;
+					text-decoration: none;
+					text-shadow: none;
+					position: absolute;
+					top: 50%;
+					left: 0px;
+					right: 0px;
+					margin: -15px auto auto auto;
+				}
+				@media (max-width:$breakpoint-mobile) {
+					margin-top: 14%;
+				}
+			}
+			&:after {
+				content: " ";
+				display: block;
+				clear: both;
+			}
+		}
+		ul {
+			padding: 0px;
+			margin: 0px;
+			height: 100%;
+			li {
+				list-style: none;
+				width: 30%;
+				float: left;
+				display: inline-block;
+				a {
+					&.logo-header {
+						display: block;
+						padding: 0% 10%;
+						img {
+							width: 100%;
+							height: auto;
+							max-width: 150px;
+							display: block;
+							margin-top: 10px;
+						}
+					}
+					display: block;
+					width: 100%;
+					font-size: 30px;
+					cursor: pointer;
+					text-align: center;
+					line-height: 2.5!important;
+					&.btn-config {
+						&>span {
+							color: #505050;
+						}
+					}
+					&.btn-onOff {
+						&>span {
+							color: #505050;
+							text-decoration: none;
+							box-shadow: 0px;
+						}
+					}
+				}
+				&:first-child {
+					background-color: $color-white;
+				}
+			}
+			&:after {
+				content: " ";
+				display: block;
+				clear: both;
+			}
+		}
+		&:after {
+			content: " ";
+			display: block;
+			clear: both;
+		}
+	}
+
+	div.header-finder {
+		width: 100%;
+		padding: 0 0 0 2%;
+		background-color: $color-payne-grey;
+		position: relative;
+		float: left;
+		height: 67px;
+		&>a {
+			display: block;
+			width: 10%;
+			max-width: 90px;
+			height: 100%;
+			background-color: $color-liver;
+			position: absolute;
+			right: 0px;
+			top: 0px;
+			cursor: pointer;
+			height: 67px;
+			z-index: 999;
+			span {
+				display: block;
+				position: absolute;
+				top: 50%;
+				margin-top: -27px;
+				left: 50%;
+				margin-left: -27px;
+				width: 53px;
+				height: 51px;
+				img {
+					width:100%;
+					height: auto;
+				}
+			}
+			&:hover {
+				span {
+					opacity: 0.5;
+					filter: alpha(opacity=50);
+				}
+			}
+			@media (max-width: $breakpoint-tablet) {
+				width: 70px;
+				span {
+					width: 45px;
+					height: 45px;
+					margin-top: -22px;
+					left: 50%;
+					margin-left: -22px;
+					img {
+						width: 45px;
+						height: auto;
+					}
+				}
+			}
+			@media(max-width: $breakpoint-mobile) {
+				width: 50px;
+				span {
+					width: 35px;
+					height: 35px;
+					margin-top: -17px;
+					left: 50%;
+					margin-left: -17px;
+					img {
+						width: 35px;
+						height: auto;
+					}
+				}
+			}
+		}
+		input {
+			@include font-base(16px, normal, $color-white-smoke, capitalize, left, 100%, $font-family-base);
+			padding: 0 110px 0 40px;
+			width: 100%;
+			background: transparent;
+			border: none;
+			height: 67px;
+			@include back-img('general', 'icon_search.svg', no-repeat, left center, inherit);
+
+			&:focus {
+				outline: none;
+			}
+			&::-webkit-input-placeholder {
+				@include font-base(16px, normal, $color-white-smoke, none, left, 100%, $font-family-base);
+			}
+			&::-moz-placeholder {
+				@include font-base(16px, normal, $color-white-smoke, none, left, 100%, $font-family-base);
+			}
+			&:-ms-input-placeholder {
+				@include font-base(16px, normal, $color-white-smoke, none, left, 100%, $font-family-base);
+			}
+			&:-moz-placeholder {
+				@include font-base(16px, normal, $color-white-smoke, none, left, 100%, $font-family-base);
+			}
+			@media (max-width: $breakpoint-tablet) {
+				padding-right: 80px;
+			}
+			@media (max-width: $breakpoint-mobile) {
+				background-position: left 5px top 20px;
+				background-size: 20px;
+			}
+		}
+		.finder-add-new {
+			-webkit-transition: width 0.5s, height 1s;
+			transition: width 0.5s, height 1s;
+		}
+	}
+
+}
+
+.finder-add-new {
+	display: block;
+	width: 0%;
+	height: 100%;
+	background-color: $color-liver;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	overflow: hidden;
+
+	ul.btns-add-new {
+		padding: 0px 0px 0px 10px;
+		margin: 8px 0px;
+		width: 100%;
+		li {
+			list-style: none;
+			display: inline-block;
+			margin-right: 15px;
+			&>p {
+				display: block;
+				@include font-base(14px, normal, $color-isabelline, uppercase, left, 100%, $font-family-demi-bold);
+				padding: 5px 15px;
+			}
+			&>a {
+				display: block;
+				@include font-base(14px, normal, $color-dark-sea-green, capitalize, left, 100%, $font-family-base);
+				padding: 5px 15px;
+				border: solid 1px $color-dark-sea-green;
+				text-decoration: none!important;
+				&:hover {
+					background-color: $color-dark-sea-green;
+					color: $color-liver;
+					font-weight: $font-family-demi-bold;
+					cursor: pointer;
+				}
+			}
+			&:last-child {
+				margin-right: 0px;
+			}
+			@media (max-width: $breakpoint-tablet-768) {
+				&:last-child {
+					margin-right: 15px;
+					margin-left: 15px;
+				}
+				margin-left: 15px;
+			}
+
+		}
+	}
+	@media (max-width: $breakpoint-tablet) {
+		overflow: visible;
+		z-index: 999;
+		ul.btns-add-new {
+			height: auto;
+			background-color: $color-liver;
+			overflow: hidden;
+			padding: 0px;
+			&>li {
+				display: block;
+				margin-bottom: 10px;
+				&:first-child {
+					height: 60px;
+				}
+			}
+		}
+	}
+}
+
+.header-finder.active {
+	@media (max-width: $breakpoint-mobile) {
+		ul {
+			padding: 0px 15px 20px 15px;
+			li {
+				&:last-child {
+					margin-right: 15px;
+				}
+			}
+		}
+	}
+	&>a {
+		span {
+			-webkit-animation-name: spin;
+			-webkit-animation-duration: 500ms;
+			-webkit-animation-timing-function: linear;
+			@-ms-keyframes spin {
+				from {
+					-ms-transform: rotate(0deg);
+				}
+				to {
+					-ms-transform: rotate(45deg);
+				}
+			}
+			@-moz-keyframes spin {
+				from {
+					-moz-transform: rotate(0deg);
+				}
+				to {
+					-moz-transform: rotate(45deg);
+				}
+			}
+			@-webkit-keyframes spin {
+				from {
+					-webkit-transform: rotate(0deg);
+				}
+				to {
+					-webkit-transform: rotate(45deg);
+				}
+			}
+			@keyframes spin {
+				from {
+					transform:rotate(0deg);
+				}
+				to {
+					transform:rotate(45deg);
+				}
+			}
+			-webkit-transform: rotate(45deg);
+			transform:rotate(45deg);
+		}
+	}
+
+	.finder-add-new {
+		width: 100%;
+		-webkit-transition: width 0.5s, height 1s;
+		transition: width 0.5s, height 1s;
+	}
+}
+.header-finder {
+	/*&>a:hover {
+		span {
+			-webkit-animation-name: spin;
+			-webkit-animation-duration: 500ms;
+			-webkit-animation-timing-function: linear;
+			@-ms-keyframes spin {
+				from {
+					-ms-transform: rotate(0deg);
+				}
+				to {
+					-ms-transform: rotate(45deg);
+				}
+			}
+			@-moz-keyframes spin {
+				from {
+					-moz-transform: rotate(0deg);
+				}
+				to {
+					-moz-transform: rotate(45deg);
+				}
+			}
+			@-webkit-keyframes spin {
+				from {
+					-webkit-transform: rotate(0deg);
+				}
+				to {
+					-webkit-transform: rotate(45deg);
+				}
+			}
+			@keyframes spin {
+				from {
+					transform:rotate(0deg);
+				}
+				to {
+					transform:rotate(45deg);
+				}
+			}
+			-webkit-transform: rotate(45deg);
+			transform:rotate(45deg);
+		}
+	}*/
+}
+/*Search box container*/
+.container-blur-search {
+	position: absolute;
+	top: 67px;
+	left: 0px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.15);
+	z-index: 999;
+	height: 0px;
+	overflow: hidden;
+	&.active {
+		height: 100%;
+	}
+	@media(max-width:$breakpoint-mobile) {
+		width: 100%!important;
+		left: 0%!important;
+	}
+	@media (max-width: $breakpoint-tablet) {
+		width: 143%;
+		left: -43%;
+	}
+}
+.container-search {
+	width: -webkit-calc(100% - 90px);
+	width:    -moz-calc(100% - 90px);
+	width:         calc(100% - 90px);
+
+	background-color: $color-white;
+	height: auto;
+	-webkit-box-shadow: 0px 4px 9px -2px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 4px 9px -2px rgba(0,0,0,0.75);
+	box-shadow: 0px 4px 9px -2px rgba(0,0,0,0.75);
+	@media (max-width: $breakpoint-mobile) {
+		width: 100%;
+	}
+	@media (max-width: $breakpoint-tablet) {
+		width: 100%;
+		z-index: 9999999;
+		width: -webkit-calc(100% - 70px);
+		width:    -moz-calc(100% - 70px);
+		width:         calc(100% - 70px);
+	}
+	@media (max-width: $breakpoint-tablet-768) {
+		width: 100%;
+	}
+
+	div.search-item-finder-searching {
+		display: none;
+		text-align: center;
+		border-bottom: 4px solid $color-white-smoke;
+		img {
+			width: 60px;
+			height: 60px;
+			margin: 50px auto;
+			display: inline-block;
+		}
+		&.active {
+			display: block;
+		}
+	}
+	div.result-container {
+		div.search-item-finder {
+			display: flex;
+			align-items: stretch;
+			justify-content: flex-start;
+			border-bottom: 4px solid $color-white-smoke;
+			padding: 10px 25px;
+			&:hover {
+				background-color: $color-snow;
+				cursor: pointer;
+				border-bottom: 4px solid $color-white-smoke;
+			}
+			&:after {
+				content: " ";
+				display: block;
+				clear: both;
+			}
+			.name {
+				@include font-base(14px, normal, $color-payne-grey, normal, left, 100%, $font-family-demi-bold);
+				display: block;
+				padding: 5px 0 8px;
+				span {
+					color: $color-payne-grey;
+					font-size: 16px;
+					margin-right: 10px;
+					&.verified {
+						@include font-base(14px!important, normal, $color-payne-grey, normal, right, 100%, $font-family-demi-bold);
+						display: inline-block;
+						background-color: $color-white-smoke;
+						padding: 5px 15px;
+					}
+					&.icon-contact {
+						float: left;
+						margin-top: 1px;
+					}
+				}
+
+				+ .name{
+					@include font-base(14px!important, normal, $color-rifle-green, inherit, left, 19px, $font-family-base);
+				}
+			}
+			.text-align-right{
+				display: flex;
+				align-items: flex-end;
+				justify-content: flex-end;
+				flex-wrap: wrap;
+			}
+
+			.enabled {
+				@include font-base(14px, normal, $color-dark-coral, normal, right, 100%, $font-family-base);
+				display: block;
+				padding: 5px 15px;
+				span {
+					color: $color-payne-grey;
+					font-size: 20px;
+				}
+			}
+			.contactPhone {
+				@include font-base(14px!important, normal, $color-rifle-green, inherit, left, 19px, $font-family-base);
+				display: inline-block;
+				padding: 5px 15px;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				span {
+					color: $color-payne-grey;
+					font-size: 14px;
+					margin-right: 10px;
+					&.icon-phone {
+					}
+				}
+			}
+		}
+		div.search-item-finder-result {
+			padding: 20px;
+			background-color: $color-white;
+			text-align: center;
+			a {
+				display: block;
+				@include font-base(14px, normal, $color-old-lavender, uppercase, center, 100%, $font-family-demi-bold);
+			}
+		}
+	}
+
+	ul {
+		width: 100%;
+		padding: 0px 0px 0px 1px;
+		margin: 0px;
+		font-size: 0px;
+		li {
+			padding: 0px;
+			margin: 0px;
+			display: inline-block;
+			width: 16.66%;
+			border-top: solid 8px $color-payne-grey;
+			background-color: $color-white-smoke;
+			@media (max-width: $breakpoint-tablet) {
+				vertical-align: top;
+			}
+			a, span {
+				display: block;
+				@include font-base(16px, normal, $color-old-lavender, capitalize, center, 100%, $font-family-demi-bold);
+				padding: 8% 3%;
+				cursor: pointer;
+				@media (max-width: $breakpoint-tablet) {
+					min-height: 53px;
+				}
+			}
+			&.active {
+				border-top: solid 8px $color-white;
+				background-color: $color-white;
+				a {
+					@include font-base(16px, normal, $color-payne-grey, capitalize, center, 100%, $font-family-demi-bold);
+				}
+			}
+			&.empty {
+				a {
+					@include font-base(16px, normal, $color-old-lavender, capitalize, center, 100%, $font-family-demi-bold);
+					opacity: 0.5;
+					filter: alpha(opacity=50);
+				}
+			}
+			&:hover {
+				border-top: solid 8px $color-white;
+				background-color: $color-white;
+				a {
+					@include font-base(16px, normal, $color-payne-grey, capitalize, center, 100%, $font-family-demi-bold);
+				}
+			}
+			&.disabled {
+				float: right;
+				span{
+					cursor: default;
+				}
+				&:hover {
+					border-top: solid 8px $color-payne-grey;
+					background-color: $color-white-smoke;
+				}
+			}
+		}
+	}
+}
+
+.open-menu-tablet {
+	display: none!important;
+	text-align: center;
+	background-color: $color-payne-grey;
+	&>span {
+		width: 40px;
+		height: 40px;
+		margin: auto;
+		font-size: 20px;
+		color: $color-white;
+		&.icon-menu-mobile {
+			@include back-img('menu', 'BtnMobileDashs.png', no-repeat, center, contain);
+			display: block;
+			width: 30px;
+			height: 30px;
+			margin: auto;
+			margin-top: 17px;
+		}
+	}
+	@media (max-width: $breakpoint-tablet) and (min-width: $breakpoint-mobile) {
+		display: inline-block!important;
+	}
+}

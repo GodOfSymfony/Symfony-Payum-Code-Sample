@@ -1,0 +1,552 @@
+@import '../globals/mixins';
+
+#review-index {
+	.contactEmail {
+		display: inline-block;
+		float: left;
+		span {
+			@include font-icon(15px, $color-payne-grey);
+		}
+		a {
+			@include font-base(14px, normal, $color-old-lavender, none, right, 100%, $font-family-base);
+			float: right;
+			margin-left: 5px;
+			margin-top: 0;
+		}
+	}
+	.contactPhone {
+		display: inline-block;
+		@include font-base(14px, normal, $color-payne-grey, none, left, 100%, $font-family-demi-bold);
+		span {
+			@include font-icon(15px, $color-payne-grey);
+		}
+		a {
+			@include font-base(14px, normal, $color-old-lavender, none, right, 100%, $font-family-base);
+			float: right;
+			margin-left: 7px;
+			margin-top: 2px;
+		}
+		@media (max-width: $breakpoint-mobile) {
+			span {
+				font-size: 16px;
+			}
+			a {
+				font-size: 12px;
+				margin-left: 0px;
+				text-align: left;
+			}
+		}
+	}
+	.info-user{
+		display: flex;
+		align-items: stretch;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+
+		&:after{
+			display: none;
+		}
+		.col-12{
+			width: 100%;
+		}
+		.col-1{
+			width: 10%;
+		}
+		.col-6{
+			display: flex;
+			align-items: flex-start;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			width: 50%;
+
+			.address{
+				width: 100%;
+				align-self: flex-start;
+			}
+			.contactEmail{
+				width: 100%;
+				align-self: flex-end;
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+			}
+		}
+		.col-5{
+			display: flex;
+			align-items: flex-start;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			width: 40%;
+			padding-right: 30px;
+
+			.extrainfo{
+				width: 100%;
+				align-self: flex-start;
+			}
+			.contactPhone{
+				width: 100%;
+				align-self: flex-end;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+			}
+		}
+
+		&.municipality{
+
+			span {
+				&.verified {
+					margin-left: 0;
+					margin-right: 5px;
+					@include font-base(14px, normal, $color-slate-gray, Capitalize, left, 19px, $font-family-demi-bold);
+					min-width: 75px;
+					text-align: center;
+					padding: 3px 5px 1px;
+					background-color: $color-white-smoke;
+					display: inline-block;
+					letter-spacing: 0.02rem;
+				}
+				&.user-count {
+					@include font-base(14px, normal, $color-payne-grey, none, left, 100%, $font-family-demi-bold);
+					min-width: 75px;
+					padding: 5px 5px 3px;
+					margin-left: 0;
+					margin-right: 5px;
+					text-align: center;
+
+					span {
+						padding: 0;
+						margin: 0;
+						@include font-base(14px, normal, $color-old-lavender, inherit, left, 16px, $font-family-base);
+					}
+				}
+
+				&.phone-mail{
+					@include font-base(14px, normal, $color-old-lavender, none, right, 100%, $font-family-base);
+					margin-top: 16px;
+					display: inline-block;
+					width: 100%;
+
+					.icon-single_user{
+						color: $color-payne-grey;
+					}
+				}
+
+				&.contactPhone{
+					align-self: center;
+				}
+
+
+			}
+
+
+		}
+	}
+	div.switch-conteiner{
+		right: 3.5%;
+		top: 15px;
+	}
+	&>div.container-page>div.page-body>div.content-wrapper>main.content {
+		&>h1 {
+			width: 100%;
+			margin: 50px 0 30px;
+			&>span {
+				@include font-base(24px, normal, $color-slate-gray, capitalize, left, 100%, $font-family-demi-bold);
+				@media (max-width: $breakpoint-tablet-768) {
+					width: 100%;
+					display: block;
+					margin-bottom: 10px;
+				}
+				@media (max-width: $breakpoint-mobile) {
+					font-size: 18px;
+					width: 100%;
+					display: block;
+				}
+			}
+			position: relative;
+			&>div {
+				&.btn-review-header-title {
+					float: right;
+				}
+				&.select, &.deny, &.approve {
+					display: inline-block;
+					margin-right: 15px;
+					a {
+						@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-demi-bold);
+					}
+				}
+				&.select {
+					a {
+						color: $color-old-lavender;
+						input {
+							display: inline-block;
+							float: left;
+							margin-right: 10px;
+							margin-top: 7px;
+						}
+					}
+				}
+				&.deny {
+					a {
+						color: $color-dark-coral;
+						span.icon-deny {
+							display: inline-block;
+							float: left;
+							@include font-icon(20px, $color-dark-coral);
+							margin-right: 10px;
+							margin-top: 3px;
+						}
+					}
+				}
+				&.approve {
+					a {
+						color: $color-dark-sea-green;
+						span.icon-confirm {
+							float: left;
+							display: inline-block;
+							@include font-icon(20px, $color-dark-sea-green);
+							margin-right: 10px;
+							margin-top: 3px;
+						}
+					}
+					margin-right: 0px;
+				}
+			}
+			@media (max-width: $breakpoint-tablet-768) {
+				&>div {
+					width: 29%;
+					&.btn-review-header-title {
+						float: none;
+						a {
+							font-size: 11px;
+						}
+						&.select {
+							a {
+								padding-bottom: 15px;
+							}
+						}
+					}
+				}
+			}
+		}
+		/**/
+		&>div.col-12 {
+			&>div.accordion-custom {
+				&>div {
+					border-bottom: solid 2px $color-slate-gray;
+					height: 47px;
+					margin-top: 20px;
+					&:first-child {
+						margin-top: 0px;
+					}
+					&>a.review-acordion-title {
+						background-color: $color-white-smoke;
+						color: $color-old-lavender;
+						border: 2px solid $color-isabelline;
+						@include back-img('general','plane-arrow-down-blue.png', no-repeat, right 15px top 18px, none);
+						&>span {
+							@include font-icon(20px, $color-slate-gray);
+							vertical-align: middle;
+							margin: -2px 6px 0 0;
+							display: inline-block;
+						}
+						&>span.number-quantity {
+							display: block;
+							width: 20px;
+							height: 20px;
+							border-radius: 999px;
+							background-color: $color-slate-gray;
+							@include font-base(12px, normal, $color-white-smoke, none, center, 185%, $font-family-demi-bold);
+							float: right;
+							margin-right: 25px;
+						}
+					}
+					&.active {
+						height: auto!important;
+						&>a.review-acordion-title {
+							background-color: $color-slate-gray;
+							color: $color-white;
+							border: 0px solid $color-isabelline;
+							@include back-img('general','plane-arrow-up-white.png', no-repeat, right 15px top 18px, none);
+							&>span {
+								@include font-icon(20px, $color-white);
+							}
+							&>span.number-quantity {
+								background-color: $color-white;
+								@include font-base(12px, normal, $color-dark-coral, none, center, 185%, $font-family-demi-bold);
+							}
+						}
+					}
+					&>div.row {
+						background-color: $color-white;
+						border-top: solid 4px $color-white-smoke;
+						&:first-child {
+							padding-top:10px;
+							border-top: none;
+						}
+
+						&>div.col-9 {
+							margin: 8px auto;
+							&>div.col-1 {
+								position: relative;
+								input {
+									margin-top: 35%;
+									margin-left: 35%;
+								}
+							}
+							&>div.col-7 {
+								&>div.address {
+									font-family: $font-family-base;
+									color: $color-liver;
+								}
+							}
+							&>div.col-4 {
+								&>div.info-proprtie {
+									margin-right: 15px;
+								}
+							}
+						}
+						&>div.col-3 {
+							font-size: 0px;
+							border-left: 6px solid $color-platinum;
+							@media (max-width: $breakpoint-tablet-768) {
+								border-left: 0px solid $color-platinum;
+							}
+							&>a.big-button-table {
+								display: inline-block;
+								text-align: center;
+								width: 33.33%;
+								margin: 8px auto;
+								@include font-base(14px, normal, $color-old-lavender, none, center, 100%, $font-family-demi-bold);
+								&>span {
+									@include font-icon(40px, $color-white);
+									display: block;
+									margin: 10px auto;
+								}
+								&.view {
+									color: $color-old-lavender;
+									&>span {
+										@include stroke(1, $color-old-lavender);
+										color: $color-white;												}
+								}
+								&.deny {
+									color: $color-dark-coral;
+									&>span {
+										color: $color-dark-coral;
+									}
+								}
+								&.approve {
+									color: $color-dark-sea-green;
+									&>span {
+										color: $color-dark-sea-green;
+									}
+								}
+							}
+						}
+
+						.no-review{
+							@include font-base(14px, normal, $color-old-lavender, uppercase, center, 100%, $font-family-base);
+							padding: 20px;
+						}
+
+						.info{
+							.top-space{
+								width: 100%;
+								margin-top: 15px;
+								margin-bottom: 10px !important;
+							}
+
+							.address, .parcel{
+								@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+								width: 100%;
+
+								span{
+									@include font-base(14px, normal, $color-payne-grey, none, left, 100%, $font-family-demi-bold);
+
+									&.register {
+										@include font-base(12px, normal, $color-old-lavender, uppercase, center, 100%, $font-family-base);
+										background-color: $color-isabelline;
+										padding: 5px 15px 3px 15px;
+										margin-left: 15px;
+										&.require {
+											@include font-base(12px, normal, $color-coral-pink, uppercase, center, 100%, $font-family-base);
+										}
+									}
+								}
+
+								&.right{
+									text-align: right;
+								}
+							}
+							.user-credit{
+								width: 100%;
+							}
+
+							&.info-data{
+								padding-left: 10px;
+								margin: 0;
+								display: flex;
+								align-items: center;
+								justify-content: flex-end;
+								flex-wrap: wrap;
+								.date{
+									display: block;
+									width: 100%;
+									align-self: flex-start;
+									text-align: right;
+									margin-bottom: 10px;
+									@include font-base(14px, normal, $color-payne-grey, none, right, 100%, $font-family-demi-bold);
+								}
+								.entity{
+									align-self: flex-end;
+									@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+
+									.name{
+										display: inline-block;
+									}
+								}
+							}
+
+							&.info-align-right{
+								.address, .parcel{
+									text-align: right;
+								}
+							}
+						}
+
+						.municipality-fees{
+							.top-space{
+								width: 100%;
+								margin-top: 15px;
+								margin-bottom: 10px !important;
+							}
+							.repeatLastPeriod, .period,
+							.registration-fee, .renewal-fee{
+								@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+
+								span{
+									@include font-base(14px, normal, $color-payne-grey, none, left, 100%, $font-family-demi-bold);
+								}
+							}
+						}
+						.invoices{
+							div.col-6 {
+								.name{
+									a > span{
+										padding-left: 0;
+										@include font-base(14px, normal, $color-rifle-green, none, left, 100%, $font-family-base);
+									}
+								}
+								.organization{
+									@include font-base(14px, normal, $color-rifle-green, none, left, 100%, $font-family-base);
+								}
+							}
+							div.col-5 {
+								&.text-align-right {
+									&>span.price {
+										display: block;
+										width: 100%;
+										margin-top: 15px;
+										margin-bottom: 10px !important;
+										&>span {
+											@include font-base(14px, normal, $color-rifle-green, none, right, 100%, $font-family-demi-bold);
+										}
+
+									}
+									&>span.date {
+										display: block;
+										width: 100%;
+										@include font-base(14px, normal, $color-rifle-green, none, right, 100%, $font-family-base);
+										&>span.icon-calendar {
+											@include font-icon(16px, $color-slate-gray);
+											margin: auto 5px;
+										}
+										&.pastdue {
+											color: $color-dark-coral;
+											@include font-base(14px, normal, $color-dark-coral, none, right, 100%, $font-family-demi-bold);
+											&>span {
+												color: $color-charcoal;
+												font-family: $font-family-base;
+												&>span {
+													color: $color-isabelline;
+												}
+											}
+											&>span.icon-calendar {
+												color: $color-dark-coral;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#view-form-modal{
+	background: $color-white;
+
+	h1{
+		margin-bottom: 15px;
+	}
+	form.form .form-body{
+		padding: 0;
+		float: left;
+	}
+
+	.modal-footer{
+		background: $color-white;
+		height: auto;
+
+		.btn-green-small{
+			padding: 10px 10px 8px;
+			margin: 0 0 12px 0;
+
+			&:hover{
+				background-color: darken($color-dark-sea-green, 12%);
+			}
+		}
+	}
+
+	.form-column.created-by{
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		> label{
+			@include font-base(13px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+			margin-right: 5px;
+		}
+
+		> span{
+			@include font-base(13px, normal, $color-payne-grey, none, right, 100%, $font-family-demi-bold);
+		}
+	}
+
+	.datefield,
+	.textfield,
+	.selectfield{
+		+ .current-info{
+			margin-top: -13px;
+			margin-bottom: 15px;
+			@include font-base(12px, normal, $color-rifle-green, none, left, 100%, $font-family-base);
+
+			.current-label{
+				@include font-base(12px, normal, $color-rifle-green, none, left, 100%, $font-family-demi-bold);
+			}
+		}
+	}
+
+	.datefield{
+		label{
+			margin-bottom: 5px;
+		}
+		input{
+			margin-bottom: 19px;
+			margin-top: 0;
+		}
+	}
+}

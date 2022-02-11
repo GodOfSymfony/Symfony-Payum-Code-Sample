@@ -1,0 +1,112 @@
+@import "../globals/variables";
+@import "../globals/mixins";
+
+#entity-contact-form, #entity-form {
+	div.row {
+		div.page-body {
+			div.content-wrapper {
+				main {
+					div.tabs-form-links {
+						margin-bottom: 30px;
+					}
+					div.col-6.contact-list {
+						margin-right: 15px;
+						&>div.listing-data {
+							&>div.accordion-custom {
+								.collapsible-container {
+									border: 2px solid $color-isabelline	;
+									margin-bottom: 20px;
+									clear: left;
+									float: left;
+									width: 100%;
+									.action-container {
+										@include font-base(16px, normal, $color-old-lavender, none, left, 100%, $font-family-demi-bold);
+										padding: 10px 15px;
+										&>a {
+											display: inline-block;
+											float: right;
+											margin-right: 15px;
+											margin-bottom: 0;
+											&>span {
+												@include font-icon(16px, $color-slate-gray);
+												&.icon-arrow {
+													color: $color-payne-grey;
+												}
+												&.edit-action {
+													color: $color-slate-gray;
+												}
+												&.icon-remove_cancel {
+													color: $color-dark-coral;
+												}
+											}
+											&:first-child {
+												margin-right: 0px;
+											}
+										}
+									}
+									.info {
+										display: none;
+									}
+								}
+								.collapsible-container.active {
+									height:auto;
+									float: left;
+									width: 100%;
+
+									.info {
+										display: block;
+										background-color: $color-white;
+										padding: 10px 20px;
+
+										p{
+											@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+
+											span{
+												@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-demi-bold);
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					div.col-6.create {
+						&.form-body {
+							padding-left: 15px;
+							margin-left: -15px;
+							margin-right: 0px;
+							p.title-block-filter {
+								margin: 20px 0px 0px 0px;
+								padding: 40px 35px 5px 35px;
+								border: 0px;
+								@include font-base(18px, normal, $color-old-lavender, none, left, 100%, $font-family-demi-bold);
+							}
+							fieldset {
+								&>h3 {
+									@include font-base(18px, normal, $color-old-lavender, none, left, 100%, $font-family-demi-bold);
+									padding: 40px 35px 5px 35px;
+									margin: 0px;
+									background-color: $color-white;
+								}
+							}
+							form.form {
+								padding: 5px 35px 0px 35px !important;
+								div.form-row {
+									width: 100%;
+									&:first-child {
+										margin-top: 20px;
+									}
+								}
+								div.form-footer {
+									.btn-green-big {
+										padding: 5% 4%;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

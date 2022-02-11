@@ -1,0 +1,237 @@
+@import '../globals/mixins';
+
+#property-renewal-form,
+#property-inspection-form,
+#property-deregister-form {
+	.container-btn-back{
+		margin-bottom: 30px;
+	}
+
+	h1.content-box-title {
+		div.content-box-support {
+			float: right;
+			cursor: pointer;
+			&.content-btn{
+				text-align: right;
+
+				.button.waves-effect{
+					display: inline-block;
+					vertical-align: middle;
+					margin: -3px 0 0;
+					padding: 5px 15px;
+					border: 1px solid $color-payne-grey;
+					@include font-base(14px, normal, $color-old-lavender, capitalize, center, 19px, $font-family-demi-bold);
+
+					&:hover{
+						background-color: $color-payne-grey;
+						color: $color-white
+					}
+				}
+			}
+			.logs-form{
+				float: left;
+				margin-right: 10px;
+				display: inline-flex;
+				div {
+					a {
+						display:inline-block;
+						@include font-base(14px, normal, $color-old-lavender, normal, left, 100%, $font-family-demi-bold);
+					}
+
+					.logs-qty{
+						display: inline-block;
+						vertical-align: middle;
+						width: 15px;
+						height: 15px;
+						border-radius: 50%;
+						background-color: $color-payne-grey;
+						margin: -2px 3px 0;
+						padding: 0;
+						@include font-base(10px, normal, $color-white, inherit, center, 16px, $font-family-demi-bold);
+					}
+				}
+			}
+			.new-dispute {
+				display: inline-flex;
+				float: left;
+				margin-right: 10px;
+				div {
+					a {
+						display:inline-block;
+						@include font-base(14px, normal, $color-old-lavender, normal, left, 100%, $font-family-demi-bold);
+					}
+				}
+			}
+		}
+	}
+
+	.property-summary {
+		background-color: $color-rifle-green;
+		padding: 20px;
+		text-align: left;
+		& > .address {
+			width: 50%;
+			margin: 0px;
+			&>label.title {
+				@include font-base(14px, normal, $color-white, none, left, 100%, $font-family-base);
+				margin-bottom: 10px;
+				display: block;
+			}
+			&>label.address {
+				@include font-base(24px, normal, $color-white, none, left, 100%, $font-family-demi-bold);
+				display: block;
+			}
+		}
+		& > .last-update {
+			width: 50%;
+			float: right;
+			& > label.title {
+				@include font-base(14px, normal, $color-white, none, right, 100%, $font-family-base);
+				margin-bottom: 10px;
+				display: block;
+			}
+			& > label.address {
+				@include font-base(14px, normal, $color-white, none, right, 100%, $font-family-demi-bold);
+				display: block;
+			}
+		}
+	}
+
+	div.info-properties-extra {
+		background-color: $color-rifle-green;
+		padding: 20px 20px;
+		margin-top: 20px;
+		div.col-6 {
+			p.title-address {
+				&.right {
+					text-align: right;
+				}
+				@include font-base(14px, normal, $color-white, none, left, 100%, $font-family-base);
+				margin: 0px 0px 15px 0px;
+			}
+			p.address-address {
+				@include font-base(24px, normal, $color-white, none, left, 100%, $font-family-demi-bold);
+				margin: 0px;
+			}
+			p.update-date {
+				&.right {
+					text-align: right;
+				}
+				@include font-base(14px, normal, $color-white, none, left, 100%, $font-family-demi-bold);
+				margin-top: 10px;
+				margin: 0px;
+			}
+		}
+		&:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+	}
+	div.form-footer {
+		button.btn-green-big {
+			max-width: 260px;
+		}
+	}
+
+
+}
+div.file-uploader {
+	div {
+		&>label {
+			@include font-base(14px, normal, $color-old-lavender, capitalize, left, 100%, $font-family-base);
+			display: block;
+		}
+		&>div.drop-area {
+			width: 100%;
+			display: block;
+			border: dashed 2px $color-old-lavender;
+			padding: 70px 10px;
+			text-align: center;
+			@include font-base(18px, normal, $color-old-lavender, capitalize, center, 100%, $font-family-demi-bold);
+			margin: 10px 0px 30px 0px;
+			&:hover {
+				background-color: $color-white-smoke;
+				cursor: copy;
+			}
+			&:-moz-drag-over {
+				background-color: $color-white-smoke;
+				cursor: copy;
+			}
+			&[drop-active=true] {
+				background-color: $color-white-smoke;
+				cursor: copy;
+			}
+			&.active {
+				background-color: $color-white-smoke;
+				cursor: copy;
+			}
+		}
+		.fileinput-button {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 15px;
+			> span {
+				@include font-base(14px, normal, $color-old-lavender, capitalize, left, 100%, $font-family-demi-bold);
+			}
+			label.custom-file-upload {
+				float: right;
+				margin-top: -10px;
+				@include font-base(14px, normal, $color-old-lavender, capitalize, center, 100%, $font-family-base);
+				background-color: $color-isabelline;
+				border: 1px solid $color-border-gray;
+				display: inline-block;
+				padding: 6px 12px;
+				cursor: pointer;
+
+				input[type="file"]{
+					display: none;
+				}
+			}
+		}
+		ul.files-container {
+			margin: 0px;
+			padding: 0px;
+			margin-top: 20px;
+			padding-left: 20px;
+			&>li {
+				margin: 0px;
+				padding: 0px;
+				list-style: none;
+				display: inline-block;
+				margin-bottom: 10px;
+				display: flex;
+				align-items: flex-start;
+				justify-content: flex-end;
+				width: 100%;
+				flex-direction: row-reverse;
+				word-break: break-word;
+				@include font-base(14px, normal, $color-old-lavender, normal, left, 100%, $font-family-demi-bold);
+				white-space: normal;
+				&>p {
+					@include font-base(14px, normal, $color-old-lavender, normal, left, 100%, $font-family-demi-bold);
+				}
+				&>a {
+					display: inline-block;
+					margin: 0 5px 0 0;
+					&>span.icon-remove_cancel {
+						@include font-icon(15px, $color-dark-coral);
+
+					}
+				}
+				&>img {
+					display: inline-block;
+					float: right;
+					&>span.icon-remove_cancel {
+						@include font-icon(15px, $color-dark-coral);
+
+					}
+				}
+			}
+			@media (max-width: 768px) {
+				padding-left: 0px;
+			}
+		}
+	}
+}

@@ -1,0 +1,272 @@
+@import "../globals/variables";
+
+.listing {
+    fieldset.search-box {
+        background-color: $color-white;
+        padding: 5% 4%;
+        border: none;
+        margin-bottom: 40px;
+        height: 100%;
+
+        &.search-box-side {
+            padding: 0%;
+        }
+
+        legend {
+            background-color: $color-white;
+            text-transform: uppercase;
+            font-size: 16px;
+            padding: 0 5px;
+            margin-left: -5px;
+            display: none;
+        }
+
+        >ul {
+            margin: 0;
+            margin-right: -15px;
+            padding: 0;
+            list-style-type: none;
+            overflow: hidden;
+
+            >li {
+                min-height: 60px;
+                &.small {
+                    width: 100px;
+                }
+            }
+        }
+
+        .search-box-footer {
+            padding-top: 0;
+            text-align: center;
+        }
+
+        .textfield {
+            font-size: 14px;
+            padding-bottom: 0;
+
+            &.textfield-small {
+                width: 100px;
+            }
+
+            &.textfield-xsmall {
+                width: 50px;
+            }
+
+            .textfield-label {
+                font-size: 14px;
+                // The after label is the colored underline for the TextField.
+                &:after {
+                    bottom: 0;
+                }
+            }
+            .textfield-input {
+                font-size: 14px;
+            }
+
+            &.is-focused .textfield-label,
+            &.is-dirty .textfield-label,
+            &.is-invalid .textfield-label {
+                font-size: 12px;
+            }
+        }
+
+        .datefield {
+            font-size: 14px;
+            padding-bottom: 0;
+
+            .datefield-label {
+                font-size: 14px;
+                // The after label is the colored underline for the TextField.
+                &:after {
+                    bottom: 0;
+                }
+            }
+
+            .datefield-input {
+                font-size: 14px;
+            }
+
+            &.is-focused .datefield-label,
+            &.is-dirty .datefield-label,
+            &.is-invalid .datefield-label {
+                font-size: 12px;
+            }
+        }
+
+        .datetimefield {
+            font-size: 14px;
+            padding-bottom: 0;
+            .datetimefield-label {
+                font-size: 14px;
+                // The after label is the colored underline for the TextField.
+                &:after {
+                    bottom: 0;
+                }
+            }
+
+            .datetimefield-input {
+                font-size: 14px;
+            }
+
+            &.is-focused .datetimefield-label,
+            &.is-dirty .datetimefield-label,
+            &.is-invalid .datetimefield-label {
+                font-size: 12px;
+            }
+        }
+
+        .selectfield {
+            font-size: 14px;
+            padding-bottom: 0;
+
+            &.selectfield-xlarge {
+                width: 400px;
+            }
+
+            &.selectfield-large {
+                width: 300px;
+            }
+
+            &.selectfield-xsmall {
+                width: 50px;
+            }
+
+            .selectfield-input {
+                font-size: 14px;
+            }
+
+            &.is-focused .selectfield-label,
+            &.is-dirty .selectfield-label,
+            &.is-invalid .selectfield-label {
+                font-size: 12px;
+            }
+
+            .select2-container--default .select2-selection--single,
+            .select2-container--default .select2-selection--multiple,
+            .select2-container--default.select2-container--focus .select2-selection--multiple {
+                min-height: 29px;
+                height: auto;
+            }
+
+            .select2-container--default .select2-selection--multiple,
+            .select2-container--default.select2-container--focus .select2-selection--multiple {
+                position: relative;
+                top: -3px;
+            }
+
+            .select2-container--default .select2-selection--single .select2-selection__rendered {
+                line-height: 28px;
+            }
+
+            .select2-container--default .select2-selection--single .select2-selection__arrow {
+                min-height: 28px;
+                height: auto;
+            }
+        }
+
+    } // .search-box
+
+    .listing-secondary-actions {
+        margin-bottom: 10px;
+
+        a {
+            text-transform: uppercase;
+            font-size: 14px;
+            line-height: 24px;
+            display: inline-block;
+
+            img {
+                margin-right: 5px;
+                float: left;
+            }
+        }
+        a + a {
+            margin-right: 10px;
+        }
+    }
+
+    .listing-container.scroll {
+        overflow-x: auto;
+    }
+
+    .listing-container table.fixed {
+        top: 0;
+        position: fixed;
+        width: auto;
+        display: none!important;
+        border: none;
+        z-index: $zindex-navbar-fixed - 1;
+    }
+
+    .listing-data {
+        .overlay {
+            display: none;
+        }
+        .spinner {
+            display: none;
+        }
+        &.loading {
+            .listing-data {
+                position: relative;
+                .overlay {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    background-color: rgba($color-white, 0.7);
+                    display: block;
+                }
+
+                .spinner {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 80px;
+                    height: 80px;
+                    margin-left: -40px;
+                    margin-top: -40px;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .listing-primary-actions {
+        margin-top: 40px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    &.loading {
+        .listing-data {
+            position: relative;
+            .overlay {
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                background-color: rgba($color-white, 0.7);
+                display: block;
+            }
+
+            .spinner {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 80px;
+                height: 80px;
+                margin-left: -40px;
+                margin-top: -40px;
+                display: block;
+            }
+        }
+    }
+    &:after {
+        content: " ";
+        display: block;
+        clear: both;
+    }
+}

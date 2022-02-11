@@ -1,0 +1,8 @@
+knp_snappy:
+    temporary_folder: "%kernel.cache_dir%/snappy"
+    image:
+        enabled:    true
+        binary:     '%env(WKHTMLTOIMAGE_PATH)%'
+    pdf:
+        enabled:    true
+        binary:     '%env(WKHTMLTOPDF_PATH)%'

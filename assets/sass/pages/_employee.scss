@@ -1,0 +1,41 @@
+#employee-index{
+  table.data-table tbody tr td:first-child{
+    p{
+      margin: 0;
+    }
+  }
+
+  .listing {
+    .listing-data {
+
+      .info {
+        text-align: right;
+        float: left;
+        width: 100%;
+        span.name {
+          float: left;
+        }
+        span.address, span.contactPhone, span.contactEmail {
+          @include font-base(14px, normal, $color-old-lavender, none, right, 100%, $font-family-base);
+        }
+        span.contactPhone {
+        }
+        span.contactEmail {
+
+        }
+        span.contactPhone, span.contactEmail {
+          span {
+            font-size: 15px;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 5px 0 0;
+          }
+          a {
+            @include font-base(14px, normal, $color-old-lavender, none, right, 100%, $font-family-base);
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}

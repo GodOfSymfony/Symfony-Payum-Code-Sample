@@ -1,0 +1,37 @@
+@import "../globals/variables";
+@import "../globals/mixins";
+
+/*index page*/
+#entity-index {
+	div.listing {
+		div.listing-data {
+			table.data-table tbody tr td{
+				padding: 5px 20px;
+			}
+			div.info {
+				text-align: right;
+				span.name {
+					float: left;
+				}
+				span.address, span.contactPhone, span.contactEmail {
+					@include font-base(14px, normal, $color-old-lavender, none, right, 100%, $font-family-base);
+				}
+				span.contactPhone {
+					float: left;
+				}
+				span.contactEmail {
+					float: right;
+
+				}
+				span.contactPhone, span.contactEmail {
+					span {
+						font-size: 15px;
+					}
+					a {
+						@include font-base(14px, normal, $color-old-lavender, none, right, 100%, $font-family-base);
+					}
+				}
+			}
+		}
+	}
+}

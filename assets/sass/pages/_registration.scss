@@ -1,0 +1,331 @@
+@import "../globals/variables";
+@import "../globals/mixins";
+
+#security-registration {
+	&:after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+
+	.textfield-error, .selectfield-error, .toggle-list-error{
+		position: relative;
+		top: inherit;
+		right: inherit;
+		display: block;
+		padding-top: 5px;
+
+		ul {
+			li{
+				margin-top: 0;
+			}
+		}
+	}
+
+	div.container-form-register {
+		position: relative;
+		width: 100%;
+		max-width: 1200px;
+		margin: auto;
+		font-size: 0px;
+		text-align: center;
+		&:after {
+			content: " ";
+			display: block;
+			clear: both;
+		}
+	}
+	background-image: url('../../images/app/security/background_login.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: auto;
+	text-align: center;
+	padding: 7% 5%;
+
+	.logo-content {
+		height: -webkit-calc(100% - 0px);
+		height:    -moz-calc(100% - 0px);
+		height:         calc(100% - 0px);
+
+		width: 40%;
+		background-color: rgba(255,255,255,0.3);
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		&>div.LogoSecurity {
+			background-color: transparent;
+			margin-top: 0%;
+		}
+		&>p {
+			@include font-base(24px, normal, $color-isabelline, normal, center, 100%, $font-family-demi-bold);
+			margin-bottom: 25px;
+		}
+		&>span {
+			display: block;
+			@include font-base(18px, normal, $color-isabelline, normal, center, 100%, $font-family-demi-bold);
+			margin-bottom: 25px;
+		}
+
+		&>div {
+			background-color: rgba(255,255,255,0.2);
+			padding: 15px 10px;
+			margin-bottom: 30px;
+			a {
+				display: block;
+				@include font-base(18px, normal, $color-isabelline, normal, center, 100%, $font-family-demi-bold);
+				span {
+					@include font-base(18px, normal, $color-isabelline, normal, center, 100%, $font-family-bold);
+				}
+			}
+		}
+	}
+
+	.form-registration-content {
+		width: 60%;
+		height: auto;
+		margin: auto;
+		float: right;
+
+		-webkit-box-shadow: 0px 10px 30px -8px rgba(0,0,0,0.75);
+		-moz-box-shadow: 0px 10px 30px -8px rgba(0,0,0,0.75);
+		box-shadow: 0px 10px 30px -8px rgba(0,0,0,0.75);
+
+		div.LogoSecurity {
+			padding: 5%;
+			img {
+				width: 100%;
+				height: auto;
+				max-width: 150px;
+			}
+		}
+
+		form {
+			div {
+				&.formItemsContainer {
+					background-color: $color-isabelline;
+					padding: 25px;
+					font-size: 0;
+					display: flex;
+					align-items: flex-start;
+					justify-content: space-between;
+					flex-wrap: wrap;
+					.item-doble {
+						width: 46%;
+						margin-bottom: 15px;
+						font-size: 14px;
+						input {
+							width: 100%;
+						}
+					}
+					.item-single {
+						display: block;
+						width: 100%;
+						margin-bottom: 15px;
+						font-size: 14px;
+					}
+					&>div {
+						&.item-single, &.item-doble {
+							&>div {
+								&>div.switch-conteiner {
+									&>label.selectfield-label-input-check {
+										text-transform: uppercase;
+									}
+								}
+							}
+							&>div.textfield {
+								&>label {
+									color: $color-old-lavender;
+									font-family: $font-family-demi-bold;
+									text-transform: uppercase;
+									display: block;
+									text-align: left;
+								}
+								&>input {
+									font-family: $font-family-demi-bold;
+									display: block;
+									text-align: left;
+									width: 100%;
+									background: transparent;
+									border: none;
+									border-bottom: 1px solid $color-old-lavender;
+									padding: 0 10px;
+									margin: 0;
+									color: $color-charcoal;
+									height: 35px;
+									line-height: 35px;
+									&:focus {
+										outline: 0px;
+									}
+								}
+								&>div.switch-conteiner {
+									&>label {
+										color: $color-slate-gray
+									}
+									&>input[type=checkbox] {
+										display: none;
+										height: 0px;
+									}
+								}
+								&.hidden {
+									display: none;
+								}
+							}
+							&>div.selectfield {
+								&>label.selectfield-label {
+									color: $color-old-lavender;
+									font-family: $font-family-demi-bold;
+									text-transform: uppercase;
+									display: block;
+									text-align: left;
+								}
+								&>select.selectfield-input {
+									font-family: $font-family-demi-bold;
+									display: block;
+									text-align: left;
+									width: 100%;
+									background-color: transparent;
+									border: none;
+									border-bottom: 1px solid $color-old-lavender;
+									padding: 0 10px;
+									margin: 0;
+									color: $color-charcoal;
+									height: 35px;
+									line-height: 35px;
+									&:focus {
+										outline: 0px;
+									}
+								}
+								&.hidden {
+									display: none;
+								}
+							}
+							.requested-organization.disabled {
+								border-bottom: 0px;
+							}
+						}
+					}
+				}
+				button {
+					display: block;
+					position: relative;
+					z-index: 999;
+				}
+			}
+		}
+	}
+
+	@media (max-width: $breakpoint-mobile) {
+		div.registration-content {
+			div.logo-content {
+				width: 100%;
+				float: none;
+				display: block;
+				position: relative;
+				top: 0px;
+				margin-top: -34px;
+				div.LogoSecurity {
+					text-align: center;
+					margin-bottom: 0px;
+					&>img {
+						display: block;
+						max-width: 90px;
+						margin: 20px auto;
+					}
+				}
+				&>div:last-child {
+					margin-bottom: 0px;
+				}
+				p {
+					margin-top: 0px;
+					margin-bottom: 40px;
+				}
+				span {
+					font-family: $font-family-base;
+					max-width: 90%;
+					margin: auto;
+					margin-bottom: 20px;
+				}
+			}
+			div.form-registration-content {
+				width: 100%;
+				float: none;
+				form.form-security {
+					div.formItemsContainer {
+						div.item-doble {
+							width: 100%;
+							&:first-child {
+								margin-top: 15px;
+							}
+							&:nth-child(2),
+							&:nth-child(4),
+							&:nth-child(7),
+							&:nth-child(12),
+							&:nth-child(14){
+								margin-left: 0%;
+							}
+							&>div.switch-conteiner {
+								margin: 15px 0px;
+								label {
+									font-size: 14px;
+								}
+								div.on-off-switch {
+									float: right;
+								}
+							}
+						}
+						button.btn-green-big {
+							width: 100%;
+							padding: 20px 25px;
+							max-width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+	.error {
+		color: $color-dark-coral;
+		font-size: 15px;
+		font-weight: bold;
+		text-align: center;
+		background-color: rgba(255,255,255,0.4);
+		padding: 0px;
+		position: absolute;
+		top: -37px;
+		left: 0px;
+		width: 100%;
+		div.alert {
+			padding: 10px 5px;
+			margin-bottom: 0px;
+		}
+	}
+
+
+	.selectfield {
+		select.selectfield-input {
+			background-position: right 4px top 8px;
+		}
+	}
+
+
+}
+
+.registration-content {
+	.error {
+		color: $color-dark-coral;
+		font-size: 15px;
+		font-weight: bold;
+		text-align: center;
+		background-color: rgba(255,255,255,0.4);
+		padding: 0px;
+		position: absolute;
+		top: -48px;
+		left: 0px;
+		width: 100%;
+		div.alert {
+			padding: 10px 5px;
+		}
+	}
+}

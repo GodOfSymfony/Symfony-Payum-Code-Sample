@@ -1,0 +1,31 @@
+@import '../globals/mixins';
+
+#user-index{
+	.container-page {
+		min-height: 1010px;
+	}
+}
+
+#user-form {
+	div {
+		&>div.page-body {
+			.form-body {
+				&:after {
+					display: none!important;
+				}
+			}
+		}
+	}
+	div.external-form-input {
+		top: -75px;
+	}
+}
+.content-white {
+	background-color: $color-white;
+	padding: 3%;
+	text-align: center;
+	h3.create-info {
+		@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+		margin-bottom: 3%;
+	}
+}

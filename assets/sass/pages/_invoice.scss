@@ -1,0 +1,404 @@
+@import '../globals/mixins';
+
+#support-ticket,
+#invoice-index,
+#invoice-logs {
+    div.btn-header-title {
+        a.btn-how-pay-check {
+            @include font-base(14px, normal, $color-old-lavender, none, center, 100%, $font-family-demi-bold);
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+	div.pager-item-per-page {
+		background-color: $color-white;
+		width: 230px;
+		padding: 5px 10px;
+		text-align: center;
+		float: right;
+		&>ul.ul-pager-head {
+			font-size: 0px;
+			width: 100%;
+			margin: 0px;
+			padding: 0px;
+			&>li {
+				display: inline-block;
+				margin: 0px;
+				padding: 0px;
+				list-style: none;
+				width: 33%;
+				text-align: center;
+				vertical-align: middle;
+				span {
+					@include font-base(14px, normal, $color-old-lavender, none, center, 100%, $font-family-base);
+				}
+				&>div.form-row {
+					width: 95%;
+					margin: auto;
+					&>div.form-column {
+						min-height: auto;
+						&>div.selectfield {
+							&>select {
+								margin-top: 0px;
+								padding-right:22px;
+								background-position: right 5px center;
+							}
+						}
+					}
+				}
+				&:first-child {
+					width: 30%;
+				}
+				&:last-child {
+					width: 36%;
+				}
+			}
+		}
+		&:after {
+			clear: both;
+			content: "";
+			display: block;
+		}
+		margin-bottom: 15px;
+		@media (max-width: $breakpoint-mobile) {
+			margin-top: -13px;
+			margin-bottom: 15px;
+		}
+	}
+
+	&>div.container-page>div.page-body>div.content-wrapper>main.content {
+		&>div.col-9 {
+
+		}
+		&>div.listing>form.listing-form>div.row>div.col-9>div.listing-data{
+			table>tbody>tr>td {
+				padding: 8px 20px;
+				&:nth-child(2) {
+					width: 100%;
+				}
+				&:first-child{
+					min-width: 138px;
+					padding-left: 10px;
+					padding-right: 10px;
+				}
+				&>div.info {
+					&>div.col-1 {
+						width: 6%;
+						input.input-table {
+							font-size: 20px;
+						}
+					}
+					&>div.col-5 {
+						&>div.info {
+							&>span.name {
+								@include font-base(14px, normal, $color-payne-grey, none, left, 100%, $font-family-demi-bold);
+								span {
+									@include font-base(14px, normal, $color-rifle-green, none, left, 100%, $font-family-base);
+									margin-left: 0px;
+									padding-left: 0px;
+									text-transform: uppercase;
+									padding: 4px 10px 4px 0px;
+								}
+								> a {
+									@include font-base(14px, normal, $color-payne-grey, none, left, 100%, $font-family-demi-bold);
+									& > span {
+										@include font-base(14px, normal, $color-rifle-green, none, left, 100%, $font-family-base);
+										&.icon-print {
+											padding-left: 0px;
+										}
+										&.icon-print, &.icon-download {
+											@include font-icon(16px, $color-old-lavender);
+										}
+									}
+								}
+								&.bottom-space{
+									margin-bottom: 5px !important;
+									span {
+										padding: 0;
+									}
+								}
+								span.paid {
+									@include font-base(12px, normal, $color-white, lowercase, left, 100%, $font-family-base);
+									background-color: $color-dark-sea-green;
+									padding: 3px 5px 2px;
+									display: inline-block;
+									width: 51px;
+									text-align: center;
+									margin-top: -5px;
+								}
+
+							}
+							.organization {
+								a{
+									margin: 0 0 0 5px;
+								}
+								&.inactive {
+									a{
+										> span {
+											color: $color-isabelline;
+										}
+									}
+								}
+							}
+						}
+					}
+					&>div.col-6 {
+						&.text-align-right {
+							&>span.price {
+								display: block;
+								&>span {
+									@include font-base(14px, normal, $color-rifle-green, none, right, 100%, $font-family-demi-bold);
+								}
+
+							}
+							&>span.date {
+								display: block;
+								@include font-base(14px, normal, $color-rifle-green, none, right, 100%, $font-family-base);
+								&>span.icon-calendar {
+									@include font-icon(16px, $color-slate-gray);
+									margin: auto 5px;
+								}
+								&.pastdue {
+									color: $color-dark-coral;
+									@include font-base(14px, normal, $color-dark-coral, none, right, 100%, $font-family-demi-bold);
+									&>span {
+										color: $color-charcoal;
+										font-family: $font-family-base;
+										&>span {
+											color: $color-isabelline;
+										}
+									}
+									&>span.icon-calendar {
+										color: $color-dark-coral;
+									}
+								}
+							}
+						}
+					}
+				}
+				&>div.actions {
+					position: relative;
+					&>a {
+						&>span.icon-view {
+							@include font-icon(12px, $color-slate-gray);
+						}
+						&>span.icon-pay {
+							@include font-icon(18px, $color-dark-sea-green);
+						}
+					}
+					&.inactive {
+						&>a {
+							&>span.icon-pay {
+								color: $color-isabelline;
+							}
+						}
+					}
+				}
+
+				&:last-child {
+					padding: 0;
+					vertical-align: middle;
+					text-align: center;
+					min-width: 65px;
+					.actions{
+						a{
+							display: inline-block;
+							vertical-align: middle;
+							width: 100%;
+						}
+						.edit-action{
+							margin-bottom: 0;
+						}
+						.pay-action{
+							padding-top: 10px;
+							span{
+								position: relative;
+								display: inline-block;
+								vertical-align: middle;
+							}
+							.text-pay {
+								@include font-base(9px, normal, $color-dark-sea-green, uppercase, center, 100%, $font-family-demi-bold);
+								margin-left: 2px;
+
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	div.export-container-invoice {
+		&>p {
+			@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-demi-bold);
+			display: inline-block;
+		}
+		&>a {
+			display: inline-block;
+			&>span {
+				@include font-icon(20px, $color-payne-grey);
+			}
+		}
+	}
+	div.alert-footer-container-invoice {
+		p {
+			@include font-base(13px, normal, $color-dark-coral, none, left, 100%, $font-family-demi-bold);
+		}
+	}
+
+	table.data-table thead th{
+
+		&.sorting-header + th > p{
+			display: none;
+		}
+	}
+}
+
+#invoice-index{
+	.listing-data{
+		padding-right: 15px;
+		@media (max-width: $breakpoint-tablet) {
+			padding-right: 0;
+		}
+
+		span.paid {
+			text-transform: inherit;
+		}
+	}
+	&>div.container-page>div.page-body>div.content-wrapper>main.content {
+		& > div.listing > form.listing-form > div.row > div.col-9 > div.listing-data {
+			table > tbody > tr > td {
+				& > div.info {
+					& > div.col-5 {
+						& > div.info {
+							& > span.name {
+								span.paid {
+									text-transform: inherit;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+div.container-invoice-selected {
+	background-color: $color-white;
+	display: none;
+	width: 100%;
+	padding: 20px 15px;
+	margin-bottom: 15px;
+	&.show {
+		display: block;
+	}
+	.invoice-data {
+		height: 68px;
+		p.amount-invoices {
+			@include font-base(18px, normal, $color-liver, none, left, 100%, $font-family-demi-bold);
+			float: left;
+			margin: 0;
+		}
+		p.sum-price-invoices {
+			@include font-base(18px, normal, $color-slate-gray, none, right, 100%, $font-family-demi-bold);
+			margin: 0;
+		}
+		div.container-btns-invoice {
+			text-align: right;
+			margin-top: 20px;
+			@media (max-width: $breakpoint-mobile) {
+				text-align: right;
+			}
+			a.btn-invoice {
+				@include font-base(14px, normal, $color-slate-gray, none, right, 100%, $font-family-demi-bold);
+				display: inline-block;
+				padding: 5px 10px;
+				border: solid 1px $color-old-lavender;
+				cursor: pointer;
+				width: 125px;
+				text-align: center;
+				& > span {
+					margin-right: 5px;
+				}
+				&.download, &.print {
+					& > span {
+						@include font-icon(16px, $color-old-lavender);
+					}
+				}
+				&.pay {
+					background-color: $color-dark-sea-green;
+					color: $color-white;
+					border: none;
+					& > span {
+						@include font-icon(16px, $color-white);
+					}
+				}
+				@media (max-width: $breakpoint-mobile) {
+					width: 100%;
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+
+	.invoice-data {
+		.overlay {
+			display: none;
+		}
+		.spinner {
+			display: none;
+		}
+		&.loading {
+			.invoice-data {
+				position: relative;
+				.overlay {
+					position: absolute;
+					top: 0;
+					right: 0;
+					left: 0;
+					bottom: 0;
+					background-color: rgba($color-white, 0.7);
+					display: block;
+				}
+
+				.spinner {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					width: 80px;
+					height: 80px;
+					margin-left: -40px;
+					margin-top: -40px;
+					display: block;
+				}
+			}
+		}
+	}
+
+	&.loading {
+		.invoice-data {
+			position: relative;
+			.overlay {
+				position: absolute;
+				top: 0;
+				right: 0;
+				left: 0;
+				bottom: 0;
+				background-color: rgba($color-white, 0.7);
+				display: block;
+			}
+
+			.spinner {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 80px;
+				height: 80px;
+				margin-left: -40px;
+				margin-top: -40px;
+				display: block;
+			}
+		}
+	}
+}

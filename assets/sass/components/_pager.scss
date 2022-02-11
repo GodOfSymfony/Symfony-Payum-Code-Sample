@@ -1,0 +1,121 @@
+@import "../globals/variables";
+@import "../globals/mixins";
+
+.pager {
+	@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+	span, a {
+		@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-demi-bold);
+	}
+	.pager-first, .pager-previous {
+		display: none;
+	}
+	.pager-next, .pager-last {
+		display: none!important;
+	}
+	div.col-6 {
+		.selected {
+			font-family: $font-family-demi-bold;
+			color: $color-old-lavender;
+		}
+		&.text-align-left {
+			@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+			&>span {
+				@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-demi-bold);
+			}
+			&>a {
+				@include font-base(14px!important, normal, $color-old-lavender!important, none, left, 100%, $font-family-base);
+				padding: 0px 4px!important;
+			}
+		}
+		&.text-align-right {
+			&>a {
+				@include font-base(14px!important, normal, $color-old-lavender!important, none, left, 100%, $font-family-base);
+				padding: 0px 4px!important;
+			}
+		}
+	}
+}
+
+tfoot {
+	&>tr {
+		&>td {
+			border: none!important;
+			&>div.pager {
+				margin-top: 15px!important;
+				&>div.col-6 {
+					width: 100%;
+					&.text-align-left {
+						font-size: 0px;
+						span {
+							font-size: 0px;
+						}
+						a {
+							font-size: 0px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+//Items Per Pages
+.pager-item-per-page {
+	background-color: $color-white;
+	width: 230px;
+	padding: 5px 10px;
+	text-align: center;
+	float: right;
+	margin-bottom: 15px;
+	.ul-pager-head {
+		font-size: 0px;
+		width: 100%;
+		margin: 0px;
+		padding: 0px;
+		li {
+			display: inline-block;
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+			width: 33%;
+			text-align: center;
+			vertical-align: middle;
+			span {
+				@include font-base(14px, normal, $color-old-lavender, none, center, 100%, $font-family-base);
+			}
+			.form-row {
+				width: 95%;
+				margin: auto;
+				.form-column {
+					min-height: auto;
+					.selectfield {
+						select {
+							margin-top: 0px;
+							padding-right:22px;
+							background-position: right 5px center;
+						}
+					}
+				}
+			}
+			&:first-child {
+				width: 30%;
+			}
+			&:last-child {
+				width: 36%;
+			}
+
+			.selectfield{
+				margin-bottom: 0;
+			}
+		}
+	}
+	&:after {
+		clear: both;
+		content: "";
+		display: block;
+	}
+	@media (max-width: $breakpoint-mobile) {
+		margin-top: -13px;
+		margin-bottom: 15px;
+	}
+}

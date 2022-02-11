@@ -1,0 +1,145 @@
+{% extends 'layout.html.twig' %}
+{% import "Common/macros.html.twig" as macros %}
+{% form_theme form with 'Common/form_theme.html.twig' %}
+
+{% block title %}{{ parent() }} :: Invoice Payment{% endblock %}
+
+{% block page_id %}credit-card-form{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script type="text/javascript">
+        require(['app'], function() {
+            require(['jquery', 'pages/paymentCc'], function($, PaymentCc) {
+                $(function() {
+                    new PaymentCc(
+                        $('#btn_by_check'),
+                        $('#btn_pay'),
+                        $('{{'#' ~  form.vars.id }}'),
+                        {
+                            ccNum: $('{{'#' ~  form.number.vars.id }}'),
+                            typeContainer: $('#cards_container'),
+                            expiryMonth: $('{{'#' ~  form.expireAt.year.vars.id }}'),
+                            expiryYear: $('{{'#' ~  form.expireAt.month.vars.id }}'),
+                            cvc: $('{{'#' ~  form.securityCode.vars.id }}'),
+                            holder: $('{{'#' ~  form.holder.vars.id }}')
+
+                        }
+                    );
+                });
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+
+    {% if invoice is not defined %}
+        {% set invoice = getInvoice(firstModel.invoiceId) %}
+    {% endif %}
+
+    <div class="col-12 relative-element responsive-container">
+        <h1 class="content-box-title">
+            Invoices Payment
+        </h1>
+        <div class="btn-new-header-title">
+            <div>
+                <a href="{{ path('app_payment_check', { id: invoice.id }) }}" id="btn_by_check">
+                    Pay by check
+                </a>
+                <a href="{{ path('app_invoice_list') }}">
+                    Pay later
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {{ form_start(form, { 'action': actionUrl }) }}
+
+    <div class="listing">
+        {{ macros.form_general_errors(form) }}
+            <div class="row clear-side-row-right">
+                <div class="col-6 responsive-container">
+                    <div class="container-pay-info">
+                        <p class="title-pay-credit-card">Pay with Credit Card</p>
+                        <ul class="pay-credit-card" id="cards_container">
+                            <li>
+                                <img class="card-types mastercard" src="{{ asset('images/app/general/mastercard.png') }}" alt="Mastercard" />
+                            </li>
+                            <li>
+                                <img class="card-types visa" src="{{ asset('images/app/general/visa.png') }}" alt="VISA" />
+                            </li>
+                            <li>
+                                <img class="card-types amex" src="{{ asset('images/app/general/amex.png') }}" alt="American Express" />
+                            </li>
+                            <li>
+                                <img class="card-types discover" src="{{ asset('images/app/general/discover.png') }}" alt="Discover" />
+                            </li>
+                        </ul>
+                        <!-------->
+                        <div class="form-row complete-row-form name-cvv">
+                            <div class="form-column">
+                                <div class=" textfield">
+                                    {{ form_row(form.number, {'label': 'Card Number', 'attr': {'placeholder': '4111 1111 1111 1111'} }) }}
+                                    <span class="textfield-error"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-------->
+                        <ul class="card-info">
+                            <li>
+                                <div class="form-row complete-row-form">
+                                    <div class="form-column">
+                                        <div class=" selectfield">
+                                            {{ form_row(form.expireAt, {'label': 'Valid Until' }) }}
+                                            <span class="selectfield-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-column">
+                                        <div class=" textfield">
+                                            {{ form_row(form.securityCode, {'label': 'CVV', 'attr': {'placeholder': '123'} }) }}
+                                            <span class="textfield-error"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-------->
+                        <div class="form-row complete-row-form">
+                            <div class="form-column">
+                                <div class=" textfield">
+                                    {{ form_row(form.holder, {'label': 'Name on Card', 'attr': {'placeholder': 'John Doe'} }) }}
+                                    <span class="textfield-error"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 responsive-container">
+                    <div class="container-pay-black">
+                        <div class="contact-pay-info">
+                            <ul class="list-info-pay">
+                                <li>
+                                    <p class="title-pay">{{ invoiceTypeLabel(invoice.type) }} - #{{ invoice.id }}</p>
+                                    <p class="invoice-pay">INVOICE DATE</p>
+                                    <p class="date-pay">{{ invoice.invoiceDate|date('m/d/Y') }}</p>
+                                </li>
+                                <li>
+                                    <img src="{{ asset('images/app/general/paidIcon.png') }}" alt="" />
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="total-pay">
+                            TOTAL DUE
+                            <span>${{ firstModel.totalAmount|number_format(2, '.', ',') }}</span>
+                        </p>
+                    </div>
+                    <button id="btn_pay" class="btn-confirm-pay" disabled>CONFIRM AND PAY</button>
+                </div>
+            </div>
+        <div style="display: none;" >
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

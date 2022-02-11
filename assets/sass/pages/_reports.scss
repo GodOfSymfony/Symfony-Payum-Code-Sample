@@ -1,0 +1,40 @@
+@import '../globals/mixins';
+
+#reports-index>div.container-page>div.page-body>div.content-wrapper {
+	&>main.content {
+		@media (max-width: $breakpoint-tablet-768) {
+			&>div.col-6 {
+				&.padding-left-15 {
+					padding-left: 0px;
+				}
+				width: 100%;
+				float: none;
+			}
+		}
+
+		.reports-links{
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			a{
+				width: 49%;
+
+				.links-title {
+					@include font-base(18px, normal, $color-old-lavender, none, left, 100%, $font-family-demi-bold);
+					margin-bottom: 10px;
+					display: block;
+				}
+				.links-description {
+					@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+					display: block;
+				}
+			}
+
+			&:after, &:before{
+				display: none;
+			}
+		}
+	}
+}
+

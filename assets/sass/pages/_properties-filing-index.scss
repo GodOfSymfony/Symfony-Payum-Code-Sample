@@ -1,0 +1,71 @@
+@import '../globals/mixins';
+
+#property-filing-index {
+    div.container-page {
+        div.page-body {
+            div.content-wrapper {
+                main {
+                    div.listing {
+                        form {
+                            div {
+                                div.col-9 {
+                                    padding-left: 15px;
+                                    div.btn-new-header-title {
+                                        right: 15px;
+                                        top: -55px;
+                                    }
+                                }
+                                div.listing-data {
+                                    div.listing-container {
+                                        table.data-table {
+                                            margin-top: 0px;
+                                            td.td-property-filing-table {
+                                                div.col-8 {
+                                                    @include font-base(14px, normal, $color-payne-grey, none, left, 100%, $font-family-demi-bold);
+                                                    span {
+                                                        @include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+                                                    }
+                                                    p {
+                                                        @include font-base(14px, normal, $color-rifle-green, none, left, 100%, $font-family-base);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    table.data-table tbody tr td{
+
+        &.td-property-filing-table{
+            padding-top: 10px;
+            .col-12{
+                margin-bottom: 10px;
+                @include font-base(14px, normal, $color-payne-grey, none, left, 100%, $font-family-demi-bold);
+                span {
+                    @include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+                }
+                p {
+                    @include font-base(14px, normal, $color-rifle-green, none, left, 100%, $font-family-base);
+                    margin: 0 0 5px 0;
+                }
+
+                .filing-type{
+                    @include font-base(14px, normal, $color-payne-grey, none, left, 100%, $font-family-demi-bold);
+                }
+                .filing-dates{
+                    @include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+                }
+            }
+        }
+
+    }
+
+}

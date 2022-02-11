@@ -1,0 +1,19 @@
+#property-renewal-form {
+  .content-btn{
+    text-align: right;
+
+    .button.waves-effect{
+      display: inline-block;
+      margin: 30px 0;
+      padding: 5px 15px;
+      border: 1px solid $color-payne-grey;
+      @include font-base(14px, normal, $color-old-lavender, capitalize, center, 19px, $font-family-demi-bold);
+
+      &:hover{
+        background-color: $color-payne-grey;
+        color: $color-white
+      }
+    }
+  }
+
+}

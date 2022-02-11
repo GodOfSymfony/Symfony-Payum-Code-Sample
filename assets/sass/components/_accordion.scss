@@ -1,0 +1,143 @@
+@import "../globals/variables";
+
+div.container-accordion {
+	&>div {
+		&>a {
+			@include font-base(16px, normal, $color-white, none, left, 100%, $font-family-demi-bold);
+			background-color: $color-slate-gray;
+			display: block;
+			padding: 10px 15px;
+			@include back-img('general','plane-arrow-up-white.png', no-repeat, right 5% top 14px, none);
+		}
+		ul {
+			margin: 0px;
+			padding: 0px;
+			width: 100%;
+			li {
+				list-style: none;
+				margin: 0px;
+				&:nth-child(odd) {
+					background-color: $color-snow;
+				}
+				&:nth-child(even) {
+					background-color: $color-isabelline;
+				}
+				a {
+					@include font-base(16px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+					display: block;
+					padding: 10px 15px;
+				}
+			}
+		}
+	}
+}
+div.container-left-side {
+	padding-right: 10px;
+	div.container-accordion {
+		margin-top: 15px;
+		border-bottom: solid 2px $color-old-lavender;
+		&.inactive {
+			div {
+				height: 36px;
+				overflow: hidden;
+				a {
+					background-color: $color-isabelline;
+					color: $color-old-lavender;
+					@include back-img('general','plane-arrow-down.png', no-repeat, 95% 14px, none);
+				}
+			}
+		}
+	}
+	&>div:first-child {
+		margin-top: 0%;
+	}
+}
+
+.container-rigth-info {
+	padding-left: 10px;
+}
+
+div.title-version {
+	width: 100%;
+	background-color: $color-white;
+	padding: 10px 10px;
+	text-align: left;
+	margin-bottom: 10px;
+	p {
+		@include font-base(14px, normal, $color-old-lavender, capitalize, left, 100%, $font-family-demi-bold);
+	}
+	div {
+		display: inline-block;
+		float: right;
+		position: relative;
+		span {
+			@include font-icon(20px, $color-slate-gray);
+			float: left;
+			margin: 10px 10px 0px 0px;
+		}
+		p {
+			@include font-base(14px, normal, $color-old-lavender, capitalize, left, 100%, $font-family-demi-bold);
+			display: inline-block;
+		}
+	}
+}
+.container-verison-info {
+	margin-left: -15px;
+	padding-left: 15px;
+}
+/********CUSTOME ACORDION CLASS***********/
+.accordion-custom {
+	&>div {
+		overflow: hidden;
+		height: 36px;
+		&>span {
+			display: inline-block;
+			float: right;
+		}
+
+		div.customs-item-actions-container {
+			@include font-base(16px, normal, $color-rifle-green, none, left, 120%, $font-family-demi-bold);
+			background-color: $color-white-smoke;
+			color: $color-rifle-green;
+			padding: 10px 15px;
+			span {
+				display: inline-block;
+				float: right;
+				//margin-right: 15px;
+				a {
+					span.icon-reset {
+						margin-right: 10px;
+					}
+				}
+				a.item-action {
+					span {
+						color: $color-slate-gray;
+					}
+				}
+			}
+		}
+		&.active {
+			height: auto;
+			&>a.collapser-button {
+				@include back-img('general','plane-arrow-up.png', no-repeat, 95% 14px, none);
+			}
+		}
+	}
+	&>li {
+		&>div {
+			overflow: hidden;
+			height: 36px;
+			&.active {
+				height: auto!important;
+			}
+		}
+	}
+}
+
+.accordion-custom-father {
+	overflow: hidden;
+	height: 51px;
+	&.active {
+		height: auto;
+	}
+}

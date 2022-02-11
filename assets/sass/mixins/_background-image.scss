@@ -1,0 +1,8 @@
+@import "../globals/variables.scss";
+
+@mixin back-img($img-folder, $img-name, $repeat:'', $position:'', $size:'') {
+	background-image: url('../../images/app/#{$img-folder}/#{$img-name}');
+	background-repeat: $repeat;
+	background-position: $position;
+	background-size: $size;
+}

@@ -1,0 +1,425 @@
+@import '../globals/mixins';
+
+#tutorial-index {
+	.container-verison-side {
+
+	}
+
+	.accordion-custom {
+		> div {
+			border: 2px solid $color-isabelline;
+			margin-bottom: 20px;
+			cursor: pointer;
+
+			a.header-category {
+				background-image: none;
+				span {
+					margin-right: 15px;
+					&:first-child {
+						margin-right: 0px;
+					}
+				}
+			}
+		}
+
+		&:last-child{
+			> div{
+				margin-bottom: 0;
+			}
+		}
+	}
+	.btn-new-header-title {
+		top: 38px;
+	}
+}
+
+div.container-accordion {
+	&.transparent-drag {
+		> div {
+			background-color: $color-white-smoke;
+			border: none;
+			> a {
+				border-bottom: solid 1px $color-payne-grey;
+			}
+		}
+	}
+	> div {
+		> a,
+		> span{
+			@include font-base(16px, normal, $color-white, none, left, 100%, $font-family-demi-bold);
+			background-color: $color-slate-gray;
+			display: block;
+			padding: 10px 15px;
+			@include back-img('general','plane-arrow-up-white.png', no-repeat, 95% 14px, none);
+
+			&.collapser-button{
+				display: block;
+				width: 100%;
+				float: inherit;
+			}
+		}
+		ul {
+			margin: 0px;
+			padding: 0px;
+			width: 100%;
+			&.drag-tuorial-change-category {
+				background-color: $color-white-smoke;
+				border: dashed 3px $color-old-lavender;
+				text-align: center;
+				width: 100%;
+				min-height: 40px;
+				margin: 10px 0px 0px 0px;
+				padding: 4% 4%;
+				&:after {
+					content: "Drag Tutorials Here";
+					display: block;
+					@include font-base(18px, normal, $color-old-lavender, none, center, 100%, $font-family-demi-bold);
+					padding: 4% 4%;
+				}
+			}
+			li {
+				display: block;
+				list-style: none;
+				margin: 0px;
+				&:nth-child(odd) {
+					background-color: $color-snow;
+				}
+				&:nth-child(even) {
+					background-color: $color-isabelline;
+				}
+				&>span {
+					display: block;
+					width: 100%;
+					@include font-base(16px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+					padding: 15px 15px;
+					float: none;
+				}
+				&>a {
+					background: none;
+					padding: 0px;
+					display: inline-block;
+					float: right;
+					&>span {
+						padding: 0px;
+						margin-top: -5px;
+					}
+				}
+			}
+		}
+	}
+}
+
+div.container-tutorial-side {
+	margin-right: 15px;
+	div.container-accordion {
+		margin-top: 15px;
+		border-bottom: solid 2px $color-old-lavender;
+		&.category-container {
+			&>div {
+				height: 56px;
+			}
+		}
+		&.inactive {
+			div{
+				a {
+					background-color: $color-isabelline;
+					color: $color-old-lavender;
+					@include back-img('general','plane-arrow-down.png', no-repeat, 95% 14px, none);
+				}
+			}
+		}
+	}
+	&>div:first-child {
+		margin-top: 0%;
+	}
+}
+div.tutorial-category-container {
+	div.container-accordion {
+		&.category-container {
+			&>div {
+				height: 45px;
+				&.active {
+					height: auto;
+					a {
+						@include back-img('general','plane-arrow-down-white.png', no-repeat, right 15px top 18px, none);
+					}
+				}
+				a {
+					@include back-img('general','plane-arrow-up-white.png', no-repeat, right 15px top 18px, none);
+					img {
+						width: 25px;
+						height: auto;
+						margin-right: 5px;
+					}
+				}
+				ul.category-content {
+					&>li.tutorial-content {
+						padding: 10px 15px;
+						&:nth-child(2n) {
+							background-color: $color-white-smoke;
+						}
+						&>a {
+							float: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+div.container-verison-side {
+	&.blue {
+		&>div.tutorial-category-container {
+			&>div.accordion-custom {
+				&>div {
+					&>a.header-category {
+						&>span.open-action {
+							margin-top: 5px;
+						}
+					}
+				}
+				&>div.active {
+					&>a.header-category {
+						background-color: $color-payne-grey;
+						color: $color-white;
+						&>img {}
+						&>span.open-action {
+							-moz-transform: rotate(180deg);
+							-webkit-transform: rotate(180deg);
+							-o-transform: rotate(180deg);
+							-ms-transform: rotate(180deg);
+							margin-top: -2px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.action-back{
+	text-align: right;
+	a{
+		float: right;
+		margin-top: 13px;
+		margin-left: 0px;
+		@include font-base(16px, normal, $color-old-lavender, none, left, 100%, $font-family-demi-bold);
+		&>span.icon-arrow {
+			display: inline-block;
+			@include font-icon(16px, $color-old-lavender);
+			-webkit-transform: rotate(90deg);
+			-moz-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			-o-transform: rotate(90deg);
+			filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+			margin-right: 10px;
+		}
+	}
+}
+
+div.title-tutorial {
+	width: 100%;
+	background-color: $color-white;
+	padding: 10px 10px;
+	text-align: left;
+	margin-bottom: 10px;
+	p {
+		@include font-base(14px, normal, $color-old-lavender, capitalize, left, 100%, $font-family-demi-bold);
+	}
+	div {
+		display: inline-block;
+		float: right;
+		position: relative;
+		span {
+			@include font-icon(20px, $color-slate-gray);
+			float: left;
+			margin: 10px 10px 0px 0px;
+		}
+		p {
+			@include font-base(14px, normal, $color-old-lavender, capitalize, left, 100%, $font-family-demi-bold);
+			display: inline-block;
+		}
+	}
+}
+
+.container-tutorial-info {
+	padding-left: 15px;
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	h1.title-tutorial-info{
+		background-color: $color-white;
+		margin-top: 2px;
+	}
+}
+
+.container-tutorial-icons {
+	margin-left: -15px;
+	padding-left: 15px;
+	@media (max-width: $breakpoint-mobile) {
+		margin-left: 0px;
+		padding-left: 0px;
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	&>div.container-icons-add {
+		background-color: $color-white;
+		padding: 20px;
+		&>p.title-add-category {
+			@include font-base(18px, normal, $color-old-lavender, capitalize, left, 100%, $font-family-demi-bold);
+			padding: 0px 20px 0px 20px;
+			&>span {
+				float: right;
+				@include font-base(14px, normal, $color-dark-coral, capitalize, left, 100%, $font-family-demi-bold);
+				&>span.icon-wrong {
+					width: 20px;
+					height: 20px;
+					display: inline-block;
+					margin-bottom: -5px;
+					margin-right: 10px;
+				}
+			}
+		}
+		&>form.form {
+			&>div.form-body {
+				&>div.form-row {
+					width: 100%;
+					&>div.form-column {
+						&>div.toggle-list {
+							&>div.toggle-list-items {
+								label {
+									width: 51px;
+									margin: 0px;
+									margin-left: 1px;
+									span {
+										width: 51px;
+										padding: 5px;
+										&:after {
+											display: none;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#tutorial-index {
+	h1.title-tutorial-info {
+		@include font-base(24px, normal, $color-old-lavender, uppercase, center, 100%, $font-family-demi-bold);
+		position: relative;
+		overflow: hidden;
+		padding: 15px 15px 15px 15px;
+		span {
+			@include font-icon(79px, $color-slate-gray);
+			display: block;
+			position: absolute;
+			left: -14px;
+			top: -14px;
+			-moz-transform: rotate(21deg);
+			-webkit-transform: rotate(21deg);
+			-o-transform: rotate(21deg);
+			-ms-transform: rotate(21deg);
+		}
+	}
+
+	p.sub-title-tutorial-info {
+		@include font-base(14px, normal, $color-rifle-green, normal, left, 100%, $font-family-demi-bold);
+		padding: 10px 15px 5px 15px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		background-color: $color-white;
+		margin: 0;
+		> a {
+			display: block;
+			width: 100%;
+		}
+
+		.actions-btns {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+
+			a {
+				display: block;
+				margin: 0;
+				line-height: 1;
+				&.btn-edit-tutorial {
+					span {
+						@include font-icon(20px, $color-slate-gray);
+						margin: 0;
+					}
+				}
+				&.btn-delete-tutorial {
+					margin-left: 15px;
+					span {
+						@include font-icon(20px, $color-dark-coral);
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+	.container-ckeditor {
+		margin-top: 5px;
+	}
+}
+/*finder tutorials*/
+div.container-finder-tutorial {
+	margin-bottom: 20px;
+}
+p.title-fninder-tutorial {
+	@include font-base(16px, normal, $color-old-lavender, normal, left, 100%, $font-family-demi-bold);
+	@media (max-width: $breakpoint-mobile) {
+		margin-top: 0px;
+	}
+
+}
+input.finder-tutorial {
+	width: 100%;
+	background-color: $color-white;
+	border: solid 0.5px $color-pastel-gray;
+	color: $color-old-lavender;
+	padding: 10px 15px;
+}
+a.btn-find-tutorials {
+	display: block;
+	position: absolute;
+	bottom: 10px;
+	right: 15px;
+}
+
+.btn-header-title.new-manage {
+	position: absolute;
+	right: 105px;
+	top: 44px;
+	margin-bottom: 0px;
+}
+.new-manage {
+	div {
+		a {
+			@include font-base(14px, normal, $color-old-lavender, normal, left, 100%, $font-family-demi-bold);
+		}
+	}
+}
+span.icon-manage {
+	width: 26px;
+	height: 26px;
+	display: inline-block;
+	float: left;
+	margin-right: 9px;
+	margin-top: -3px;
+	@include back-img('general','icon_settings.svg', no-repeat, center center, none);
+}

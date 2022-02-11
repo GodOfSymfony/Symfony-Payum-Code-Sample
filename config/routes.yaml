@@ -1,0 +1,15 @@
+#app:
+#    resource: "@Controller/"
+#    type:     annotation
+#    prefix:   /
+#
+#credit_card:
+#    resource: "@Controller/"
+#    type:     annotation
+#    prefix:   /
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+payum_all:
+    resource: "@PayumBundle/Resources/config/routing/all.xml"

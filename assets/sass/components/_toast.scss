@@ -1,0 +1,39 @@
+@import "../globals/variables";
+@import "../globals/mixins";
+
+#toast-container {
+    display: block;
+    position: fixed;
+    z-index: $zindex-toast;
+    min-width: 8%;
+    top: $toast-top-height + 20px;
+    right: 20px;
+}
+
+.toast {
+    border-radius: 2px;
+    top: 0;
+    width: auto;
+    clear: both;
+    margin-top: 10px;
+    position: relative;
+    max-width: 100%;
+    height: $toast-height;
+    line-height: $toast-height;
+    background-color: $toast-color;
+    padding: 0 25px;
+    font-size: $toast-font-size;
+    font-weight: 300;
+    color: $toast-text-color;
+    float: right;
+    @include shadow-2dp;
+
+    .button {
+        margin: 0;
+        margin-left: 2rem;
+    }
+
+    &.rounded {
+        border-radius: 24px;
+    }
+}

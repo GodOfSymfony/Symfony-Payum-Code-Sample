@@ -1,0 +1,57 @@
+@import '../globals/mixins';
+
+#error-page {
+
+}
+
+.alert-danger {
+	strong {
+		@include font-base(14px, normal, $color-error, normal, left, 100%, $font-family-demi-bold);
+	}
+	background-color: rgba(245,245,245,0.6);
+	padding: 10px 5px;
+	margin-bottom: 20px;
+}
+
+.textfield-error, .selectfield-error, .toggle-list-error {
+	display: block;
+	padding-top: 5px;
+	ul {
+		margin: 0px;
+		padding: 0px;
+		height: 20px;
+		li {
+			list-style: none;
+			@include font-base(12px, normal, $color-error, normal, left, 100%, $font-family-demi-bold);
+		}
+	}
+}
+
+.datefield-error, textfield-error {
+	@include font-base(10px, normal, $color-error, normal, left, 100%, $font-family-demi-bold);
+	display: block!important;
+	ul {
+		padding-left: 0px;
+		li {
+			list-style: none;
+		}
+	}
+	&:before {
+		content: " ";
+		display: block;
+		margin-bottom: -10px;
+	}
+	&:after {
+		content: " ";
+		display: block;
+		margin-bottom: 15px;
+	}
+}
+
+.form-half-input {
+	.alert-danger {
+		width: 97%;
+		margin: auto;
+		margin-bottom: 20px;
+	}
+}

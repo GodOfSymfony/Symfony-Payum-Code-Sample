@@ -1,0 +1,402 @@
+@import '../globals/mixins';
+
+#municipality-create-fee {
+
+	form.form .form-row .form-column{
+		padding-left: 0;
+		padding-right: 0;
+
+		.selectfield-label-input-check{
+			@include font-base(14px, normal, $color-old-lavender, normal, left, 19px, $font-family-base);
+		}
+	}
+
+	div {
+		&>div.page-body {
+			.form-body {
+				padding-left: 0;
+				padding-right: 0;
+				padding-top: 0;
+				&>label {
+					@include font-base(16px, normal, $color-rifle-green, capitalize, left, 100%, $font-family-demi-bold);
+					padding: 15px 15px;
+					background-color: $color-white;
+					display: block;
+					margin-bottom: 5px;
+					margin-top: 30px;
+					&:first-child {
+						margin-top: 0px;
+					}
+					div.form-row {
+						div.form-colum {
+							div.textfield {
+								input.textfield-input {
+									margin-bottom: 15px!important;
+								}
+							}
+						}
+					}
+				}
+				&:after {
+					content: " ";
+					display: block;
+					clear: both;
+					margin-bottom: 0px;
+				}
+				.municipality-fee-form-footer {
+					.form-column {
+						&>div {
+							width: 70%;
+						}
+						&>div.muni-fee-footer-form {
+							width: 30%;
+							float: right;
+							margin-top: -71px;
+						}
+					}
+				}
+			}
+			.form-footer {
+				&:after {
+					content: " ";
+					display: block;
+					clear: both;
+					margin-bottom: 40px;
+				}
+			}
+		}
+	}
+	div.form-row {
+		&.half-block {
+			display: inline-block;
+			width: 50%;
+
+			#fee_form_period{
+				.toggle-list-label{
+					display: block;
+					line-height: 28px;
+				}
+				.toggle-list-items{
+					display: flex;
+					align-items: flex-start;
+					justify-content: flex-start;
+
+					label{
+						margin: 0 10px 0 0;
+						padding: 0;
+						width: 50%;
+
+						.radio-label{
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							padding: 5px;
+							width: 100%;
+							height: 42px;
+							border: 1px solid $color-pastel-gray;
+							&:after {
+								top: inherit;
+								right: inherit;
+								left: inherit;
+								bottom: inherit;
+								position: relative;
+								margin: 0 -22px 0 7px;
+							}
+						}
+
+						input[type=radio]:checked + span.radio-label{
+							box-shadow: 0 0 4px 0 rgba(0,0,0,0.22);
+
+							&:after{
+								margin-right: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.quarter-block {
+			display: inline-block;
+			width: 50%;
+			float: right;
+			display: flex;
+			align-items: flex-start;
+			justify-content: flex-start;
+			label{
+				line-height: 2;
+				margin-bottom: 0;
+			}
+
+			.form-column{
+				margin-left: 10px;
+
+				&:first-child{
+					margin-left: 0;
+				}
+			}
+			.textfield{
+				input{
+					height: 42px;
+					margin: 0;
+					border: 1px solid $color-pastel-gray;
+				}
+			}
+			.selectfield {
+				select{
+					margin: 0;
+					border-radius: 0;
+					height: 42px;
+					border: 1px solid $color-pastel-gray;
+
+					&#fee_form_periodFixedRecurrenceType{
+						margin-top: 28px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.no-back-form {
+	background-color: transparent!important;
+}
+
+.back-color-white {
+	background-color: $color-white;
+	padding: 15px 30px;
+}
+.plus-half-block {
+	width: 80%!important;
+	display: inline-block!important;
+	float: left!important;
+}
+.less-quarter-block {
+	width: 20%!important;
+	display: inline-block!important;
+	float: left!important;
+}
+
+.fee-container-renewal {
+	width: 100%;
+	.half-block {
+		width: 50%!important;
+		display: inline-block!important;
+		float: left!important;
+		div.toggle-list-items {
+			label {
+
+			}
+		}
+	}
+
+
+	&:after {
+		content: " ";
+		display: block;
+		clear: both;
+		margin-bottom: 20px;
+	}
+}
+
+.table-muni-fee {
+	&>div.listing-data {
+		&>div.listing-container {
+			&>table.data-table {
+				thead {
+					tr {
+						th {
+							@include font-base(16px!important, normal, $color-payne-grey!important, capitalize, left, 100%, $font-family-demi-bold);
+							p {
+								@include font-base(16px, normal, $color-payne-grey, capitalize, left, 100%, $font-family-demi-bold);
+							}
+							&:last-child {
+								border-left: 4px solid $color-platinum;
+								text-align: center;
+							}
+						}
+					}
+				}
+				tbody {
+					tr {
+						td {
+							p {
+								@include font-base(14px, normal, $color-rifle-green, capitalize, left, 100%, $font-family-demi-bold);
+								padding: 0px;
+								margin: 0px!important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#municipality-create-fee {
+	table.data-table {
+		border: 0;
+
+		thead {
+			tr {
+				border-bottom: 3px solid $color-white-smoke;
+				th {
+					border: 0;
+					padding: 10px;
+					&:last-child {
+						border-left: 4px solid $color-platinum;
+					}
+				}
+			}
+		}
+		tbody {
+			border: 0;
+			tr {
+				border: 0;
+				border-bottom: 3px solid $color-white-smoke;
+
+				td {
+					border: 0;
+					padding: 10px!important;
+					&:last-child {
+						border-left: 4px solid $color-platinum;
+
+					}
+
+					&.small-checks-table{
+						display: flex;
+						align-items: flex-start;
+						justify-content: flex-start;
+						.textfield{
+							margin: 0;
+							width: 100%;
+
+							input{
+								margin: 0;
+
+							}
+						}
+						.toggle-list{
+							width: 90px;
+							margin: 0;
+							min-width: 90px;
+
+							.toggle-list-items{
+								display: flex;
+								align-items: flex-start;
+								justify-content: center;
+								padding: 0;
+
+								label{
+									width: 35px;
+									height: 35px;
+									display: block;
+									margin: 0;
+									padding: 0;
+									cursor: pointer;
+
+
+									&:last-child{
+										margin-left: 5px;
+									}
+
+									.radio-label{
+										display: block;
+										width: 35px;
+										height: 35px;
+										padding: 3px;
+										line-height: 30px;
+										text-align: center;
+										border: 1px solid $color-pastel-gray;
+									}
+
+
+									input[type=radio],
+									input[type=radio]:checked{
+										display: none;
+									}
+									input[type=radio] + span{
+										background-color: $color-white-smoke;
+										color: $color-old-lavender;
+									}
+									input[type=radio]:checked + span{
+										background-color: $color-slate-gray;
+										color: $color-white;
+										box-shadow: 0 0 4px 0 rgba(0,0,0,0.22);
+
+										&:after{
+											margin-right: 0;
+										}
+								}
+									input[type=radio]:checked + span:after {
+										display: none;
+										background-color: $color-slate-gray;
+									}
+								}
+							}
+						}
+
+					}
+
+					.actions.actions-inline{
+						display: flex;
+						align-items: center;
+						justify-content: flex-end;
+						span{
+							margin: 0;
+							text-align: right;
+							width: auto;
+						}
+
+						a{
+							margin: 0 0 0 15px;
+							padding: 0;
+						}
+					}
+
+				}
+
+				&:nth-last-child(2) {
+					border-bottom: 0;
+				}
+
+				&.ui-sortable-helper{
+					display: flex;
+					align-items: stretch;
+					justify-content: center;
+
+					td{
+						width: 25%;
+
+						&:nth-child(2){
+							width: 50%;
+						}
+					}
+				}
+
+				&#no_periods{
+					td{
+						border-left: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+.actions-inline {
+	a {
+		display: inline-block;
+		margin: auto 5px;
+	}
+	span {
+		display: inline-block;
+		@include font-base(14px, normal, $color-old-lavender, capitalize, center, 100%, $font-family-base);
+		width: 60%;
+	}
+}
+
+.muni-fee-footer-form {
+	position: relative;
+}

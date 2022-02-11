@@ -1,0 +1,70 @@
+@import "../globals/variables";
+
+#confirmation-modal {
+
+	.form-footer {
+		a.accept-button-icon, a.cancel-button-icon, a.close-button-icon {
+			margin: auto 10px 15px 10px;
+		}
+	}
+}
+.modal-title {
+
+}
+
+.modal-body {
+	&>p.title-modal-view {
+		@include font-base(18px, normal, $color-liver, none, center, 100%, $font-family-demi-bold);
+	}
+	&>div.col-6 {
+		&:last-child {
+			padding-left: 15px;
+		}
+		&>div.info-review {
+			font-size: 0px;
+			a {
+				display: inline-block;
+				float: right;
+				span.icon-edit {
+					@include font-icon(16px, $color-slate-gray);
+				}
+			}
+			input.input-info-review {
+				display: inline-block!important;
+				width: 64%;
+				margin-right: 2%;
+				@include font-base(14px, normal, $color-liver, none, left, 100%, $font-family-base);
+			}
+			select.select-info-review {
+				display: inline-block!important;
+				width: 20%;
+				@include font-base(14px, normal, $color-liver, none, left, 100%, $font-family-base);
+			}
+			&>p.name-review {
+				@include font-base(14px, normal, $color-liver, none, left, 100%, $font-family-base);
+			}
+			&>p.info-popup-review {
+				@include font-base(14px, normal, $color-liver, none, left, 100%, $font-family-base);
+				span {
+					&.icon-phone {
+						@include font-icon(16px, $color-slate-gray);
+						float: left;
+						margin-right: 15px;
+					}
+					&.icon-contact {
+						@include font-icon(16px, $color-slate-gray);
+						float: left;
+						margin-right: 15px;
+					}
+				}
+			}
+		}
+		div.switch-conteiner {
+			padding-top: 11px;
+			.checkbox-input {
+				display: none!important;
+			}
+		}
+
+	}
+}

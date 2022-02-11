@@ -1,0 +1,299 @@
+@import '../globals/mixins';
+
+#support-ticket {
+  h1.content-box-title{
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+  .support-ticket-list{
+    > .col-12{
+      margin-bottom: 20px;
+    }
+  }
+  p.title-ticket {
+    @include font-base(18px, normal, $color-outer-Space, capitalize, left, 100%, $font-family-demi-bold);
+    margin-top: 0px;
+  }
+    .see-more{
+        float:right;
+        margin:25px 0;
+        > .see-more-btn {
+            display: inline-block;
+            vertical-align: middle;
+            margin: -3px 0 0;
+            padding: 4px 8px 2px;
+            border: 1px solid $color-payne-grey;
+            @include font-base(11px, normal, $color-old-lavender, uppercase, center, 19px, $font-family-demi-bold);
+
+            &:hover{
+              background-color: $color-payne-grey;
+              color: $color-white
+            }
+
+            > .icon-arrow {
+                display: inline-block;
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0)
+            }
+        }
+  }
+  .pager {
+    width: 100%;
+    display: flex;
+    margin: 20px 0;
+  }
+  div.container-color-ticket {
+    ul {
+      background-color: $color-rifle-green;
+      padding: 20px;
+      font-size: 0px;
+      min-height: 226px;
+        vertical-align: top;
+      &>li {
+        width: 50%;
+        display: inline-block;
+          vertical-align: top;
+        &>p.address-ticket {
+          @include font-base(24px, normal, $color-white, normal, left, 100%, $font-family-demi-bold);
+          margin: 15px 0px;
+        }
+        &>p.number-ticket {
+          @include font-base(24px, normal, $color-white, normal, left, 100%, $font-family-demi-bold);
+          margin: 15px 0px;
+        }
+        &>p.due-ticket {
+          @include font-base(16px, normal, $color-white, normal, right, 100%, $font-family-base);
+          margin: 15px 0px;
+        }
+        &>p.price-ticket {
+          @include font-base(36px, normal, $color-white, normal, right, 100%, $font-family-demi-bold);
+          margin: 15px 0px 40px 0px;
+        }
+        &>p.register-ticket {
+          @include font-base(16px, normal, $color-white, uppercase, left, 100%, $font-family-base);
+          margin: 15px 0px;
+          &.right {
+            text-align: right;
+          }
+        }
+        &>p.submitted-ticket {
+          @include font-base(18px, normal, $color-white, normal, right, 100%, $font-family-demi-bold);
+          margin: 15px 0px;
+        }
+          &>p.info-ticket {
+              @include font-base(14px, normal, $color-white, normal, left, 100%, $font-family-base);
+              margin: 15px 0px;
+              &>span {
+                  @include font-base(14px, normal, $color-white, normal, left, 100%, $font-family-demi-bold);
+              }
+          }
+        @media (max-width: $breakpoint-tablet-768) {
+          width: 100%;
+          display: block;
+          &>p.price-ticket {
+            text-align: left;
+          }
+          &>p.due-ticket {
+            text-align: left;
+          }
+
+        }
+      }
+    }
+    p.update-ticket {
+      @include font-base(16px, normal, $color-white, uppercase, right, 100%, $font-family-base);
+      margin: 10px 0px;
+    }
+    p.date-ticket {
+      @include font-base(18px, normal, $color-white, normal, right, 100%, $font-family-demi-bold);
+      margin: 10px 0px;
+    }
+      p.price-left-ticket {
+          @include font-base(32px, normal, $color-white, normal, left, 100%, $font-family-demi-bold);
+          margin-bottom: 0px;
+          &>span {
+              @include font-base(24px, normal, $color-white, normal, right, 100%, $font-family-demi-bold);
+              float: right;
+              margin-top: 3px;
+          }
+      }
+  }
+  a.btn-back {
+    display: block;
+    @include font-base(16px, normal, $color-old-lavender, uppercase, left, 100%, $font-family-demi-bold);
+    margin-top: 20px;
+    &>span.icon-arrow {
+      display: inline-block;
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3)
+    }
+    @media (max-width: $breakpoint-tablet) {
+      margin-bottom: 20px;
+    }
+  }
+  /**/
+  div.col-6 {
+    &>form.form {
+      margin-left: 20px;
+      @media (max-width: $breakpoint-tablet-768) {
+        margin-left: 0px;
+      }
+    }
+  }
+  button.btn-green-big {
+    padding: 5% 4%;
+  }
+
+  div.btn-new.btn-new-header-title {
+    top: 37px;
+    right: 0;
+    @media (max-width: $breakpoint-mobile) {
+      top:4%;
+    }
+  }
+  div.container-invoice-log {
+    margin-top:15px;
+    &>p.date-invoice-log {
+      @include font-base(18px, normal, $color-old-lavender, normal, left, 100%, $font-family-demi-bold);
+      margin:0px;
+      float: left;
+      &>span.dott {
+        display: inline-block;
+        width:20px;
+        height:20px;
+        background-color:$color-dark-sea-green;
+        border-radius:999px;
+        margin-right: 20px;
+        &.green {
+          background-color:$color-dark-sea-green;
+        }
+        &.red {
+          background-color:$color-dark-coral;
+        }
+      }
+    }
+
+    &>div.btn-invoice-action {
+      text-align: right;
+      margin-bottom: 20px;
+      a {
+        display: inline-block;
+        @include font-base(14px, normal, $color-slate-gray, normal, left, 130%, $font-family-demi-bold);
+        margin-left:20px;
+        margin-bottom:0px;
+        &.delete-action {
+          color:$color-dark-coral;
+        }
+        span {
+          @include font-icon(16px, $color-slate-gray);
+          margin: -4px 5px 0;
+          display: inline-block;
+          vertical-align: middle;
+
+          &.icon-edit {
+            color:$color-slate-gray;
+            font-size: 18px;
+
+          }
+          &.icon-remove_cancel {
+            color:$color-dark-coral;
+            font-size: 18px !important;
+          }
+        }
+      }
+    }
+
+
+    .back-btn{
+      float:left;
+    }
+    &>div.info-log {
+      text-align: right;
+      position: relative;
+      &>div {
+        width:96%;
+        margin:auto;
+        margin-right:0px;
+        @include font-base(14px, normal, $color-old-lavender, normal, left, 130%, $font-family-base);
+        background-color:$color-white;
+        padding:15px;
+      }
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        height:100%;
+        top:0px;
+        left:10px;
+        border-left: solid 1px $color-white;
+        width:0px;
+      }
+      @media (max-width: $breakpoint-tablet-768) {
+        &>div {
+          width:100%;
+        }
+        &:after {
+          display: none;
+        }
+      }
+      .ticket-author{
+        text-align: right;
+        color: $color-slate-gray;
+      }
+    }
+  }
+    div.btn-new-header-title {
+        &>div {
+            a{
+                &.back-btn {
+                    color: $color-old-lavender!important;
+                    margin-right: 0px;
+                }
+            }
+        }
+    }
+  div.no-tickets {
+      background-color: $color-platinum;
+      text-align: center;
+      padding: 30px 30px;
+      p{
+          text-align: center;
+          padding: 30px 30px;
+          font-size: 20px;
+          text-transform: uppercase;
+          color: $color-slate-gray;
+      }
+  }
+  .container-btn-back {
+    display: block;
+    > .btn-back {
+      float: left;
+      margin-top: 13px;
+      margin-left: -28px;
+      @include font-base(16px, normal, $color-old-lavender, none, left, 100%, $font-family-demi-bold);
+
+      > .icon-arrow {
+        display: inline-block;
+        @include font-icon(16px, $color-old-lavender);
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+        margin-right: 10px;
+      }
+    }
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+}
+

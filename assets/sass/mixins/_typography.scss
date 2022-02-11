@@ -1,0 +1,65 @@
+/* Typography */
+
+@mixin typo-blockquote($colorContrast: false) {
+  position: relative;
+  font-size: 24px;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.08em;
+
+  &:before {
+    position: absolute;
+    left: -0.5em;
+    content: '“';
+  }
+
+  &:after {
+    content: '”';
+    margin-left: -0.05em;
+  }
+
+  @if $colorContrast {
+    opacity: 0.54;
+  }
+}
+
+@mixin typo-menu($colorContrast: false) {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin typo-button($colorContrast: false) {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  //line-height: 1;
+  letter-spacing: 0;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin font-face($fontFamily, $fontFile, $fontsPath) {
+  font-family: $fontFamily;
+  src: url('#{$fontsPath}/#{$fontFile}.eot');
+  src: url('#{$fontsPath}/#{$fontFile}.eot?#iefix') format('embedded-opentype'),
+       url('#{$fontsPath}/#{$fontFile}.woff') format('woff'),
+       url('#{$fontsPath}/#{$fontFile}.ttf') format('truetype'),
+       url('#{$fontsPath}/#{$fontFile}.svg##{$fontFamily}') format('svg');
+}
+
+@mixin font-base($fsize:'14px', $fweight:'normal', $fcolor:$color-white, $ftransform:'none', $faligne:'none', $flineheight:'100%', $ffamily:$font-family-demi-bold) {
+  font-size: $fsize;
+  font-weight: $fweight;
+  color: $fcolor;
+  text-transform: $ftransform;
+  text-align: $faligne;
+  line-height: $flineheight;
+  font-family: $ffamily;
+}

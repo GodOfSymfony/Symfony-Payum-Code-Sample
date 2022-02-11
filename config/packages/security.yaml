@@ -1,0 +1,75 @@
+security:
+    encoders:
+        App\Entity\User: bcrypt
+
+    providers:
+        users:
+            entity: { class: App\Entity\User, property: email }
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        # we need a firewall for admin users
+        user:
+            pattern:   ^/
+            provider: users
+            anonymous: ~
+
+            form_login:
+                username_parameter: _email
+                login_path: app_login
+                check_path: app_login_check
+                use_referer: true
+                default_target_path: /
+
+            logout:
+                path: app_logout
+                target: app_login
+                invalidate_session: false
+
+            remember_me:
+                secret:   "%env(APP_SECRET)%%_admin"
+                lifetime: 31536000 # 365 days in seconds
+                path:     /
+                domain:   ~ # Defaults to the current domain from $_SERVER
+
+    access_control:
+        - { path: ^/login$, role: [IS_AUTHENTICATED_ANONYMOUSLY]}
+        - { path: ^/loginCheck$, role: [IS_AUTHENTICATED_ANONYMOUSLY]}
+        - { path: ^/resetPassword, role: [IS_AUTHENTICATED_ANONYMOUSLY]}
+        - { path: ^/changePassword, role: [IS_AUTHENTICATED_ANONYMOUSLY]}
+        - { path: ^/registration, role: [IS_AUTHENTICATED_ANONYMOUSLY]}
+        - { path: ^/, role: [ROLE_MUNIREG, ROLE_MUNICIPALITY, ROLE_REGISTER_PARTY] }
+
+    role_hierarchy:
+        #MUNIREG ROLES
+        ROLE_SUPER_ADMIN:                [ROLE_ADMIN_MUNIREG]
+        ROLE_ADMIN_MUNIREG:              [ROLE_MUNIREG]
+        ROLE_MUNIREG:                    [ROLE_ADMIN_REGISTER_PARTY, ROLE_ADMIN_MUNICIPAL, ROLE_USER_MANAGEMENT,
+                                          ROLE_ORGANIZATION_MANAGEMENT, ROLE_MUNICIPALITY_MANAGEMENT,
+                                          ROLE_PROPERTY_MANAGEMENT, ROLE_TUTORIAL_MANAGEMENT, ROLE_VERSION_MANAGEMENT]
+        #MUNICIPALITY ROLES
+        ROLE_ADMIN_MUNICIPAL:            [ROLE_MUNICIPALITY, ROLE_USER_MANAGEMENT, ROLE_MUNICIPALITY_MANAGEMENT]
+        ROLE_MUNICIPALITY:               [ROLE_USER_EDIT, ROLE_PROPERTY_MANAGEMENT, ROLE_TUTORIAL_VIEW]
+        #REGISTER PARTY ROLES
+        ROLE_ADMIN_REGISTER_PARTY:       [ROLE_REGISTER_PARTY, ROLE_USER_MANAGEMENT]
+        ROLE_REGISTER_PARTY:             [ROLE_USER_EDIT, ROLE_PROPERTY_MANAGEMENT, ROLE_REGISTRATION_ACTIVITY,
+                                          ROLE_TUTORIAL_VIEW]
+        #FUNCTIONALITIES ROLES
+        ROLE_USER_MANAGEMENT:            [ROLE_USER_NEW, ROLE_USER_EDIT_PRIVILEGES, ROLE_USER_EDIT]
+        ROLE_USER_EDIT:                  [ROLE_USER_VIEW]
+        ROLE_ORGANIZATION_MANAGEMENT:    [ROLE_ORGANIZATION_NEW, ROLE_ORGANIZATION_EDIT]
+        ROLE_ORGANIZATION_EDIT:          [ROLE_ORGANIZATION_VIEW]
+        ROLE_MUNICIPALITY_MANAGEMENT:    [ROLE_MUNICIPALITY_NEW, ROLE_MUNICIPALITY_EDIT]
+        ROLE_MUNICIPALITY_EDIT:          [ROLE_MUNICIPALITY_VIEW]
+        ROLE_PROPERTY_MANAGEMENT:        [ROLE_PROPERTY_NEW, ROLE_PROPERTY_EDIT]
+        ROLE_PROPERTY_EDIT:              [ROLE_PROPERTY_VIEW]
+        ROLE_REGISTRATION_ACTIVITY:      [ROLE_FORM_REGISTRATION, ROLE_FORM_RENEWAL, ROLE_FORM_DEREGISTRATION]
+        ROLE_FORM_REGISTRATION:          [ROLE_FORM_REGISTRATION_NEW, ROLE_FORM_REGISTRATION_EDIT]
+        ROLE_FORM_RENEWAL:               [ROLE_FORM_RENEWAL_NEW, ROLE_FORM_RENEWAL_EDIT]
+        ROLE_FORM_DEREGISTRATION:        [ROLE_FORM_DEREGISTRATION_NEW, ROLE_FORM_DEREGISTRATION_EDIT]
+        ROLE_TUTORIAL_MANAGEMENT:        [ROLE_TUTORIAL_NEW, ROLE_TUTORIAL_EDIT, ROLE_TUTORIAL_VIEW]
+        ROLE_VERSION_MANAGEMENT:         [ROLE_VERSION_NEW, ROLE_VERSION_EDIT, ROLE_VERSION_VIEW]

@@ -1,0 +1,9 @@
+#alert-modal {
+	width: 500px;
+	.message {
+		text-align: center;
+	}
+	@media (max-width: $breakpoint-mobile) {
+		width: 96%;
+	}
+}

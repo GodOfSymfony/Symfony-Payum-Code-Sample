@@ -1,0 +1,106 @@
+@import '../globals/mixins';
+
+#version-form {
+	&>div.container-page>div.page-body>div.content-wrapper>main.content>form.form>div.responsive-container.form-body-version>div.version-number {
+		&>div.form-column {
+
+		}
+	}
+
+	div.version-number {
+		font-size: 0px;
+		div {
+			div.textfield {
+				input[type=number] {
+					-moz-appearance: textfield;
+                    margin-top: 0px;
+				}
+				label.textfield-label {
+					@include font-base(14px, normal, $color-slate-gray, capitalize, left, 100%, $font-family-demi-bold);
+					width: 25%;
+					float: left;
+                    margin-top: 14px;
+				}
+				input.textfield-input {
+					width: 73%;
+					@include back-img('general', 'versionArrows.png', no-repeat, right 13px top 14px, normal);
+					float: right;
+					padding-right: 68px;
+					text-align: right;
+					@-moz-document url-prefix() {
+						padding-right: 68px;
+						text-align: right;
+					}
+
+					&::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+						opacity: 0;
+						display: none;
+					}
+				}
+			}
+			.go-major-up, .go-minor-up {
+				width: 39px;
+				height: 32px;
+				font-size: 0px;
+				position: absolute;
+				top: 12px;
+				right: 13px;
+			}
+
+			.go-major-down, .go-minor-down {
+				width: 39px;
+				height: 32px;
+				font-size: 0px;
+				position: absolute;
+				bottom: 8px;
+				right: 13px;
+			}
+		}
+	}
+	/**/
+	.version-number {
+		width: 100%;
+		&>div {
+			width: 25%;
+			display: inline-block;
+			float: left;
+            margin-top: -14px;
+			&>div.textfield {
+				label {
+					display: inline-block !important;
+					width: 53%;
+					vertical-align: top;
+				}
+				.textfield-input {
+					@include font-base(72px, normal, $color-slate-gray, normal, center, 100%, $font-family-base);
+					display: inline-block !important;
+					width: 38%;
+					border: none;
+					background-color: transparent;
+					&::-webkit-input-placeholder {
+						color: $color-slate-gray;
+					}
+					&::-moz-placeholder {
+						color: $color-slate-gray;
+					}
+					&:-ms-input-placeholder {
+						color: $color-slate-gray;
+					}
+					&:-moz-placeholder {
+						color: $color-slate-gray;
+					}
+				}
+			}
+			&>.date-rode-version {
+				display: inline-block;
+			}
+			&:last-child {
+				width: 50%;
+                margin-top: 0px;
+			}
+		}
+	}
+    .form-footer {
+        margin-top: 0px;
+    }
+}

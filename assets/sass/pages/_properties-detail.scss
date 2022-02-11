@@ -1,0 +1,260 @@
+@import '../globals/mixins';
+
+#property-detail {
+	.icon-attach{
+		font-size: 0;
+		&:before {
+			content: "";
+			width: 16px;
+			height: 16px;
+			display: inline-block;
+			@include back-img('general','attachment.svg', no-repeat, 100% 100%, none);
+
+		}
+	}
+	.icon-pay{
+		color: $color-dark-sea-green;
+	}
+	.padding-info-properties-extra {
+		background-color: $color-rifle-green;
+		padding: 30px 20px;
+		float: none;
+		margin-bottom: 20px;
+		display: flex;
+		align-items: stretch;
+		justify-content: flex-start;
+		&:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		.info-properties{
+			width: 100%;
+			.item-direction-properties {
+				@include font-base(24px, normal, $color-white, capitalize, left, 100%, $font-family-demi-bold);
+				margin-bottom: 20px;
+			}
+			.details-properties{
+				display: flex;
+				align-items: flex-start;
+				justify-content: flex-start;
+				> div{
+					padding-right: 20px;
+					width: 100%;
+					.item-info-properties {
+						@include font-base(14px, normal, $color-white, capitalize, left, 100%, $font-family-demi-bold);
+						margin-bottom: 20px;
+
+						.title {
+							display: inline-flex;
+							margin-right: 10px;
+							@include font-base(14px, normal, $color-white, uppercase, left, 100%, $font-family-base);
+							margin-bottom: 10px;
+						}
+						.see-organization-details, .see-entity-details {
+							display: inline-flex;
+						}
+						> strong {
+							display: block;
+						}
+
+						&:last-child{
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+		.balance-date{
+			min-width: 230px;
+			display: flex;
+			align-items: flex-start;
+			justify-content: flex-end;
+			flex-wrap: wrap;
+			.item-info-properties-price {
+				@include font-base(36px, normal, $color-white, capitalize, right, 100%, $font-family-demi-bold);
+				margin-bottom: 10px;
+				align-self: flex-start;
+				width: 100%;
+				span {
+					display: block;
+					@include font-base(16px, normal, $color-white, uppercase, right, 100%, $font-family-base);
+					margin-bottom: 10px;
+				}
+			}
+
+			.item-info-properties-date {
+				align-self: flex-end;
+				width: 100%;
+				@include font-base(14px, normal, $color-white, capitalize, right, 100%, $font-family-demi-bold);
+				span {
+					display: block;
+					@include font-base(14px, normal, $color-white, uppercase, right, 100%, $font-family-base);
+					margin-bottom: 10px;
+				}
+			}
+		}
+
+	}
+
+	#property-filing {
+		div.clear-side-row-right {
+			position: relative;
+			&>div.col-3 {
+				background-color: $color-white;
+				height: 100%;
+				min-height: 530px;
+				&.side-bar-filter {
+					top:-20px;
+				}
+				&:after {
+					content: "";
+					display: block;
+					clear: both;
+				}
+			}
+		}
+	}
+
+	div.btn-header-title-property {
+		position: absolute;
+		top: 40px;
+		right: 0px;
+		&>div {
+			&>a {
+				display: inline-block;
+				@include font-base(14px, normal, $color-old-lavender, capitalize, center, 100%, $font-family-demi-bold);
+				padding: 5px 5px;
+				&.bordered {
+					border: solid 1px $color-old-lavender;
+					width: 100px;
+				}
+				&>span {
+					&.icon-remove_cancel {
+						color: $color-dark-coral;
+					}
+				}
+
+				.logs-qty{
+					display: inline-block;
+					vertical-align: middle;
+					width: 15px;
+					height: 15px;
+					border-radius: 50%;
+					background-color: $color-payne-grey;
+					margin: -2px 3px 0;
+					padding: 0;
+					@include font-base(10px, normal, $color-white, inherit, center, 16px, $font-family-demi-bold);
+				}
+			}
+		}
+	}
+	/**/
+	div.container-page {
+		div.page-body {
+			div.content-wrapper {
+				main {
+					div {
+						div.tabs-form-content {
+							div.side-bar-filter {
+								top: 59px;
+								background-color: $color-white;
+								height: -webkit-calc(100% - 24px);
+								height: -moz-calc(100% - 24px);
+								height: calc(100% - 24px);
+							}
+							div.btn-new-header-title {
+								display: none;
+							}
+							div.col-9 {
+								padding-right: 25px;
+								div.btn-new-header-title {
+									display: block;
+									right: 25px;
+									top: 0px;
+								}
+								table.data-table {
+									margin-top: 35px;
+									td.td-property-filing-table {
+										padding-top: 10px;
+										.col-12,
+										div.col-8 {
+											margin-bottom: 10px;
+											@include font-base(14px, normal, $color-payne-grey, none, left, 100%, $font-family-demi-bold);
+											span {
+												@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+											}
+											p {
+												@include font-base(14px, normal, $color-rifle-green, none, left, 100%, $font-family-base);
+												margin: 0 0 5px 0;
+											}
+
+											.filing-type{
+												@include font-base(14px, normal, $color-payne-grey, none, left, 100%, $font-family-demi-bold);
+											}
+											.filing-dates{
+												@include font-base(14px, normal, $color-old-lavender, none, left, 100%, $font-family-base);
+											}
+										}
+									}
+								}
+							}
+
+
+
+
+						}
+					}
+				}
+			}
+		}
+	}
+
+	table.data-table tbody tr td{
+		&.td-registration-table{
+			.filing-type{
+				@include font-base(14px, normal, $color-payne-grey, none, left, 100%, $font-family-demi-bold);
+			}
+			.filing-notes{
+				@include font-base(14px, normal, $color-rifle-green, none, left, 100%, $font-family-base);
+				&.bold{
+					@include font-base(14px, normal, $color-rifle-green, none, left, 100%, $font-family-demi-bold);
+				}
+
+				span {
+					@include font-base(14px, normal, $color-rifle-green, none, left, 100%, $font-family-base);
+				}
+			}
+		}
+		&.pay-status{
+			background-color: $color-white-smoke;
+			padding: 10px;
+			text-align: center;
+
+			span{
+				display: inline-block;
+				vertical-align: middle;
+
+				&.paid{
+					background-color: $color-dark-sea-green;
+					@include font-base(14px, normal, $color-white, none, center, 100%, $font-family-base);
+					padding: 3px 10px 2px;
+				}
+
+				&.due{
+					p{
+						margin: 0 0 4px 0;
+						padding: 0;
+						width: 100%;
+						@include font-base(14px, normal, $color-rifle-green, none, left, 100%, $font-family-demi-bold);
+					}
+
+					span{
+						@include font-base(14px, normal, $color-dark-coral, none, left, 100%, $font-family-base);
+					}
+				}
+			}
+		}
+	}
+}
